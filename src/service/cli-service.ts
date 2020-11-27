@@ -28,6 +28,10 @@ export const cliService = {
       type: 'boolean',
       alias: 'v',
     },
+    git: {
+      type: 'boolean',
+      alias: 'g',
+    },
   }),
   options: minimistOptions({
     arguments: 'string',
