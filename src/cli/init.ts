@@ -1,6 +1,6 @@
 import { fs } from 'mz'
 import path from 'path'
-import { util } from 'src/util'
+// import { util } from 'src/util'
 import { config } from 'src/util/config'
 
 const init = {
@@ -8,7 +8,7 @@ const init = {
   checkIfConfigExists: (): boolean => fs.existsSync(init.configFileLocation()),
   create: (): void => {
     if (init.checkIfConfigExists()) {
-      util.log('Config already exists')
+      // util.log('Config already exists')
       return
     }
     fs.writeFileSync(init.configFileLocation(), init.default())

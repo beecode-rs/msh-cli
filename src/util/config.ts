@@ -7,7 +7,7 @@ dotenv.config({ path: './.msh-user' })
 
 export const config = Object.freeze({
   rootDir: env('ROOT_DIR').string.default(process.cwd()).required,
-  projects: env('PROJECTS').json.default([]).required,
+  projects: env('PROJECTS').json.default([]).required as string[],
   pullRequestSkip: env('PULL_REQUEST_SKIP').json.default([]).required,
   git: {
     team: env('GIT_TEAM').string.optional,
@@ -23,4 +23,5 @@ export const config = Object.freeze({
     npmEnabled: env('CMD_NPM_ENABLED').boolean.default(true).required,
     prEnabled: env('CMD_PR_ENABLED').boolean.default(true).required,
   },
+  logLevel: env('LOG_LEVEL').string.default('debug').required
 })

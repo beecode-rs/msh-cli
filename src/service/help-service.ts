@@ -3,10 +3,10 @@ export const helpService = {
     return `
 Usage: msh [option...]
 
-Options:
+Command:
 
    -g | --git [cmd]
-      cmd:
+      options:
           clone        Clone all project
           pull         Pull all projects
           fetch        Fetch all projects
@@ -15,11 +15,14 @@ Options:
    -i | --init         Initiate .msh config file with default values
 
    -c | --clean [cmd]
-      cmd:
+      options:
           npm          Clean all node_modules folders
           docker       Remove all docker images (do a "docker-compose down" command first)
 
    -n | --npm          Run npm i in all containers
+      options:
+          -g           Gather all npm packages to a global package.json
+          -i           Run npm i for all projects
 
    -p | --pr           Generate PR for all projects (added option to auto merge)
 

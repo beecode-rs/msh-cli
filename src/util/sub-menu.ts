@@ -1,8 +1,8 @@
 import { ChoiceCollection } from 'inquirer'
-import { MainMenu } from 'src/main-menu'
+import { MainMenu } from 'src/controller/cli-menu/main-menu'
 import { BaseMenu } from 'src/util/base-menu'
 import { config } from 'src/util/config'
-import { util } from 'src/util/index'
+// import { util } from 'src/util/index'
 
 export abstract class SubMenu extends BaseMenu {
   private async __mainMenu(): Promise<void> {
@@ -14,7 +14,7 @@ export abstract class SubMenu extends BaseMenu {
 
   public async run(preSelected?: string): Promise<void> {
     if (!config.cmd[`${this.constructor.name.toLowerCase()}Enabled`]) {
-      util.log(`${this.constructor.name.toLowerCase()} command is disabled. Check config file [.msh]`)
+      // util.log(`${this.constructor.name.toLowerCase()} command is disabled. Check config file [.msh]`)
       return
     }
     return super.run(preSelected)
