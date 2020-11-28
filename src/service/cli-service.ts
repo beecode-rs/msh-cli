@@ -1,25 +1,17 @@
 import chalk from 'chalk'
-import { ParsedArgs } from 'minimist'
+import minimist, { ParsedArgs } from 'minimist'
 import minimistOptions from 'minimist-options'
-import { helpService } from 'src/service/help-service'
-import { util } from 'src/util'
-import { constant } from 'src/util/constant'
-import { logger } from 'src/util/logger'
+import { ExecResult, cliDal } from 'src/dal'
+import { helpService } from 'src/service'
+import { constant } from 'src/util'
+
+export type PrintStdMessage = {
+  [key: string]: ExecResult
+}
 
 export const cliService = {
   exitAfterCommandExecuted: false,
-  printMessage: (messages: any): void => {
-    for (const [key, val] of Object.entries(messages)) {
-      util.log(chalk.cyan(key))
-      for (const msg of (val as any).stdout.split('\n')) {
-        util.log(msg)
-      }
-      for (const msg of (val as any).stderr.split('\n')) {
-        util.log(chalk.red(msg))
-      }
-    }
-  },
-  commands: minimistOptions({
+  _commands: minimistOptions({
     help: {
       type: 'boolean',
       alias: 'h',
@@ -32,26 +24,45 @@ export const cliService = {
       type: 'boolean',
       alias: 'g',
     },
+    npm: {
+      type: 'boolean',
+      alias: 'n',
+    },
   }),
-  options: minimistOptions({
+  _options: minimistOptions({
     arguments: 'string',
   }),
-  print: (msg: string): void => {
-    // eslint-disable-next-line no-console
-    console.log(msg)
-  },
-  hasOneCommandSelected: (argv: ParsedArgs): boolean => {
-    const cmdCount = cliService.commandsSelected(argv)
-    if (cmdCount > 1) {
-      cliService.print('ERROR !!! - CLI can run only one cmd at a time')
-      return false
-    }
-    return cmdCount === 1
-  },
-  commandsSelected: (argv: ParsedArgs): number =>
-    (cliService.commands.boolean as string[]).reduce((sum, cmd) => {
+  _selectedCommandCount: (argv: ParsedArgs): number =>
+    (cliService._commands.boolean as string[]).reduce((sum, cmd) => {
       return argv[cmd] ? ++sum : sum
     }, 0),
-  printVersion: (): void => logger.info(`v${constant.projectVersion}`),
-  printHelp: (): void => cliService.print(helpService.text()),
+  cliArguments: (): minimist.Opts => {
+    return { ...cliService._options, ...cliService._commands }
+  },
+  commandIsSelected: (argv: ParsedArgs): boolean => {
+    const cmdCount = cliService._selectedCommandCount(argv)
+    if (cmdCount > 1) throw new Error('ERROR !!! - CLI can run only one cmd at a time')
+    return cmdCount === 1
+  },
+  printStdMessage: (...messageArgs: PrintStdMessage[]): void => {
+    const messages = cliService._joinResults(messageArgs)
+    for (const [key, execResult] of Object.entries(messages)) {
+      cliDal.print(chalk.cyan(key))
+      for (const msg of execResult.stdout.split('\n')) cliDal.print(msg)
+      for (const msg of execResult.stderr.split('\n')) cliDal.print(chalk.red(msg))
+    }
+  },
+  _joinResults: (results: PrintStdMessage[]): PrintStdMessage => {
+    return results.reduce((agg, cur) => {
+      agg = Object.assign(agg, cur)
+      return agg
+    }, {} as PrintStdMessage)
+  },
+  printError: (message: string): void => {
+    cliDal.print(chalk.red(message))
+  },
+  printVersion: (): void => cliDal.print(`v${constant.projectVersion}`),
+  printHelp: (): void => cliDal.print(helpService.text()),
+  exec: cliDal.exec,
+  cd: cliDal.cd,
 }

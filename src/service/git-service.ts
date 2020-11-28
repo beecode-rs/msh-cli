@@ -1,12 +1,10 @@
 import chalk from 'chalk'
-import { assignIn } from 'lodash'
-import { cliService } from 'src/service/cli-service'
-import { ExecResult, consoleService } from 'src/service/console-service'
-import { config } from 'src/util/config'
+import { PrintStdMessage, cliService } from 'src/service'
+import { config } from 'src/util'
 
 export type ExecuteForProjectParams = {
   project: string
-  command: GitCommand
+  cmd: string
 }
 
 export enum GitCommand {
@@ -16,36 +14,39 @@ export enum GitCommand {
   CLONE = 'clone',
 }
 
-export type GitCommandParams = {
-  projects: string[]
-  command: GitCommand
-}
-
 export const gitService = {
-  status: async () => {
-    return gitService._simpleCommand({ projects: config.projects, command: GitCommand.STATUS })
+  status: async (): Promise<void> => {
+    return gitService._simpleCommand(GitCommand.STATUS)
   },
-  fetch: async () => {
-    return gitService._simpleCommand({ projects: config.projects, command: GitCommand.FETCH })
+  fetch: async (): Promise<void> => {
+    return gitService._simpleCommand(GitCommand.FETCH)
   },
-  pull: async () => {
-    return gitService._simpleCommand({ projects: config.projects, command: GitCommand.PULL })
+  pull: async (): Promise<void> => {
+    return gitService._simpleCommand(GitCommand.PULL)
   },
-  clone: async () => {
-    consoleService.cd(config.rootDir)
-  },
-  _simpleCommand: async (params: GitCommandParams) => {
-    const { command } = params
-    const promises = params.projects.map((project) => {
-      gitService._execute({ project, command })
+  clone: async (): Promise<void> => {
+    cliService.cd(config.rootDir)
+    const { host: gitHost, team: gitTeam, projectPrefix } = config.git
+    const promises = config.projects.map((project) => {
+      const gitProject = [projectPrefix, project].filter(Boolean).join('-')
+      const cmd = `git clone git@${gitHost}:${gitTeam}/${gitProject}.git ${project}`
+      return gitService._execGitCommand({ project, cmd })
     })
-    const result = await Promise.all(promises)
-    cliService.printMessage(assignIn({}, ...result))
+    const results = await Promise.all(promises)
+    cliService.printStdMessage(...results)
   },
-  _execute: async (params: ExecuteForProjectParams): Promise<{ [key: string]: ExecResult }> => {
-    const cmd = `git -C ${config.rootDir}/${params.project} ${params.command}`
+  _simpleCommand: async (gitCommand: GitCommand): Promise<void> => {
+    const promises = config.projects.map((project) => {
+      const cmd = `git -C ${config.rootDir}/${project} ${gitCommand}`
+      return gitService._execGitCommand({ project, cmd })
+    })
+    const results = await Promise.all(promises)
+    cliService.printStdMessage(...results)
+  },
+  _execGitCommand: async (params: ExecuteForProjectParams): Promise<PrintStdMessage> => {
+    const { cmd } = params
     const printOnDone = chalk.green(`DONE - ${params.project}`)
-    const result = await consoleService.exec({ cmd, printOnDone })
+    const result = await cliService.exec({ cmd, printOnDone })
     return { [params.project]: result }
   },
 }
