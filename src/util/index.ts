@@ -2,35 +2,34 @@ export * from 'src/util/config'
 export * from 'src/util/constant'
 export * from 'src/util/logger'
 
-
 // import chalk from 'chalk'
 // import shell from 'shelljs'
 // import { config } from 'src/util/config'
 
 // const util = {
-  // execAsync: (command: string): Promise<{ stdout: string; stderr: string; error: boolean }> => {
-  //   return new Promise<{ stdout: string; stderr: string; error: boolean }>((resolve) => {
-  //     {
-  //       shell.exec(command, { silent: true }, (code, stdout, stderr) => {
-  //         const execResult = { stdout, stderr, error: false }
-  //         if (code !== 0) execResult.error = true
-  //         return resolve(execResult)
-  //       })
-  //     }
-  //   })
-  // },
+// execAsync: (command: string): Promise<{ stdout: string; stderr: string; error: boolean }> => {
+//   return new Promise<{ stdout: string; stderr: string; error: boolean }>((resolve) => {
+//     {
+//       shell.exec(command, { silent: true }, (code, stdout, stderr) => {
+//         const execResult = { stdout, stderr, error: false }
+//         if (code !== 0) execResult.error = true
+//         return resolve(execResult)
+//       })
+//     }
+//   })
+// },
 
-  // log: (msg: string | any): void => {
-  //   /* tslint:disable */
-  //   if (typeof msg === 'object') {
-  //     // eslint-disable-next-line no-console
-  //     console.log(JSON.stringify(msg, null, 4))
-  //   } else {
-  //     // eslint-disable-next-line no-console
-  //     console.log(msg)
-  //   }
-  //   /* tslint:enable */
-  // },
+// log: (msg: string | any): void => {
+//   /* tslint:disable */
+//   if (typeof msg === 'object') {
+//     // eslint-disable-next-line no-console
+//     console.log(JSON.stringify(msg, null, 4))
+//   } else {
+//     // eslint-disable-next-line no-console
+//     console.log(msg)
+//   }
+//   /* tslint:enable */
+// },
 //   printConfig: (): void => {
 //     const gitUserName = config.git.username ? `     username : ${chalk.cyan(config.git.username)}` : ``
 //     const pullRequestSkip =

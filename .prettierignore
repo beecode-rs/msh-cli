@@ -1,8 +1,7 @@
-.cache/
-.sass_cache/
+.idea/
+bin/
+dist/
 node_modules/
+resource/
 package.json
 package-lock.json
-scripts
-resource
-build

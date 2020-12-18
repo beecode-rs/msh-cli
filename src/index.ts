@@ -8,8 +8,8 @@ import { cliService } from 'src/service'
 const argv = minimist(process.argv.slice(2), cliService.cliArguments())
 ;(async (): Promise<void> => {
   try {
-    if (cliService.commandIsSelected(argv)) return await cliController.rootController.router(argv)
-    cliService.printHelp()
+    if (!cliService.commandIsSelected(argv)) return cliService.printHelp()
+    await cliController.rootController.router(argv)
   } catch (err) {
     cliService.printError(err.message)
   }
