@@ -21,8 +21,8 @@ Command:
 
    -n | --npm          Run npm i in all containers
       options:
-          -g           Gather all npm packages to a global package.json
-          -i           Run npm i for all projects
+          install      Run npm i for all projects
+          global       !!!Not Implemented yet!!! Gather all npm packages to a global package.json
 
    -p | --pr           Generate PR for all projects (added option to auto merge)
 
