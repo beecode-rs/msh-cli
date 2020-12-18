@@ -33,8 +33,7 @@ const cli = {
     // else if (argv.git) await new Git().run(argv.git)
     // else util.log('ERROR !!! - Command not found')
   },
-  requestRunningMultipleCommands: (argv): boolean =>
-    Object.values(alias).reduce((sum, cmd) => (argv[cmd] ? ++sum : sum), 0) > 1,
+  requestRunningMultipleCommands: (argv): boolean => Object.values(alias).reduce((sum, cmd) => (argv[cmd] ? ++sum : sum), 0) > 1,
   allowPrintConfigForCmd: (argv): boolean => !argv.help && !argv.init && !argv.version,
 }
 

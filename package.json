@@ -9,8 +9,18 @@
   "bugs": {
     "url": "https://github.com/beecode-rs/msh-cli/issues"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
   "dependencies": {
-    "@beecode/msh-node-env": "0.0.3",
+    "@beecode/msh-node-env": "0.0.7",
     "async-shelljs": "0.1.4",
     "chalk": "4.1.0",
     "compare-versions": "3.6.0",
@@ -37,32 +47,34 @@
     "@types/inquirer": "7.3.1",
     "@types/lodash": "4.14.165",
     "@types/minimist": "1.2.1",
-    "@types/mocha": "8.0.4",
+    "@types/mocha": "8.2.0",
     "@types/module-alias": "2.0.0",
-    "@types/mz": "2.7.2",
-    "@types/node": "14.14.9",
+    "@types/mz": "2.7.3",
+    "@types/node": "14.14.14",
     "@types/request": "2.48.5",
     "@types/shelljs": "0.8.8",
     "@types/sinon": "9.0.9",
     "@types/source-map-support": "0.5.3",
-    "@typescript-eslint/eslint-plugin": "4.8.2",
-    "@typescript-eslint/parser": "4.8.2",
+    "@typescript-eslint/eslint-plugin": "4.10.0",
+    "@typescript-eslint/parser": "4.10.0",
     "chai": "4.2.0",
-    "eslint": "7.14.0",
-    "eslint-config-prettier": "6.15.0",
+    "eslint": "7.15.0",
+    "eslint-config-prettier": "7.0.0",
     "eslint-plugin-import": "2.22.1",
+    "markdown-toc": "1.2.0",
     "mocha": "8.2.1",
-    "prettier": "2.2.0",
+    "prettier": "2.2.1",
     "rimraf": "3.0.2",
-    "sinon": "9.2.1",
-    "ts-node": "9.0.0",
+    "sinon": "9.2.2",
+    "ts-node": "9.1.1",
     "tsc-watch-2": "0.0.2",
     "tsconfig-lint": "0.12.0",
-    "typescript": "4.1.2"
+    "typescript": "4.1.3"
   },
   "files": [
     "dist",
-    "bin"
+    "bin",
+    "package-lock.json"
   ],
   "homepage": "https://github.com/beecode-rs/msh-cli#readme",
   "keywords": [
@@ -72,8 +84,16 @@
     "project"
   ],
   "license": "mit",
-  "main": "./src",
+  "main": "./dist/index.js",
   "name": "@beecode/msh-cli",
+  "optionalDependencies": {
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "husky": "4.3.6"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/beecode-rs"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/beecode-rs/msh-cli.git"
@@ -83,20 +103,29 @@
   },
   "scripts": {
     "audit": "npm audit --json | npx npm-audit-helper",
-    "build": "tsc",
-    "build:watch": "npm run build -- -w",
+    "build": "npm run clean && tsc -p ./tsconfig-build.json",
+    "build:watch": "npm run clean && tsc-watch -p tsconfig-build.json --preserveWatchOutput",
+    "bump-version": "rjp package.json version",
     "clean": "rimraf ./dist/*",
+    "commit": "git-cz",
+    "coverage": "nyc npm run test:unit",
+    "coverage:publish": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "debug": "node --inspect -r ts-node/register ./src/index.ts",
-    "eslint": "eslint . --ext .ts",
+    "doc:toc": "markdown-toc -i ./README.md",
+    "eslint": "eslint . --ext .ts --quiet",
     "eslint:fix": "npm run eslint -- --fix",
     "lint": "npm run eslint && npm run prettier",
     "lint:fix": "npm run eslint:fix && npm run prettier:fix",
-    "prebuild": "npm run clean",
     "preinstall": "npx npm-force-resolutions",
-    "prettier": "prettier --check \"src/**/*.{ts,js,json}\"",
-    "prettier:fix": "prettier --write \"src/**/*.{ts,js,json}\"",
-    "start": "ts-node ./src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prettier": "prettier --check \"./src/**/*.{ts,json}\"",
+    "prettier:fix": "prettier --write \"./src/**/*.{ts,json}\"",
+    "semantic-release": "semantic-release",
+    "semantic-release:check": "npm run semantic-release -- --dry-run --no-ci",
+    "start": "node ./dist/index.js",
+    "start:ts": "ts-node ./src/index.ts",
+    "test": "npm run test:unit -- --forbid-only && npm run test:int -- --forbid-only",
+    "test:int": "mocha ./src/test/{**/,/}*.ts",
+    "test:unit": "mocha ./src/{**/,/}*.test.ts"
   },
   "version": "0.1.8"
 }
