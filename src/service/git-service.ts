@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 import { PrintStdMessage, cliService } from 'src/service'
-import { config } from 'src/util'
+import { config, constant } from 'src/util'
 
 export type ExecuteForProjectParams = {
   project: string
@@ -25,7 +25,7 @@ export const gitService = {
     return gitService._simpleCommand(GitCommand.PULL)
   },
   clone: async (): Promise<void> => {
-    cliService.cd(config.rootDir)
+    cliService.cd(constant.rootDir)
     const { host: gitHost, team: gitTeam, projectPrefix } = config.git
     const promises = config.projects.map((project) => {
       const gitProject = [projectPrefix, project].filter(Boolean).join('-')
@@ -37,7 +37,7 @@ export const gitService = {
   },
   _simpleCommand: async (gitCommand: GitCommand): Promise<void> => {
     const promises = config.projects.map((project) => {
-      const cmd = `git -C ${config.rootDir}/${project} ${gitCommand}`
+      const cmd = `git -C ${constant.rootDir}/${project} ${gitCommand}`
       return gitService._execGitCommand({ project, cmd })
     })
     const results = await Promise.all(promises)

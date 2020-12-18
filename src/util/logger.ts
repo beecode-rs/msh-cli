@@ -40,7 +40,7 @@ export const logger = {
       case LogLevel.INFO:
         return 2
       case LogLevel.DEBUG:
-        return 4
+        return 3
       default:
         throw new Error(`Unknown log lever [${logLevel}]`)
     }

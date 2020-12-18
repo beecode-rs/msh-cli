@@ -3,13 +3,13 @@ import stringify from 'fast-json-stable-stringify'
 import fs from 'fs'
 import * as path from 'path'
 import { PrintStdMessage, cliService } from 'src/service'
-import { config, logger } from 'src/util'
+import { config, constant, logger } from 'src/util'
 
 export const npmService = {
   install: async (): Promise<void> => {
     const promises = config.projects.map((project) => {
       return new Promise<PrintStdMessage>((resolve, rejects) => {
-        cliService.cd(project)
+        cliService.cd(path.join(constant.rootDir, project))
         const cmd = `npm i -s`
         cliService
           .exec({ cmd })
@@ -19,13 +19,14 @@ export const npmService = {
             resolve({ [project]: result })
           })
           .catch(rejects)
-        cliService.cd('..')
       })
     })
     const results = await Promise.all(promises)
     cliService.printStdMessage(...results)
+    cliService.cd(constant.rootDir)
   },
   global: (): void => {
+    throw new Error('not implemented yet')
     const gDeps = {}
     const gDepsNewer = {}
     const gDepsOlder = {}
