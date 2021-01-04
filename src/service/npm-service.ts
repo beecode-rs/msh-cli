@@ -5,8 +5,8 @@ import * as path from 'path'
 import { ProjectCommand } from 'src/model/project-command'
 import { ProjectNpmInstallCommand } from 'src/model/project-npm-install-command'
 import { PrintStdMessage, cliService } from 'src/service/cli-service'
+import { shellService } from 'src/service/shell-service'
 import { config } from 'src/util/config'
-import { constant } from 'src/util/constant'
 import { logger } from 'src/util/logger'
 
 export const npmService = {
@@ -23,10 +23,10 @@ export const npmService = {
   install: async (): Promise<void> => {
     const promises = config.projects.map((project) => {
       return new Promise<PrintStdMessage>((resolve, rejects) => {
-        cliService.cd(path.join(constant.rootDir, project))
+        shellService.cd(path.join(config.rootDir, project))
         const cmd = `npm i -s`
-        cliService
-          .exec({ cmd })
+        shellService
+          .exec(cmd)
           .then((result) => {
             logger.debug(`exec done for project [${project}]`)
             logger.debug(JSON.stringify({ [project]: result }))
@@ -37,7 +37,7 @@ export const npmService = {
     })
     const results = await Promise.all(promises)
     cliService.printStdMessage(...results)
-    cliService.cd(constant.rootDir)
+    shellService.cd(config.rootDir)
   },
   global: (): void => {
     throw new Error('not implemented yet')

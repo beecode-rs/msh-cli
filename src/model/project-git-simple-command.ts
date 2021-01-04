@@ -1,5 +1,6 @@
 import { ProjectCommand } from 'src/model/project-command'
-import { PrintStdMessage, cliService } from 'src/service/cli-service'
+import { PrintStdMessage } from 'src/service/cli-service'
+import { shellService } from 'src/service/shell-service'
 
 export enum GitSimpleCommand {
   STATUS = 'status',
@@ -23,7 +24,7 @@ export class ProjectGitSimpleCommand implements ProjectCommand {
 
   public async execute(project: string): Promise<PrintStdMessage> {
     const cmd = `git -C ${this.__rootDir}/${project} ${this.__simpleGitCommand}`
-    const result = await cliService.exec({ cmd })
+    const result = await shellService.exec(cmd)
     return { [project]: result }
   }
 }
