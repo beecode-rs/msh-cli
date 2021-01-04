@@ -1,9 +1,7 @@
 import chalk from 'chalk'
-import minimist, { ParsedArgs } from 'minimist'
-import minimistOptions from 'minimist-options'
 import { ExecResult, cliDal } from 'src/dal'
-import { helpService } from 'src/service'
-import { constant } from 'src/util'
+import { helpService } from 'src/service/help-service'
+import { constant } from 'src/util/constant'
 
 export type PrintStdMessage = {
   [key: string]: ExecResult
@@ -11,39 +9,6 @@ export type PrintStdMessage = {
 
 export const cliService = {
   exitAfterCommandExecuted: false,
-  _commands: minimistOptions({
-    help: {
-      type: 'boolean',
-      alias: 'h',
-    },
-    version: {
-      type: 'boolean',
-      alias: 'v',
-    },
-    git: {
-      type: 'boolean',
-      alias: 'g',
-    },
-    npm: {
-      type: 'boolean',
-      alias: 'n',
-    },
-  }),
-  _options: minimistOptions({
-    arguments: 'string',
-  }),
-  _selectedCommandCount: (argv: ParsedArgs): number =>
-    (cliService._commands.boolean as string[]).reduce((sum, cmd) => {
-      return argv[cmd] ? ++sum : sum
-    }, 0),
-  cliArguments: (): minimist.Opts => {
-    return { ...cliService._options, ...cliService._commands }
-  },
-  commandIsSelected: (argv: ParsedArgs): boolean => {
-    const cmdCount = cliService._selectedCommandCount(argv)
-    if (cmdCount > 1) throw new Error('ERROR !!! - CLI can run only one cmd at a time')
-    return cmdCount === 1
-  },
   printStdMessage: (...messageArgs: PrintStdMessage[]): void => {
     const messages = cliService._joinResults(messageArgs)
     for (const [key, execResult] of Object.entries(messages)) {
@@ -60,6 +25,9 @@ export const cliService = {
   },
   printError: (message: string): void => {
     cliDal.print(chalk.red(message))
+  },
+  printSuccess: (message): void => {
+    cliDal.print(chalk.green(message))
   },
   printVersion: (): void => cliDal.print(`v${constant.projectVersion}`),
   printHelp: (): void => cliDal.print(helpService.text()),

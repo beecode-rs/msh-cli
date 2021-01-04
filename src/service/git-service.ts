@@ -1,52 +1,24 @@
-import chalk from 'chalk'
-import { PrintStdMessage, cliService } from 'src/service'
-import { config, constant } from 'src/util'
-
-export type ExecuteForProjectParams = {
-  project: string
-  cmd: string
-}
-
-export enum GitCommand {
-  STATUS = 'status',
-  FETCH = 'fetch',
-  PULL = 'pull',
-  CLONE = 'clone',
-}
+import { ProjectCommand } from 'src/model/project-command'
+import { ProjectGitCloneCommand } from 'src/model/project-git-clone-command'
+import { GitSimpleCommand, ProjectGitSimpleCommand } from 'src/model/project-git-simple-command'
+import { config } from 'src/util/config'
 
 export const gitService = {
-  status: async (): Promise<void> => {
-    return gitService._simpleCommand(GitCommand.STATUS)
-  },
-  fetch: async (): Promise<void> => {
-    return gitService._simpleCommand(GitCommand.FETCH)
-  },
-  pull: async (): Promise<void> => {
-    return gitService._simpleCommand(GitCommand.PULL)
-  },
-  clone: async (): Promise<void> => {
-    cliService.cd(constant.rootDir)
-    const { host: gitHost, team: gitTeam, projectPrefix } = config.git
-    const promises = config.projects.map((project) => {
-      const gitProject = [projectPrefix, project].filter(Boolean).join('-')
-      const cmd = `git clone git@${gitHost}:${gitTeam}/${gitProject}.git ${project}`
-      return gitService._execGitCommand({ project, cmd })
-    })
-    const results = await Promise.all(promises)
-    cliService.printStdMessage(...results)
-  },
-  _simpleCommand: async (gitCommand: GitCommand): Promise<void> => {
-    const promises = config.projects.map((project) => {
-      const cmd = `git -C ${constant.rootDir}/${project} ${gitCommand}`
-      return gitService._execGitCommand({ project, cmd })
-    })
-    const results = await Promise.all(promises)
-    cliService.printStdMessage(...results)
-  },
-  _execGitCommand: async (params: ExecuteForProjectParams): Promise<PrintStdMessage> => {
-    const { cmd } = params
-    const printOnDone = chalk.green(`DONE - ${params.project}`)
-    const result = await cliService.exec({ cmd, printOnDone })
-    return { [params.project]: result }
+  createCommand: (commandType: string): ProjectCommand => {
+    if (commandType === 'clone') {
+      if (!config.git.team) throw new Error('You need to specify GIT_TEAM env variable')
+      return new ProjectGitCloneCommand({
+        gitHost: config.git.host,
+        gitTeam: config.git.team,
+        projectPrefix: config.git.projectPrefix,
+        rootDir: config.rootDir,
+      })
+    } else if ((<any>Object).values(GitSimpleCommand).includes(commandType)) {
+      return new ProjectGitSimpleCommand({
+        rootDir: config.rootDir,
+        gitSimpleCommand: commandType as GitSimpleCommand,
+      })
+    }
+    throw new Error(`Unsupported git command [${commandType}]`)
   },
 }

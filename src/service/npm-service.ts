@@ -2,10 +2,24 @@ import cVer from 'compare-versions'
 import stringify from 'fast-json-stable-stringify'
 import fs from 'fs'
 import * as path from 'path'
-import { PrintStdMessage, cliService } from 'src/service'
-import { config, constant, logger } from 'src/util'
+import { ProjectCommand } from 'src/model/project-command'
+import { ProjectNpmInstallCommand } from 'src/model/project-npm-install-command'
+import { PrintStdMessage, cliService } from 'src/service/cli-service'
+import { config } from 'src/util/config'
+import { constant } from 'src/util/constant'
+import { logger } from 'src/util/logger'
 
 export const npmService = {
+  createCommand: (commandType: string): ProjectCommand => {
+    switch (commandType) {
+      case 'install':
+        return new ProjectNpmInstallCommand({ rootDir: config.rootDir })
+        break
+      default:
+        throw new Error(`Unsupported npm command [${commandType}]`)
+    }
+  },
+
   install: async (): Promise<void> => {
     const promises = config.projects.map((project) => {
       return new Promise<PrintStdMessage>((resolve, rejects) => {

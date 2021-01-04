@@ -1,7 +1,6 @@
 import { fs } from 'mz'
 import path from 'path'
-import { constant } from 'src/util'
-// import { util } from 'src/util'
+import { constant } from 'src/util/constant'
 
 const init = {
   configFileLocation: (): string => path.join(constant.rootDir, '.msh'),

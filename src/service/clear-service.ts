@@ -1,5 +1,5 @@
 export const clearService = {
-    npm: async ():Promise<void> => {
+  npm: async (): Promise<void> => {
     //       const promises: any[] = []
     // for (const project of config.projects) {
     //   const cmd = `rm -rf ${config.rootDir}/${project}/node_modules/*`
@@ -11,5 +11,5 @@ export const clearService = {
     // }
     // const result = await Promise.all(promises)
     // cliService.printStdMessage(assignIn({}, ...result))
-    }
+  },
 }

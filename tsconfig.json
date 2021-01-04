@@ -25,5 +25,8 @@
     "target": "ESNext"
   },
   "exclude": ["./node_modules", "./dist", "./.idea", "./.semaphore", "./resource"],
-  "include": ["./src/**/*.ts"]
+  "include": [
+    "./src/**/*.ts",
+    "node_modules/@types/shelljs/make.d.ts"
+  ]
 }

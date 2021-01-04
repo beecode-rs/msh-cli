@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProjectGitCommand = void 0;
+class ProjectGitCommand {
+    execute(project) {
+        return Promise.resolve(undefined);
+    }
+}
+exports.ProjectGitCommand = ProjectGitCommand;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJvamVjdC1naXQtY29tbWFuZC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9tb2RlbC9wcm9qZWN0LWdpdC1jb21tYW5kLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUVBLE1BQWEsaUJBQWlCO0lBQ3JCLE9BQU8sQ0FBQyxPQUFlO1FBQzVCLE9BQU8sT0FBTyxDQUFDLE9BQU8sQ0FBQyxTQUFTLENBQUMsQ0FBQztJQUNwQyxDQUFDO0NBRUY7QUFMRCw4Q0FLQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFByb2plY3RDb21tYW5kIH0gZnJvbSAnc3JjL21vZGVsL3Byb2plY3QtY29tbWFuZCdcblxuZXhwb3J0IGNsYXNzIFByb2plY3RHaXRDb21tYW5kIGltcGxlbWVudHMgUHJvamVjdENvbW1hbmR7XG4gIHB1YmxpYyBleGVjdXRlKHByb2plY3Q6IHN0cmluZyk6IFByb21pc2U8UHJpbnRTdGRNZXNzYWdlPiB7XG4gICAgcmV0dXJuIFByb21pc2UucmVzb2x2ZSh1bmRlZmluZWQpO1xuICB9XG5cbn1cbiJdfQ==

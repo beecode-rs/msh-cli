@@ -1,16 +1,14 @@
 import 'module-alias/register'
 import 'source-map-support/register'
 
-import minimist from 'minimist'
-import { cliController } from 'src/controller'
-import { cliService } from 'src/service'
+const unhandledFn = (errorType) => (err): void => {
+  // eslint-disable-next-line no-console
+  console.error(errorType, err)
+  process.exit(1)
+}
 
-const argv = minimist(process.argv.slice(2), cliService.cliArguments())
-;(async (): Promise<void> => {
-  try {
-    if (!cliService.commandIsSelected(argv)) return cliService.printHelp()
-    await cliController.rootController.router(argv)
-  } catch (err) {
-    cliService.printError(err.message)
-  }
-})()
+process.on('uncaughtException', unhandledFn('Uncaught Exception'))
+process.on('unhandledRejection', unhandledFn('Unhandled Rejection'))
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require('src/app').app.start()

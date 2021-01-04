@@ -1,4 +1,4 @@
-import { config } from 'src/util'
+import { config } from 'src/util/config'
 
 export enum LogLevel {
   ERROR = 'error',
