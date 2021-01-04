@@ -1,5 +1,6 @@
 import { ProjectCommand } from 'src/model/project-command'
-import { PrintStdMessage, cliService } from 'src/service/cli-service'
+import { PrintStdMessage } from 'src/service/cli-service'
+import { shellService } from 'src/service/shell-service'
 
 export type ProjectGitCloneCommandParams = {
   rootDir: string
@@ -24,7 +25,7 @@ export class ProjectGitCloneCommand implements ProjectCommand {
   public async execute(project: string): Promise<PrintStdMessage> {
     const gitProject = [this.__projectPrefix, project].filter(Boolean).join('-')
     const cmd = `git clone git@${this.__gitHost}:${this.__gitTeam}/${gitProject}.git ${project}`
-    const result = await cliService.exec({ cmd })
+    const result = await shellService.exec(cmd)
     return { [project]: result }
   }
 }

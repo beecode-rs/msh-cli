@@ -1,6 +1,7 @@
 import chalk from 'chalk'
 import { ExecResult, cliDal } from 'src/dal'
 import { helpService } from 'src/service/help-service'
+import { shellService } from 'src/service/shell-service'
 import { constant } from 'src/util/constant'
 
 export type PrintStdMessage = {
@@ -8,7 +9,6 @@ export type PrintStdMessage = {
 }
 
 export const cliService = {
-  exitAfterCommandExecuted: false,
   printStdMessage: (...messageArgs: PrintStdMessage[]): void => {
     const messages = cliService._joinResults(messageArgs)
     for (const [key, execResult] of Object.entries(messages)) {
@@ -23,14 +23,6 @@ export const cliService = {
       return agg
     }, {} as PrintStdMessage)
   },
-  printError: (message: string): void => {
-    cliDal.print(chalk.red(message))
-  },
-  printSuccess: (message): void => {
-    cliDal.print(chalk.green(message))
-  },
-  printVersion: (): void => cliDal.print(`v${constant.projectVersion}`),
-  printHelp: (): void => cliDal.print(helpService.text()),
-  exec: cliDal.exec,
-  cd: cliDal.cd,
+  printVersion: (): void => shellService.print(`v${constant.projectVersion}`),
+  printHelp: (): void => shellService.print(helpService.text()),
 }

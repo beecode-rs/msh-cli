@@ -9,7 +9,7 @@ export abstract class BaseMenu {
 
   private async __execute(command: string): Promise<void> {
     await this[command]()
-    if (cliService.exitAfterCommandExecuted) process.exit()
+    // if (cliService.exitAfterCommandExecuted) process.exit()
     await this.run()
   }
 

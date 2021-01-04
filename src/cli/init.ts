@@ -1,9 +1,9 @@
 import { fs } from 'mz'
 import path from 'path'
-import { constant } from 'src/util/constant'
+import { config } from 'src/util/config'
 
 const init = {
-  configFileLocation: (): string => path.join(constant.rootDir, '.msh'),
+  configFileLocation: (): string => path.join(config.rootDir, '.msh'),
   checkIfConfigExists: (): boolean => fs.existsSync(init.configFileLocation()),
   create: (): void => {
     if (init.checkIfConfigExists()) {

@@ -20,7 +20,7 @@ const cli = {
       process.exit()
     }
 
-    if (hasArgs) cliService.exitAfterCommandExecuted = true // TODO use memory dao/service
+    // if (hasArgs) cliService.exitAfterCommandExecuted = true // TODO use memory dao/service
     return hasArgs
   },
   run: async (argv): Promise<void> => {
