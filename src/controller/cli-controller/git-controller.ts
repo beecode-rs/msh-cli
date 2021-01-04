@@ -1,5 +1,5 @@
 import { ParsedArgs } from 'minimist'
-import { gitService } from 'src/service'
+import { gitService } from 'src/service/git-service'
 
 export const gitController = {
   router: async (argv: ParsedArgs): Promise<void> => {

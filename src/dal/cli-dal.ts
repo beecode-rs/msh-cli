@@ -1,5 +1,6 @@
 import shell from 'shelljs'
-import { LogLevel, config, logger } from 'src/util'
+import { config } from 'src/util/config'
+import { LogLevel, logger } from 'src/util/logger'
 
 export type ExecResult = {
   stdout: string

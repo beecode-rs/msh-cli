@@ -1,5 +1,5 @@
 import { ParsedArgs } from 'minimist'
-import { npmService } from 'src/service'
+import { npmService } from 'src/service/npm-service'
 
 export const npmController = {
   router: async (argv: ParsedArgs): Promise<void> => {
