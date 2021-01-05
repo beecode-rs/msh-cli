@@ -25,9 +25,9 @@ blocks:
             - cache store
             - npm run eslint
             - npm run prettier
-            - npm run coverage
-            - 'npm run coverage:publish'
-            - npm run test:int
+#            - npm run coverage
+#            - 'npm run coverage:publish'
+#            - npm run test:int
   - name: Bump Version
     task:
       secrets:
