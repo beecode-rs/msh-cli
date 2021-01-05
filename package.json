@@ -40,6 +40,14 @@
   },
   "description": "MicroService Shell helper",
   "devDependencies": {
+    "@commitlint/prompt": "11.0.0",
+    "@istanbuljs/nyc-config-typescript": "1.0.1",
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/commit-analyzer": "8.0.1",
+    "@semantic-release/exec": "5.0.0",
+    "@semantic-release/git": "9.0.0",
+    "@semantic-release/github": "7.2.0",
+    "@semantic-release/release-notes-generator": "9.0.1",
     "@types/chai": "4.2.14",
     "@types/chalk": "2.2.0",
     "@types/compare-versions": "3.3.0",
@@ -59,13 +67,18 @@
     "@typescript-eslint/eslint-plugin": "4.12.0",
     "@typescript-eslint/parser": "4.12.0",
     "chai": "4.2.0",
+    "codecov": "3.8.1",
+    "commitizen": "4.2.2",
     "eslint": "7.17.0",
     "eslint-config-prettier": "7.1.0",
     "eslint-plugin-import": "2.22.1",
     "markdown-toc": "1.2.0",
     "mocha": "8.2.1",
+    "nyc": "15.1.0",
     "prettier": "2.2.1",
+    "replace-json-property": "1.6.3",
     "rimraf": "3.0.2",
+    "semantic-release": "17.3.1",
     "sinon": "9.2.2",
     "ts-node": "9.1.1",
     "tsc-watch-2": "0.0.2",
@@ -91,9 +104,6 @@
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
     "husky": "4.3.6"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/beecode-rs"
   },
   "repository": {
     "type": "git",
