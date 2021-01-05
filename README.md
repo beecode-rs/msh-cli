@@ -44,7 +44,7 @@ authentication microservice we get `sp-auth`. But when we clone it strip the pre
 # Configuration
 
 configuration is stored in the file `.msh` located at the root of your project. You can generate init config file by
-calling `msh -i`
+calling `msh -i`.
 
 ```dotenv
 PROJECTS=["auth","node-common","type-definitions",..]
