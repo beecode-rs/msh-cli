@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.InitConfig = void 0;
+const init_config_service_1 = require("src/service/init-config-service");
+class InitConfig {
+    async execute() {
+        await init_config_service_1.initConfigService.tryToCreateConfig();
+    }
+}
+exports.InitConfig = InitConfig;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5pdC1jb25maWcuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvbW9kZWwvY29tbWFuZC9pbml0LWNvbmZpZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFDQSx5RUFBbUU7QUFFbkUsTUFBYSxVQUFVO0lBQ2QsS0FBSyxDQUFDLE9BQU87UUFDbEIsTUFBTSx1Q0FBaUIsQ0FBQyxpQkFBaUIsRUFBRSxDQUFBO0lBQzdDLENBQUM7Q0FDRjtBQUpELGdDQUlDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgSUNvbW1hbmQgfSBmcm9tICdzcmMvbW9kZWwvY29tbWFuZC9pbmRleCdcbmltcG9ydCB7IGluaXRDb25maWdTZXJ2aWNlIH0gZnJvbSAnc3JjL3NlcnZpY2UvaW5pdC1jb25maWctc2VydmljZSdcblxuZXhwb3J0IGNsYXNzIEluaXRDb25maWcgaW1wbGVtZW50cyBJQ29tbWFuZCB7XG4gIHB1YmxpYyBhc3luYyBleGVjdXRlKCk6IFByb21pc2U8dm9pZD4ge1xuICAgIGF3YWl0IGluaXRDb25maWdTZXJ2aWNlLnRyeVRvQ3JlYXRlQ29uZmlnKClcbiAgfVxufVxuIl19

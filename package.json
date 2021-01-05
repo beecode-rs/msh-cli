@@ -1,0 +1,132 @@
+{
+  "_moduleAliases": {
+    "src": "./dist"
+  },
+  "author": "Milos Bugarinovic <milos.bugarinovic@gmail.com> (http://milos.bugarinovic.com)",
+  "bin": {
+    "msh": "./bin/msh.js"
+  },
+  "bugs": {
+    "url": "https://github.com/beecode-rs/msh-cli/issues"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@beecode/msh-node-app": "0.0.2",
+    "@beecode/msh-node-env": "0.1.0",
+    "async-shelljs": "0.1.4",
+    "chalk": "4.1.0",
+    "compare-versions": "3.6.0",
+    "dotenv": "8.2.0",
+    "fast-json-stable-stringify": "^2.1.0",
+    "inquirer": "7.3.3",
+    "lodash": "4.17.20",
+    "minimist": "1.2.5",
+    "minimist-options": "4.1.0",
+    "module-alias": "2.2.2",
+    "mz": "2.7.0",
+    "request": "2.88.2",
+    "request-promise-native": "1.0.9",
+    "shelljs": "0.8.4",
+    "source-map-support": "0.5.19"
+  },
+  "description": "MicroService Shell helper",
+  "devDependencies": {
+    "@types/chai": "4.2.14",
+    "@types/chalk": "2.2.0",
+    "@types/compare-versions": "3.3.0",
+    "@types/dotenv": "8.2.0",
+    "@types/fast-json-stable-stringify": "2.0.0",
+    "@types/inquirer": "7.3.1",
+    "@types/lodash": "4.14.167",
+    "@types/minimist": "1.2.1",
+    "@types/mocha": "8.2.0",
+    "@types/module-alias": "2.0.0",
+    "@types/mz": "2.7.3",
+    "@types/node": "14.14.20",
+    "@types/request": "2.48.5",
+    "@types/shelljs": "0.8.8",
+    "@types/sinon": "9.0.10",
+    "@types/source-map-support": "0.5.3",
+    "@typescript-eslint/eslint-plugin": "4.12.0",
+    "@typescript-eslint/parser": "4.12.0",
+    "chai": "4.2.0",
+    "eslint": "7.17.0",
+    "eslint-config-prettier": "7.1.0",
+    "eslint-plugin-import": "2.22.1",
+    "markdown-toc": "1.2.0",
+    "mocha": "8.2.1",
+    "prettier": "2.2.1",
+    "rimraf": "3.0.2",
+    "sinon": "9.2.2",
+    "ts-node": "9.1.1",
+    "tsc-watch-2": "0.0.2",
+    "tsconfig-lint": "0.12.0",
+    "typescript": "4.1.3"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "package-lock.json"
+  ],
+  "homepage": "https://github.com/beecode-rs/msh-cli#readme",
+  "keywords": [
+    "shell",
+    "microservice",
+    "management",
+    "project"
+  ],
+  "license": "mit",
+  "main": "./dist/index.js",
+  "name": "@beecode/msh-cli",
+  "optionalDependencies": {
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "husky": "4.3.6"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/beecode-rs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beecode-rs/msh-cli.git"
+  },
+  "resolutions": {
+    "minimist": "^1.2.3"
+  },
+  "scripts": {
+    "audit": "npm audit --json | npx npm-audit-helper",
+    "build": "npm run clean && tsc -p ./tsconfig-build.json",
+    "build:watch": "npm run clean && tsc-watch -p tsconfig-build.json --preserveWatchOutput",
+    "bump-version": "rjp package.json version",
+    "clean": "rimraf ./dist/*",
+    "commit": "git-cz",
+    "coverage": "nyc npm run test:unit",
+    "coverage:publish": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "debug": "node --inspect -r ts-node/register ./src/index.ts",
+    "doc:toc": "markdown-toc -i ./README.md",
+    "eslint": "eslint . --ext .ts --quiet",
+    "eslint:fix": "npm run eslint -- --fix",
+    "lint": "npm run eslint && npm run prettier",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "preinstall": "npx npm-force-resolutions",
+    "prettier": "prettier --check \"./src/**/*.{ts,json}\"",
+    "prettier:fix": "prettier --write \"./src/**/*.{ts,json}\"",
+    "semantic-release": "semantic-release",
+    "semantic-release:check": "npm run semantic-release -- --dry-run --no-ci",
+    "start": "node ./dist/index.js",
+    "start:ts": "ts-node ./src/index.ts",
+    "test": "npm run test:unit -- --forbid-only && npm run test:int -- --forbid-only",
+    "test:int": "mocha ./src/test/{**/,/}*.ts",
+    "test:unit": "mocha ./src/{**/,/}*.test.ts"
+  },
+  "version": "0.1.8"
+}
