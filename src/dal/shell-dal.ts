@@ -6,6 +6,7 @@ export type ExecResult = {
   stderr: string
   errorOccurred: boolean
 }
+
 export const shellDal = {
   exec: (cmd: string): Promise<ExecResult> =>
     new Promise((resolve) => {
@@ -16,8 +17,7 @@ export const shellDal = {
       })
     }),
   print: (message: string): void => {
-    // eslint-disable-next-line no-console
-    console.log(message)
+    shell.echo(message)
   },
   cd: (dir: string): void => {
     shell.cd(dir)

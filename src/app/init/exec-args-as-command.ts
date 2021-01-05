@@ -1,5 +1,5 @@
 import { Initiate } from '@beecode/msh-node-app'
-import { cliInit } from 'src/service/useCase/cli-init'
+import { cliInit } from 'src/use-case/cli-init'
 
 export class ExecArgsAsCommand extends Initiate {
   private readonly __args: string[]

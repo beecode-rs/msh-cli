@@ -1,5 +1,5 @@
-import { ProjectCommand } from 'src/model/project-command'
-import { PrintStdMessage } from 'src/service/cli-service'
+import { ExecResult } from 'src/dal/shell-dal'
+import { IProjectCommand } from 'src/model/command/project-command'
 import { shellService } from 'src/service/shell-service'
 
 export enum GitSimpleCommand {
@@ -8,23 +8,22 @@ export enum GitSimpleCommand {
   PULL = 'pull',
 }
 
-export type ProjectGitSimpleCommandParams = {
+export type GitSimpleProjectCommandParams = {
   gitSimpleCommand: GitSimpleCommand
   rootDir: string
 }
 
-export class ProjectGitSimpleCommand implements ProjectCommand {
+export class GitSimpleProjectCommand implements IProjectCommand {
   private readonly __simpleGitCommand: GitSimpleCommand
   private readonly __rootDir: string
 
-  constructor(params: ProjectGitSimpleCommandParams) {
+  constructor(params: GitSimpleProjectCommandParams) {
     this.__simpleGitCommand = params.gitSimpleCommand
     this.__rootDir = params.rootDir
   }
 
-  public async execute(project: string): Promise<PrintStdMessage> {
+  public async execute(project: string): Promise<ExecResult> {
     const cmd = `git -C ${this.__rootDir}/${project} ${this.__simpleGitCommand}`
-    const result = await shellService.exec(cmd)
-    return { [project]: result }
+    return shellService.exec(cmd)
   }
 }

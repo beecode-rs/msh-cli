@@ -1,5 +1,5 @@
 [![Build Status](https://beecode.semaphoreci.com/badges/msh-cli/branches/main.svg?style=shields)](https://beecode.semaphoreci.com/projects/msh-cli)
-[![codecov](https://codecov.io/gh/beecode-rs/msh-cli/branch/main/graph/badge.svg)](https://codecov.io/gh/beecode-rs/msh-cli)
+[![codecov](https://codecov.io/gh/beecode-rs/msh-cli/branch/main/graph/badge.svg?token=MCN43D1C15)](https://codecov.io/gh/beecode-rs/msh-cli)
 [![GitHub license](https://img.shields.io/github/license/beecode-rs/msh-cli)](https://github.com/beecode-rs/msh-cli/blob/main/LICENSE)  
 [![NPM](https://nodei.co/npm/@beecode/msh-cli.png)](https://nodei.co/npm/@beecode/msh-cli)
 
@@ -12,11 +12,9 @@ Micro-service helper: cli
 - [Idea](#idea)
 - [Configuration](#configuration)
 - [Features](#features)
-  + [git](#git)
-  + [clean](#clean)
-  + [npm](#npm)
-  + [pull request](#pull-request)
-- [CLI](#cli)
+  - [git](#git)
+  - [npm](#npm)
+- [Help](#help)
 
 <!-- tocstop -->
 
@@ -52,19 +50,18 @@ calling `msh -i`
 PROJECTS=["auth","node-common","type-definitions",..]
 GIT_TEAM=TeamName
 GIT_PROJECT_PREFIX=tn
-PULL_REQUEST_SKIP=["type-definitions","node-common",...]
-DOCKER_BASE_IMAGES=["sp-node-nginx","sp-node","sp-nginx","sp-base"]
+
+LOG_LEVEL=error
 
 CMD_GIT_ENABLED=true
-CMD_CLEAN_ENABLED=true
 CMD_NPM_ENABLED=true
-CMD_PR_ENABLED=true
 ```
 
 Also you can use `.msh-user` (next to the `.msh`) at your root dir to store user override values like
 
 ```dotenv
 GIT_USERNAME=gituser@mail.com
+GIT_PASSWORD=*****
 ```
 
 # Features
@@ -74,13 +71,8 @@ GIT_USERNAME=gituser@mail.com
   - fetch
   - pull
   - clone
-- [clean](#clean)
-  - npm
-  - docker images
 - [npm](#npm)
-  - global
-- [pull request](#pull-request)
-  - create/merge
+  - install
 
 ### git
 
@@ -95,48 +87,31 @@ Perform git commands on all project specified in `.mas` config file under `PROJE
 - **clone** - Clone all microservice projects. If `GIT_PROJECT_PREFIX` is set the project prefix is going to be striped for all
   projects.
 
-### clean
-
-Removes files, folder and docker images.
-
-- **npm** - Remove `node_modules` folder from microservice projects.
-
-- **docker images** - Remove docker images for micro-service and base images in `DOCKER_BASE_IMAGES` list
-
 ### npm
 
-- **global** - Gathers all npm packages used in all project listed in `PROJECTS`, and stores them into package.json located in the
-  master/parent project. Notifies if there are multiple versions used for the same package.
+- **install** - Run `npm -i` for all project listed in `PROJECTS`.
 
-### pull request
-
-- **create/merge** - Currently available only for Bitbucket projects. Try to create pull request for all projects from `master`
-  to `production`
-
-# CLI
+# Help
 
 ```text
-Usage: msh [option...]
+Usage: msh [command]
 
-Options:
+Command:
 
-   -g | --git [cmd]
-      cmd:
-          clone        Clone all project
-          pull         Pull all projects
-          fetch        Fetch all projects
-          status       Get status for all projects
+   -i | --init             Initiate .msh config file with default values
 
-   -i | --init         Initiate .msh config file with default values
+   -g | --git [option]
+       options:
+          clone            Clone all project
+          pull             Pull all projects
+          fetch            Fetch all projects
+          status           Get status for all projects
 
-   -c | --clean [cmd]
-      cmd:
-          npm          Clean all node_modules folders
-          docker       Remove all docker images (do a "docker-compose down" command first)
+   -n | --npm  [option]    Run npm i in all containers
+       options:
+          install          Run npm i for all projects
 
-   -n | --npm          Run npm i in all containers
+   -v | --version          Display cli version
 
-   -p | --pr           Generate PR for all projects (added option to auto merge)
-
-   -h | --help         Display this help
+   -h | --help             Display this help
 ```

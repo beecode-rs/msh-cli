@@ -13,9 +13,9 @@ export class MainMenu extends BaseMenu {
   constructor() {
     const menuItems: { name: string; value: string }[] = []
     if (config.cmd.gitEnabled) menuItems.push({ name: 'Git', value: 'Git' })
-    if (config.cmd.cleanEnabled) menuItems.push({ name: 'Clean', value: 'Clean' })
+    // if (config.cmd.cleanEnabled) menuItems.push({ name: 'Clean', value: 'Clean' })
     if (config.cmd.npmEnabled) menuItems.push({ name: 'NPM', value: 'NPM' })
-    if (config.cmd.prEnabled) menuItems.push({ name: 'Pull Request', value: 'PR' })
+    // if (config.cmd.prEnabled) menuItems.push({ name: 'Pull Request', value: 'PR' })
     super('What do you want to do?', menuItems as ChoiceCollection)
   }
 }

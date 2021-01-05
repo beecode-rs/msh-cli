@@ -1,15 +1,19 @@
-import { ProjectCommand } from 'src/model/project-command'
-import { cliService } from 'src/service/cli-service'
+import { ExecResult } from 'src/dal/shell-dal'
+import { ICommand } from 'src/model/command'
 import { shellService } from 'src/service/shell-service'
 
 export type ProjectExecutorParams = {
   projects: string[]
-  projectExecuteCmd: ProjectCommand
+  projectExecuteCmd: IProjectCommand
 }
 
-export class ProjectExecutor {
+export interface IProjectCommand {
+  execute(project: string): Promise<ExecResult>
+}
+
+export class ProjectCommand implements ICommand {
   private readonly __projects: string[]
-  private readonly __projectExecuteCmd: ProjectCommand
+  private readonly __projectExecuteCmd: IProjectCommand
 
   constructor(params: ProjectExecutorParams) {
     this.__projects = params.projects
@@ -17,12 +21,13 @@ export class ProjectExecutor {
   }
 
   public async execute(): Promise<void> {
+    if (this.__projects.length === 0) throw new Error('No Project selected, check .msh config file for [PROJECTS=]')
     const promises = this.__projects.map(async (pr) => {
       const result = await this.__projectExecuteCmd.execute(pr)
       shellService.printSuccess(`${pr} - DONE`)
-      return result
+      return { [pr]: result }
     })
     const results = await Promise.all(promises)
-    cliService.printStdMessage(...results)
+    shellService.printStdMessage(...results)
   }
 }
