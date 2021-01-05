@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.constant = void 0;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const packageJson = require('../../package.json');
+exports.constant = Object.freeze({
+    projectName: packageJson.name,
+    projectVersion: packageJson.version,
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uc3RhbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvdXRpbC9jb25zdGFudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSw4REFBOEQ7QUFDOUQsTUFBTSxXQUFXLEdBQUcsT0FBTyxDQUFDLG9CQUFvQixDQUFDLENBQUE7QUFFcEMsUUFBQSxRQUFRLEdBQUcsTUFBTSxDQUFDLE1BQU0sQ0FBQztJQUNwQyxXQUFXLEVBQUUsV0FBVyxDQUFDLElBQUk7SUFDN0IsY0FBYyxFQUFFLFdBQVcsQ0FBQyxPQUFPO0NBQ3BDLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIi8vIGVzbGludC1kaXNhYmxlLW5leHQtbGluZSBAdHlwZXNjcmlwdC1lc2xpbnQvbm8tdmFyLXJlcXVpcmVzXG5jb25zdCBwYWNrYWdlSnNvbiA9IHJlcXVpcmUoJy4uLy4uL3BhY2thZ2UuanNvbicpXG5cbmV4cG9ydCBjb25zdCBjb25zdGFudCA9IE9iamVjdC5mcmVlemUoe1xuICBwcm9qZWN0TmFtZTogcGFja2FnZUpzb24ubmFtZSxcbiAgcHJvamVjdFZlcnNpb246IHBhY2thZ2VKc29uLnZlcnNpb24sXG59KVxuIl19
