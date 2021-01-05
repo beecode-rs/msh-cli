@@ -21,6 +21,8 @@ export type cliCommands = minimist.ParsedArgs & {
   g: boolean
   npm: boolean
   n: boolean
+  init: boolean
+  i: boolean
 }
 export const argsService = {
   appCommandOptions: {
@@ -50,6 +52,10 @@ export const argsService = {
       type: 'boolean',
       alias: 'n',
     },
+    init: {
+      type: 'boolean',
+      alias: 'i',
+    },
   } as Options,
   selectedCommandCount: (params: argsServiceParams): number => {
     const miniOpts = minimistOptions(params.options)
@@ -57,10 +63,6 @@ export const argsService = {
     return (miniOpts.boolean as string[]).reduce((sum, cmd) => {
       return commands[cmd] ? ++sum : sum
     }, 0)
-  },
-  oneCommandIsSelected: (params: argsServiceParams): boolean => {
-    const cmdCount = argsService.selectedCommandCount(params)
-    return cmdCount === 1
   },
   argToObject: <T extends minimist.ParsedArgs>(params: argsServiceParams): T => {
     const miniOpts = minimistOptions(params.options)

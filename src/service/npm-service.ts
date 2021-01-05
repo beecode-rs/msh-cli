@@ -2,42 +2,19 @@ import cVer from 'compare-versions'
 import stringify from 'fast-json-stable-stringify'
 import fs from 'fs'
 import * as path from 'path'
-import { ProjectCommand } from 'src/model/project-command'
-import { ProjectNpmInstallCommand } from 'src/model/project-npm-install-command'
-import { PrintStdMessage, cliService } from 'src/service/cli-service'
-import { shellService } from 'src/service/shell-service'
+import { IProjectCommand } from 'src/model/command/project-command'
+import { NpmInstallProjectCommand } from 'src/model/command/project-command/npm-install-project-command'
 import { config } from 'src/util/config'
 import { logger } from 'src/util/logger'
 
 export const npmService = {
-  createCommand: (commandType: string): ProjectCommand => {
+  createCommand: (commandType: string): IProjectCommand => {
     switch (commandType) {
       case 'install':
-        return new ProjectNpmInstallCommand({ rootDir: config.rootDir })
-        break
+        return new NpmInstallProjectCommand({ rootDir: config.rootDir })
       default:
         throw new Error(`Unsupported npm command [${commandType}]`)
     }
-  },
-
-  install: async (): Promise<void> => {
-    const promises = config.projects.map((project) => {
-      return new Promise<PrintStdMessage>((resolve, rejects) => {
-        shellService.cd(path.join(config.rootDir, project))
-        const cmd = `npm i -s`
-        shellService
-          .exec(cmd)
-          .then((result) => {
-            logger.debug(`exec done for project [${project}]`)
-            logger.debug(JSON.stringify({ [project]: result }))
-            resolve({ [project]: result })
-          })
-          .catch(rejects)
-      })
-    })
-    const results = await Promise.all(promises)
-    cliService.printStdMessage(...results)
-    shellService.cd(config.rootDir)
   },
   global: (): void => {
     throw new Error('not implemented yet')
