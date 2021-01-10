@@ -35,7 +35,6 @@
     "mz": "2.7.0",
     "request": "2.88.2",
     "request-promise-native": "1.0.9",
-    "shelljs": "0.8.4",
     "source-map-support": "0.5.19"
   },
   "description": "MicroService Shell helper",
@@ -56,6 +55,7 @@
     "@types/inquirer": "7.3.1",
     "@types/lodash": "4.14.167",
     "@types/minimist": "1.2.1",
+    "@types/minimist-options": "3.0.0",
     "@types/mocha": "8.2.0",
     "@types/module-alias": "2.0.0",
     "@types/mz": "2.7.3",
@@ -79,7 +79,7 @@
     "replace-json-property": "1.6.3",
     "rimraf": "3.0.2",
     "semantic-release": "17.3.1",
-    "sinon": "9.2.2",
+    "sinon": "9.2.3",
     "ts-node": "9.1.1",
     "tsc-watch-2": "0.0.2",
     "tsconfig-lint": "0.12.0",
@@ -109,7 +109,7 @@
   "optionalDependencies": {
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
-    "husky": "4.3.6"
+    "husky": "4.3.7"
   },
   "repository": {
     "type": "git",
