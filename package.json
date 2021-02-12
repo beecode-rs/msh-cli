@@ -144,5 +144,5 @@
     "test:int": "mocha ./src/test/{**/,/}*.ts",
     "test:unit": "mocha ./src/{**/,/}*.test.ts"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
