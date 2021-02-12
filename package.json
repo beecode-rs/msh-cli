@@ -20,8 +20,8 @@
     }
   },
   "dependencies": {
-    "@beecode/msh-node-app": "0.0.2",
-    "@beecode/msh-node-env": "0.1.0",
+    "@beecode/msh-node-app": "0.0.3",
+    "@beecode/msh-node-env": "0.2.0",
     "async-shelljs": "0.1.4",
     "chalk": "4.1.0",
     "compare-versions": "3.6.0",
@@ -47,43 +47,44 @@
     "@semantic-release/git": "9.0.0",
     "@semantic-release/github": "7.2.0",
     "@semantic-release/release-notes-generator": "9.0.1",
-    "@types/chai": "4.2.14",
+    "@types/chai": "4.2.15",
     "@types/chalk": "2.2.0",
     "@types/compare-versions": "3.3.0",
     "@types/dotenv": "8.2.0",
     "@types/fast-json-stable-stringify": "2.0.0",
     "@types/inquirer": "7.3.1",
-    "@types/lodash": "4.14.167",
+    "@types/lodash": "4.14.168",
     "@types/minimist": "1.2.1",
     "@types/minimist-options": "3.0.0",
     "@types/mocha": "8.2.0",
     "@types/module-alias": "2.0.0",
     "@types/mz": "2.7.3",
-    "@types/node": "14.14.20",
+    "@types/node": "14.14.27",
     "@types/request": "2.48.5",
     "@types/shelljs": "0.8.8",
     "@types/sinon": "9.0.10",
     "@types/source-map-support": "0.5.3",
-    "@typescript-eslint/eslint-plugin": "4.12.0",
-    "@typescript-eslint/parser": "4.12.0",
-    "chai": "4.2.0",
+    "@typescript-eslint/eslint-plugin": "4.15.0",
+    "@typescript-eslint/parser": "4.15.0",
+    "chai": "4.3.0",
     "codecov": "3.8.1",
-    "commitizen": "4.2.2",
-    "eslint": "7.17.0",
-    "eslint-config-prettier": "7.1.0",
+    "commitizen": "4.2.3",
+    "eslint": "7.19.0",
+    "eslint-config-prettier": "7.2.0",
     "eslint-plugin-import": "2.22.1",
     "markdown-toc": "1.2.0",
-    "mocha": "8.2.1",
+    "mocha": "8.3.0",
     "nyc": "15.1.0",
+    "pinst": "2.1.4",
     "prettier": "2.2.1",
     "replace-json-property": "1.6.3",
     "rimraf": "3.0.2",
-    "semantic-release": "17.3.1",
-    "sinon": "9.2.3",
+    "semantic-release": "17.3.8",
+    "sinon": "9.2.4",
     "ts-node": "9.1.1",
     "tsc-watch-2": "0.0.2",
     "tsconfig-lint": "0.12.0",
-    "typescript": "4.1.3"
+    "typescript": "4.1.5"
   },
   "files": [
     "dist",
@@ -91,12 +92,6 @@
     "package-lock.json"
   ],
   "homepage": "https://github.com/beecode-rs/msh-cli#readme",
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run lint"
-    }
-  },
   "keywords": [
     "shell",
     "microservice",
@@ -109,7 +104,7 @@
   "optionalDependencies": {
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
-    "husky": "4.3.7"
+    "husky": "5.0.9"
   },
   "repository": {
     "type": "git",
@@ -135,7 +130,10 @@
     "eslint:fix": "npm run eslint -- --fix",
     "lint": "npm run eslint && npm run prettier",
     "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "postinstall": "husky install",
+    "postpublish": "pinst --enable",
     "preinstall": "npx npm-force-resolutions",
+    "prepublishOnly": "pinst --disable",
     "prettier": "prettier --check \"./src/**/*.{ts,json}\"",
     "prettier:fix": "prettier --write \"./src/**/*.{ts,json}\"",
     "semantic-release": "semantic-release",
