@@ -1,8 +1,8 @@
 import MshNodeEnv from '@beecode/msh-node-env'
-import { ConsoleLogger, LogLevel } from '@beecode/msh-node-log'
+import { ConsoleLogger, LogLevelType } from '@beecode/msh-node-log'
 import dotenv from 'dotenv'
 
-const env = MshNodeEnv({ loggerStrategy: new ConsoleLogger(LogLevel.INFO) })
+const env = MshNodeEnv({ loggerStrategy: new ConsoleLogger(LogLevelType.INFO) })
 dotenv.config({ path: './.msh' })
 dotenv.config({ path: './.msh-user' })
 
