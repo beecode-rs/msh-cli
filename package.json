@@ -87,7 +87,7 @@
     "sinon": "9.2.4",
     "ts-node": "9.1.1",
     "tsc-watch-2": "0.0.2",
-    "tsconfig-lint": "0.12.0",
+    "tsconfig-lint": "0.10.0",
     "typescript": "4.2.2"
   },
   "files": [
@@ -115,7 +115,7 @@
     "minimist": "^1.2.3"
   },
   "scripts": {
-    "audit": "npm audit --json | npx npm-audit-helper",
+    "audit": "#npm audit --json | npx npm-audit-helper",
     "build": "npm run clean && tsc -p ./tsconfig-build.json",
     "build:watch": "npm run clean && tsc-watch -p tsconfig-build.json --preserveWatchOutput",
     "bump-version": "rjp package.json version",
@@ -131,7 +131,7 @@
     "lint:fix": "npm run eslint:fix && npm run prettier:fix",
     "postinstall": "husky install",
     "postpublish": "pinst --enable",
-    "preinstall": "npx npm-force-resolutions@0.0.6",
+    "preinstall": "#npx npm-force-resolutions@0.0.6",
     "prepublishOnly": "pinst --disable",
     "prettier": "prettier --check \"./src/**/*.{ts,json}\"",
     "prettier:fix": "prettier --write \"./src/**/*.{ts,json}\"",
