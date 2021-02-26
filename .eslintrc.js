@@ -24,7 +24,6 @@ const config = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'prettier',
-    'prettier/@typescript-eslint',
   ],
   env: {
     es6: true,
