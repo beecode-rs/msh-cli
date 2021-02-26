@@ -1,3 +1,13 @@
+## [1.0.2](https://github.com/beecode-rs/msh-cli/compare/v1.0.1...v1.0.2) (2021-02-26)
+
+
+### Bug Fixes
+
+* disable audit fix ([074082c](https://github.com/beecode-rs/msh-cli/commit/074082c41f1161df1b755d2faafb5344592269aa))
+* log update ([90e488a](https://github.com/beecode-rs/msh-cli/commit/90e488a4c135b5d059bf3a24cae62637aeb1b5f0))
+* npm-force-resolutions problem ([bab90b9](https://github.com/beecode-rs/msh-cli/commit/bab90b94973e51f9aaca1bbd273b3baa277afcfd))
+* package-lock.json ([dace43c](https://github.com/beecode-rs/msh-cli/commit/dace43c0617ae0170f8a87de1d3cea6ce44a8626))
+
 ## [1.0.1](https://github.com/beecode-rs/msh-cli/compare/v1.0.0...v1.0.1) (2021-02-12)
 
 
