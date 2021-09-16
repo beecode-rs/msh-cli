@@ -141,5 +141,5 @@
     "tsc:cleaner:watch": "npm run tsc:cleaner -- --watch",
     "tsc:watch": "tsc-watch -p tsconfig-build.json"
   },
-  "version": "1.0.4"
+  "version": "1.0.5"
 }
