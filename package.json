@@ -109,8 +109,9 @@
     "url": "https://github.com/beecode-rs/msh-cli.git"
   },
   "scripts": {
+    "audit:fix": "npx npm-force-resolutions",
     "build": "npm run clean && tsc -p ./tsconfig-build.json",
-    "build:watch": "npm run clean && tsc-watch -p tsconfig-build.json --preserveWatchOutput",
+    "build:watch": "npm run tsc:watch -- --preserveWatchOutput --onSuccess \"npm run tsc:cleaner\"",
     "bump-version": "rjp package.json version",
     "clean": "rimraf ./dist/*",
     "commit": "git-cz",
@@ -133,7 +134,12 @@
     "start:ts": "ts-node ./src/index.ts",
     "test": "npm run test:unit -- --forbid-only && npm run test:int -- --forbid-only",
     "test:int": "#mocha ./src/test/{**/,/}*.ts",
-    "test:unit": "mocha ./src/{**/,/}*.test.ts"
+    "test:unit": "mocha ./src/{**/,/}*.test.ts",
+    "tsc": "tsc -p ./tsconfig-build.json",
+    "tsc:check": "npm run tsc -- --noEmit",
+    "tsc:cleaner": "ts-cleaner --dist build",
+    "tsc:cleaner:watch": "npm run tsc:cleaner -- --watch",
+    "tsc:watch": "tsc-watch -p tsconfig-build.json"
   },
   "version": "1.0.4"
 }
