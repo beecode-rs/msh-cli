@@ -1,4 +1,4 @@
-import { ICommand } from 'src/model/command/index'
+import { ICommand } from 'src/model/command'
 import { initConfigService } from 'src/service/init-config-service'
 
 export class InitConfig implements ICommand {

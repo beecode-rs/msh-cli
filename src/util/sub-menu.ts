@@ -2,7 +2,6 @@ import { ChoiceCollection } from 'inquirer'
 import { MainMenu } from 'src/controller/cli-menu/main-menu'
 import { BaseMenu } from 'src/util/base-menu'
 import { config } from 'src/util/config'
-// import { util } from 'src/util/index'
 
 export abstract class SubMenu extends BaseMenu {
   private async __mainMenu(): Promise<void> {

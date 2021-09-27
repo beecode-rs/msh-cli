@@ -1,4 +1,4 @@
-import { ICommand } from 'src/model/command/index'
+import { ICommand } from 'src/model/command'
 import { cliService } from 'src/service/cli-service'
 
 export class PrintVersion implements ICommand {
