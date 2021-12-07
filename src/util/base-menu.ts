@@ -1,5 +1,5 @@
 import inquirer, { Answers, ChoiceCollection, QuestionCollection } from 'inquirer'
-import { cliService } from 'src/service/cli-service'
+// import { cliService } from 'src/service/cli-service'
 
 export abstract class BaseMenu {
   private __name = '__menu'

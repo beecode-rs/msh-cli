@@ -1,6 +1,6 @@
-import { App } from '@beecode/msh-node-app'
+import { AppFlow } from '@beecode/msh-node-app'
 
-export class TuiApp extends App {
+export class TuiApp extends AppFlow {
   constructor() {
     super()
     throw new Error('Not implemented.')

@@ -3,7 +3,7 @@ import path from 'path'
 import { config } from 'src/util/config'
 
 export const initConfigService = {
-  configFileLocation: (): string => path.join(config.rootDir, '.msh'),
+  configFileLocation: (): string => path.join(config().rootDir, '.msh'),
   configFileExists: (): boolean => fs.existsSync(initConfigService.configFileLocation()),
   tryToCreateConfig: async (): Promise<void> => {
     if (initConfigService.configFileExists()) throw new Error('Config already exists')

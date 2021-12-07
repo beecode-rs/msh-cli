@@ -1,22 +1,25 @@
 import path from 'path'
-import { ExecResult } from 'src/dal/shell-dal'
-import { IProjectCommand } from 'src/model/command/project-command'
+import { ExecuteResult, ProjectExecutable } from 'src/model/command/interfaces'
 import { shellService } from 'src/service/shell-service'
+import { config } from 'src/util/config'
 
-export type NpmInstallProjectCommandParams = {
-  rootDir: string
-}
+export class NpmInstallProjectCommand implements ProjectExecutable {
+  protected readonly _rootDir: string
 
-export class NpmInstallProjectCommand implements IProjectCommand {
-  private readonly __rootDir: string
-
-  constructor(params: NpmInstallProjectCommandParams) {
-    this.__rootDir = params.rootDir
+  constructor(params?: { rootDir?: string }) {
+    const { rootDir = config().rootDir } = params ?? {}
+    this._rootDir = rootDir
   }
 
-  public async execute(project: string): Promise<ExecResult> {
-    shellService.cd(path.join(this.__rootDir, project))
-    const cmd = 'npm i -s'
-    return shellService.exec(cmd)
+  public async execute(project: string): Promise<ExecuteResult[]> {
+    try {
+      shellService.cd(path.join(this._rootDir, project))
+      const cmd = 'npm i -s'
+      const result = await shellService.exec(cmd)
+      // return [{ name: project, stringResult: result.stdout, errorMessage: result.stdout }]
+      return [{ name: project, stringResult: 'npm install successful', errorMessage: result.stdout }]
+    } catch (err: any) {
+      return [{ errorMessage: err.message }]
+    }
   }
 }

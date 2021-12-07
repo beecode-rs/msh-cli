@@ -12,7 +12,7 @@ export abstract class SubMenu extends BaseMenu {
   }
 
   public async run(preSelected?: string): Promise<void> {
-    if (!config.cmd[`${this.constructor.name.toLowerCase()}Enabled`]) {
+    if (!config().cmd[`${this.constructor.name.toLowerCase()}Enabled`]) {
       // util.log(`${this.constructor.name.toLowerCase()} command is disabled. Check config file [.msh]`)
       return
     }

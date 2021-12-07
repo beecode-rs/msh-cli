@@ -1,6 +1,6 @@
-import { ExecResult } from 'src/dal/shell-dal'
-import { IProjectCommand } from 'src/model/command/project-command'
+import { ExecuteResult, ProjectExecutable } from 'src/model/command/interfaces'
 import { shellService } from 'src/service/shell-service'
+import { config } from 'src/util/config'
 
 export enum GitSimpleCommand {
   STATUS = 'status',
@@ -8,22 +8,23 @@ export enum GitSimpleCommand {
   PULL = 'pull',
 }
 
-export type GitSimpleProjectCommandParams = {
-  gitSimpleCommand: GitSimpleCommand
-  rootDir: string
-}
+export class GitSimpleProjectCommand implements ProjectExecutable {
+  protected readonly _simpleGitCommand: GitSimpleCommand
+  protected readonly _rootDir: string
 
-export class GitSimpleProjectCommand implements IProjectCommand {
-  private readonly __simpleGitCommand: GitSimpleCommand
-  private readonly __rootDir: string
-
-  constructor(params: GitSimpleProjectCommandParams) {
-    this.__simpleGitCommand = params.gitSimpleCommand
-    this.__rootDir = params.rootDir
+  constructor(params: { gitSimpleCommand: GitSimpleCommand; rootDir?: string }) {
+    const { gitSimpleCommand, rootDir = config().rootDir } = params
+    this._simpleGitCommand = gitSimpleCommand
+    this._rootDir = rootDir
   }
 
-  public async execute(project: string): Promise<ExecResult> {
-    const cmd = `git -C ${this.__rootDir}/${project} ${this.__simpleGitCommand}`
-    return shellService.exec(cmd)
+  public async execute(project: string): Promise<ExecuteResult[]> {
+    try {
+      const cmd = `git -C ${this._rootDir}/${project} ${this._simpleGitCommand}`
+      const result = await shellService.exec(cmd)
+      return [{ name: project, errorMessage: result.stderr, stringResult: result.stdout }]
+    } catch (err: any) {
+      return [{ errorMessage: err.message }]
+    }
   }
 }

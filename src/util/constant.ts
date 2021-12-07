@@ -1,7 +1,10 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const packageJson = require('../../package.json')
+import { cacheUtil } from '@beecode/msh-node-util/lib/cache-util'
 
-export const constant = Object.freeze({
-  projectName: packageJson.name,
-  projectVersion: packageJson.version,
-})
+const packageJson = require('../../package.json') // eslint-disable-line
+
+export const constant = cacheUtil.singleton(() =>
+  Object.freeze({
+    projectName: packageJson.name,
+    projectVersion: packageJson.version,
+  })
+)

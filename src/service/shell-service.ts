@@ -10,11 +10,20 @@ export const shellService = {
   print: shellDal.print,
   printStdMessage: (...messageArgs: PrintStdMessage[]): void => {
     const messages = shellService._joinResults(messageArgs)
-    for (const [key, execResult] of Object.entries(messages)) {
-      shellService.print(chalk.cyan(key))
-      for (const msg of execResult.stdout.split('\n')) shellService.print(msg)
-      for (const msg of execResult.stderr.split('\n')) shellService.printError(msg)
-    }
+
+    Object.entries(messages).forEach(([name, { stdout, stderr }]) => {
+      const borderChar = '#'
+      const borderStars = Array(name.length + 6)
+        .fill('')
+        .map(() => borderChar)
+        .join('')
+      shellService.print(borderStars)
+      shellService.print(`${borderChar}  ${name}  ${borderChar}`)
+      shellService.print(borderStars)
+
+      if (stdout.trim() !== '') stdout.split('\n').forEach((msg) => shellService.print(msg))
+      if (stderr.trim() !== '') stderr.split('\n').forEach((msg) => shellService.printError(msg))
+    })
   },
   _joinResults: (results: PrintStdMessage[]): PrintStdMessage => {
     return results.reduce((agg, cur) => {
