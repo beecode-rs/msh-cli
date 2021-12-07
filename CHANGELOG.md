@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/beecode-rs/msh-cli/compare/v1.0.5...v1.0.6) (2021-12-07)
+
+
+### Bug Fixes
+
+* use yargs ([3c6abca](https://github.com/beecode-rs/msh-cli/commit/3c6abcaa4171813246b159ecbf321800dbfadade))
+
 ## [1.0.5](https://github.com/beecode-rs/msh-cli/compare/v1.0.4...v1.0.5) (2021-09-16)
 
 
