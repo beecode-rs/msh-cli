@@ -14,8 +14,8 @@ export class GitTagProjectCommand implements ProjectExecutable {
 
   public async execute(project: string): Promise<ExecuteResult[]> {
     try {
-      const filterLine = this._filterByName ? ` -l ${this._filterByName}` : ''
-      const cmd = `git -C ${this._rootDir}/${project} tag -n9${filterLine}`
+      const filterLine = this._filterByName ? ` -l "${this._filterByName}"` : ''
+      const cmd = `git -C ${this._rootDir}/${project} tag -n9${filterLine} | cat`
       const result = await shellService.exec(cmd)
       return [{ name: project, errorMessage: result.stderr, stringResult: result.stdout }]
     } catch (err: any) {

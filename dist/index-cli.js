@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("./index-init");
+const msh_node_app_1 = require("@beecode/msh-node-app");
+const cli_app_1 = require("src/app/cli-app");
+(0, msh_node_app_1.appStarterFactory)(cli_app_1.CliApp)
+    .start()
+    .catch((err) => console.log(err)); // eslint-disable-line no-console
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXgtY2xpLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vc3JjL2luZGV4LWNsaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHdCQUFxQjtBQUVyQix3REFBeUQ7QUFDekQsNkNBQXdDO0FBRXhDLElBQUEsZ0NBQWlCLEVBQUMsZ0JBQU0sQ0FBQztLQUN0QixLQUFLLEVBQUU7S0FDUCxLQUFLLENBQUMsQ0FBQyxHQUFHLEVBQUUsRUFBRSxDQUFDLE9BQU8sQ0FBQyxHQUFHLENBQUMsR0FBRyxDQUFDLENBQUMsQ0FBQSxDQUFDLGlDQUFpQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAnLi9pbmRleC1pbml0J1xuXG5pbXBvcnQgeyBhcHBTdGFydGVyRmFjdG9yeSB9IGZyb20gJ0BiZWVjb2RlL21zaC1ub2RlLWFwcCdcbmltcG9ydCB7IENsaUFwcCB9IGZyb20gJ3NyYy9hcHAvY2xpLWFwcCdcblxuYXBwU3RhcnRlckZhY3RvcnkoQ2xpQXBwKVxuICAuc3RhcnQoKVxuICAuY2F0Y2goKGVycikgPT4gY29uc29sZS5sb2coZXJyKSkgLy8gZXNsaW50LWRpc2FibGUtbGluZSBuby1jb25zb2xlXG4iXX0=
