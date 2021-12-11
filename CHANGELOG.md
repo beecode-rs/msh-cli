@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/beecode-rs/msh-cli/compare/v1.1.0...v1.1.1) (2021-12-11)
+
+
+### Bug Fixes
+
+* git tag cmd output and wrap search phrase with `"` ([983e866](https://github.com/beecode-rs/msh-cli/commit/983e8661fa6c25656f3991d75f2d8f04d18bc08d))
+
 # [1.1.0](https://github.com/beecode-rs/msh-cli/compare/v1.0.6...v1.1.0) (2021-12-11)
 
 
