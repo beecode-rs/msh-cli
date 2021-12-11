@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/beecode-rs/msh-cli/compare/v1.0.6...v1.1.0) (2021-12-11)
+
+
+### Features
+
+* git tag command ([ae0b4be](https://github.com/beecode-rs/msh-cli/commit/ae0b4be67435f610121431582a42dcb5fd644efc))
+
 ## [1.0.6](https://github.com/beecode-rs/msh-cli/compare/v1.0.5...v1.0.6) (2021-12-07)
 
 
