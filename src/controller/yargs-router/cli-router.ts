@@ -1,6 +1,7 @@
 import { gitRouter } from 'src/controller/yargs-router/git-router'
-import { initRouter } from 'src/controller/yargs-router/init-router'
 import { npmRouter } from 'src/controller/yargs-router/npm-router'
+import { InitConfig } from 'src/model/command/init-config'
+import { terminalWrapperFactory } from 'src/service/terminal-wrapper'
 import { config } from 'src/util/config'
 import yargs from 'yargs'
 
@@ -31,7 +32,7 @@ export class CliRouter {
   }
 
   protected _helpVersionAlias(): void {
-    this._yargs.alias('version', 'v').alias('help', 'h').fail(false)
+    this._yargs.alias('version', 'v').alias('help', 'h').showHelpOnFail(false, 'Specify --help for available options')
   }
 
   protected _demandCommands(): void {
@@ -39,39 +40,30 @@ export class CliRouter {
   }
 
   protected _gitCommands(): void {
+    if (!config().cmd.gitEnabled) return
     this._yargs.command({
-      command: 'git <git-command>',
+      command: 'git',
       describe: 'execute git command',
       aliases: ['g'],
       builder: (y) =>
-        y.positional('git-command', {
-          description: 'GIT Commands',
-          type: 'string',
-          choices: ['clone', 'pull', 'fetch', 'status'],
-        }),
+        gitRouter.commands(y).demandCommand(1, 1).showHelpOnFail(false, 'Specify --help for available options').version(false),
       handler: async (argv: any) => {
-        if (!config().cmd.gitEnabled) throw new Error('Git commands are not enabled. Check config: CMD_GIT_ENABLED')
-        const { gitCommand } = argv
-        await gitRouter.route({ gitCommand })
+        //return
       },
     })
   }
 
   protected _npmCommands(): void {
+    if (!config().cmd.npmEnabled) return
     this._yargs.command({
-      command: 'npm <npm-command>',
+      command: 'npm',
       aliases: ['n'],
       describe: 'execute npm command',
+
       builder: (y) =>
-        y.positional('npm-command', {
-          description: 'NPM Commands',
-          type: 'string',
-          choices: ['install', 'i', 'global', 'g'],
-        }),
+        npmRouter.commands(y).demandCommand(1, 1).showHelpOnFail(false, 'Specify --help for available options').version(false),
       handler: async (argv: any) => {
-        if (!config().cmd.npmEnabled) throw new Error('Git commands are not enabled. Check config: CMD_NPM_ENABLED')
-        const { npmCommand } = argv
-        await npmRouter.route({ npmCommand })
+        //return
       },
     })
   }
@@ -82,7 +74,7 @@ export class CliRouter {
       aliases: ['i'],
       describe: 'Create init file',
       handler: async (argv: any) => {
-        await initRouter.route()
+        await terminalWrapperFactory({ command: new InitConfig() }).execute()
       },
     })
   }
