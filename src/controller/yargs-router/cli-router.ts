@@ -8,8 +8,6 @@ import yargs from 'yargs'
 export class CliRouter {
   protected readonly _yargs: yargs.Argv
 
-  protected readonly _globalCommands = ['git', 'npm', 'init']
-
   public constructor(argv: string[]) {
     this._yargs = yargs(argv)
   }
@@ -28,7 +26,7 @@ export class CliRouter {
   }
 
   protected _setupUsage(): void {
-    this._yargs.usage(`$0 <${this._globalCommands.join('|')}> [command options]`)
+    this._yargs.usage(`$0 <cmd> [command options]`)
   }
 
   protected _helpVersionAlias(): void {
