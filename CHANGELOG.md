@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/beecode-rs/msh-cli/compare/v1.1.1...v1.2.0) (2021-12-12)
+
+
+### Features
+
+* cli version update notifications, cleanup help ([995f5ff](https://github.com/beecode-rs/msh-cli/commit/995f5ff49e375b240f460e30708b02746bb8ef3a))
+
 ## [1.1.1](https://github.com/beecode-rs/msh-cli/compare/v1.1.0...v1.1.1) (2021-12-11)
 
 
