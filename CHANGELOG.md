@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/beecode-rs/msh-cli/compare/v1.2.1...v1.2.2) (2022-05-28)
+
+
+### Bug Fixes
+
+* use project prefix in git clone command ([7a4fd47](https://github.com/beecode-rs/msh-cli/commit/7a4fd47632e2986cfc399c52ce4cd37a7493cb35))
+
 ## [1.2.1](https://github.com/beecode-rs/msh-cli/compare/v1.2.0...v1.2.1) (2022-02-27)
 
 
