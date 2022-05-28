@@ -12,7 +12,7 @@ export class GitCloneProjectCommand implements ProjectExecutable {
     const {
       gitHost = config().git.host,
       gitTeam = config().git.team,
-      projectPrefix = '',
+      projectPrefix = config().git.projectPrefix ?? '',
       rootDir = config().rootDir,
     } = params ?? {}
     if (!gitTeam) throw new Error('You need to specify GIT_TEAM env variable')
