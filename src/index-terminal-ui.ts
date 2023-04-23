@@ -1,8 +1,6 @@
 import './index-init'
 
-import { appStarterFactory } from '@beecode/msh-node-app'
+import { AppStarter } from '@beecode/msh-app-boot'
 import { TuiApp } from 'src/app/tui-app'
 
-appStarterFactory(TuiApp)
-  .start()
-  .catch((err) => console.log(err)) // eslint-disable-line no-console
+new AppStarter(new TuiApp()).start().catch((err) => console.log(err)) // eslint-disable-line no-console

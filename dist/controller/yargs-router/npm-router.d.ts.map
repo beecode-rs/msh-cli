@@ -1,0 +1,1 @@
+{"version":3,"file":"npm-router.d.ts","sourceRoot":"","sources":["../../../src/controller/yargs-router/npm-router.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,MAAM,OAAO,CAAA;AAEzB,qBAAa,SAAS;IACrB,QAAQ,CAAC,KAAK,EAAE,KAAK,CAAC,IAAI,GAAG,KAAK,CAAC,IAAI;IAOvC,SAAS,CAAC,QAAQ,CAAC,KAAK,EAAE,KAAK,CAAC,IAAI,GAAG,IAAI;IAe3C,SAAS,CAAC,OAAO,CAAC,KAAK,EAAE,KAAK,CAAC,IAAI,GAAG,IAAI;CAU1C"}

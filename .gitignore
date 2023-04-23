@@ -1,7 +1,6 @@
-# Created by .ignore support plugin (hsz.mobi)
 /.idea
-!.idea/runConfigurations
-.vscode
-.nyc_output
-coverage
+/!.idea/runConfigurations
+/coverage
 /node_modules
+/packages
+/test/node_modules

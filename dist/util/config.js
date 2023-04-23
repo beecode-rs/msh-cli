@@ -4,38 +4,40 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.config = void 0;
-const msh_node_env_1 = require("@beecode/msh-node-env");
-const logger_1 = require("@beecode/msh-node-env/lib/util/logger");
-const msh_node_log_1 = require("@beecode/msh-node-log");
-const simple_console_log_1 = require("@beecode/msh-node-log/lib/console-log-strategy/simple-console-log");
-const console_logger_1 = require("@beecode/msh-node-log/lib/console-logger");
-const cache_util_1 = require("@beecode/msh-node-util/lib/cache-util");
+const msh_env_1 = require("@beecode/msh-env");
+const logger_1 = require("@beecode/msh-env/lib/util/logger");
+const msh_logger_1 = require("@beecode/msh-logger");
+const console_1 = require("@beecode/msh-logger/lib/logger-strategy/console");
+const simple_1 = require("@beecode/msh-logger/lib/logger-strategy/console/log-strategy/simple");
+const pattern_1 = require("@beecode/msh-util/lib/singleton/pattern");
 const dotenv_1 = __importDefault(require("dotenv"));
-(0, logger_1.NodeEnvLogger)(new console_logger_1.ConsoleLogger({ logLevel: msh_node_log_1.LogLevelType.INFO, consoleLogStrategy: new simple_console_log_1.SimpleConsoleLog() }));
-const env = (0, msh_node_env_1.MshNodeEnv)();
+(0, logger_1.setEnvLogger)(new console_1.LoggerStrategyConsole({ consoleLogStrategy: new simple_1.ConsoleLogStrategySimple(), logLevel: msh_logger_1.LogLevel.INFO }));
+const env = (0, msh_env_1.MshEnv)();
 dotenv_1.default.config({ path: './.msh' });
 dotenv_1.default.config({ path: './.msh-user' });
-exports.config = cache_util_1.cacheUtil.singleton(() => Object.freeze({
-    rootDir: env('ROOT_DIR').string.default(process.cwd()).required,
-    projects: env('PROJECTS').json().default([]).required,
-    pullRequestSkip: env('PULL_REQUEST_SKIP').json().default([]).required,
-    git: {
-        team: env('GIT_TEAM').string.optional,
-        projectPrefix: env('GIT_PROJECT_PREFIX').string.optional,
-        host: env('GIT_HOST').string.default('bitbucket.org').required,
-        username: env('GIT_USERNAME').string.optional,
-        password: env('GIT_PASSWORD').string.optional,
-    },
-    // dockerBaseImages: env('DOCKER_BASE_IMAGES').json<string[]>().default([]).optional,
-    cmd: {
-        gitEnabled: env('CMD_GIT_ENABLED').boolean.default(true).required,
-        // cleanEnabled: env('CMD_CLEAN_ENABLED').boolean.default(false).required,
-        npmEnabled: env('CMD_NPM_ENABLED').boolean.default(true).required,
-        // prEnabled: env('CMD_PR_ENABLED').boolean.default(false).required,
-    },
-    npm: {
-        globalIgnorePackages: env('NPM_GLOBAL_IGNORE_PACKAGES').json().default([]).required,
-    },
-    logLevel: env('LOG_LEVEL').string.default('error').required,
-}));
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uZmlnLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL3V0aWwvY29uZmlnLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBLHdEQUFrRDtBQUNsRCxrRUFBcUU7QUFDckUsd0RBQW9EO0FBQ3BELDBHQUFvRztBQUNwRyw2RUFBd0U7QUFDeEUsc0VBQWlFO0FBQ2pFLG9EQUEyQjtBQUUzQixJQUFBLHNCQUFhLEVBQUMsSUFBSSw4QkFBYSxDQUFDLEVBQUUsUUFBUSxFQUFFLDJCQUFZLENBQUMsSUFBSSxFQUFFLGtCQUFrQixFQUFFLElBQUkscUNBQWdCLEVBQUUsRUFBRSxDQUFDLENBQUMsQ0FBQTtBQUU3RyxNQUFNLEdBQUcsR0FBRyxJQUFBLHlCQUFVLEdBQUUsQ0FBQTtBQUN4QixnQkFBTSxDQUFDLE1BQU0sQ0FBQyxFQUFFLElBQUksRUFBRSxRQUFRLEVBQUUsQ0FBQyxDQUFBO0FBQ2pDLGdCQUFNLENBQUMsTUFBTSxDQUFDLEVBQUUsSUFBSSxFQUFFLGFBQWEsRUFBRSxDQUFDLENBQUE7QUFFekIsUUFBQSxNQUFNLEdBQUcsc0JBQVMsQ0FBQyxTQUFTLENBQUMsR0FBRyxFQUFFLENBQzdDLE1BQU0sQ0FBQyxNQUFNLENBQUM7SUFDWixPQUFPLEVBQUUsR0FBRyxDQUFDLFVBQVUsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxPQUFPLENBQUMsT0FBTyxDQUFDLEdBQUcsRUFBRSxDQUFDLENBQUMsUUFBUTtJQUMvRCxRQUFRLEVBQUUsR0FBRyxDQUFDLFVBQVUsQ0FBQyxDQUFDLElBQUksRUFBWSxDQUFDLE9BQU8sQ0FBQyxFQUFFLENBQUMsQ0FBQyxRQUFRO0lBQy9ELGVBQWUsRUFBRSxHQUFHLENBQUMsbUJBQW1CLENBQUMsQ0FBQyxJQUFJLEVBQVksQ0FBQyxPQUFPLENBQUMsRUFBRSxDQUFDLENBQUMsUUFBUTtJQUMvRSxHQUFHLEVBQUU7UUFDSCxJQUFJLEVBQUUsR0FBRyxDQUFDLFVBQVUsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxRQUFRO1FBQ3JDLGFBQWEsRUFBRSxHQUFHLENBQUMsb0JBQW9CLENBQUMsQ0FBQyxNQUFNLENBQUMsUUFBUTtRQUN4RCxJQUFJLEVBQUUsR0FBRyxDQUFDLFVBQVUsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxPQUFPLENBQUMsZUFBZSxDQUFDLENBQUMsUUFBUTtRQUM5RCxRQUFRLEVBQUUsR0FBRyxDQUFDLGNBQWMsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxRQUFRO1FBQzdDLFFBQVEsRUFBRSxHQUFHLENBQUMsY0FBYyxDQUFDLENBQUMsTUFBTSxDQUFDLFFBQVE7S0FDOUM7SUFDRCxxRkFBcUY7SUFDckYsR0FBRyxFQUFFO1FBQ0gsVUFBVSxFQUFFLEdBQUcsQ0FBQyxpQkFBaUIsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLENBQUMsUUFBUTtRQUNqRSwwRUFBMEU7UUFDMUUsVUFBVSxFQUFFLEdBQUcsQ0FBQyxpQkFBaUIsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLENBQUMsUUFBUTtRQUNqRSxvRUFBb0U7S0FDckU7SUFDRCxHQUFHLEVBQUU7UUFDSCxvQkFBb0IsRUFBRSxHQUFHLENBQUMsNEJBQTRCLENBQUMsQ0FBQyxJQUFJLEVBQVksQ0FBQyxPQUFPLENBQUMsRUFBRSxDQUFDLENBQUMsUUFBUTtLQUM5RjtJQUNELFFBQVEsRUFBRSxHQUFHLENBQUMsV0FBVyxDQUFDLENBQUMsTUFBTSxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUMsQ0FBQyxRQUFRO0NBQzVELENBQUMsQ0FDSCxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTXNoTm9kZUVudiB9IGZyb20gJ0BiZWVjb2RlL21zaC1ub2RlLWVudidcbmltcG9ydCB7IE5vZGVFbnZMb2dnZXIgfSBmcm9tICdAYmVlY29kZS9tc2gtbm9kZS1lbnYvbGliL3V0aWwvbG9nZ2VyJ1xuaW1wb3J0IHsgTG9nTGV2ZWxUeXBlIH0gZnJvbSAnQGJlZWNvZGUvbXNoLW5vZGUtbG9nJ1xuaW1wb3J0IHsgU2ltcGxlQ29uc29sZUxvZyB9IGZyb20gJ0BiZWVjb2RlL21zaC1ub2RlLWxvZy9saWIvY29uc29sZS1sb2ctc3RyYXRlZ3kvc2ltcGxlLWNvbnNvbGUtbG9nJ1xuaW1wb3J0IHsgQ29uc29sZUxvZ2dlciB9IGZyb20gJ0BiZWVjb2RlL21zaC1ub2RlLWxvZy9saWIvY29uc29sZS1sb2dnZXInXG5pbXBvcnQgeyBjYWNoZVV0aWwgfSBmcm9tICdAYmVlY29kZS9tc2gtbm9kZS11dGlsL2xpYi9jYWNoZS11dGlsJ1xuaW1wb3J0IGRvdGVudiBmcm9tICdkb3RlbnYnXG5cbk5vZGVFbnZMb2dnZXIobmV3IENvbnNvbGVMb2dnZXIoeyBsb2dMZXZlbDogTG9nTGV2ZWxUeXBlLklORk8sIGNvbnNvbGVMb2dTdHJhdGVneTogbmV3IFNpbXBsZUNvbnNvbGVMb2coKSB9KSlcblxuY29uc3QgZW52ID0gTXNoTm9kZUVudigpXG5kb3RlbnYuY29uZmlnKHsgcGF0aDogJy4vLm1zaCcgfSlcbmRvdGVudi5jb25maWcoeyBwYXRoOiAnLi8ubXNoLXVzZXInIH0pXG5cbmV4cG9ydCBjb25zdCBjb25maWcgPSBjYWNoZVV0aWwuc2luZ2xldG9uKCgpID0+XG4gIE9iamVjdC5mcmVlemUoe1xuICAgIHJvb3REaXI6IGVudignUk9PVF9ESVInKS5zdHJpbmcuZGVmYXVsdChwcm9jZXNzLmN3ZCgpKS5yZXF1aXJlZCxcbiAgICBwcm9qZWN0czogZW52KCdQUk9KRUNUUycpLmpzb248c3RyaW5nW10+KCkuZGVmYXVsdChbXSkucmVxdWlyZWQsXG4gICAgcHVsbFJlcXVlc3RTa2lwOiBlbnYoJ1BVTExfUkVRVUVTVF9TS0lQJykuanNvbjxzdHJpbmdbXT4oKS5kZWZhdWx0KFtdKS5yZXF1aXJlZCxcbiAgICBnaXQ6IHtcbiAgICAgIHRlYW06IGVudignR0lUX1RFQU0nKS5zdHJpbmcub3B0aW9uYWwsXG4gICAgICBwcm9qZWN0UHJlZml4OiBlbnYoJ0dJVF9QUk9KRUNUX1BSRUZJWCcpLnN0cmluZy5vcHRpb25hbCxcbiAgICAgIGhvc3Q6IGVudignR0lUX0hPU1QnKS5zdHJpbmcuZGVmYXVsdCgnYml0YnVja2V0Lm9yZycpLnJlcXVpcmVkLFxuICAgICAgdXNlcm5hbWU6IGVudignR0lUX1VTRVJOQU1FJykuc3RyaW5nLm9wdGlvbmFsLFxuICAgICAgcGFzc3dvcmQ6IGVudignR0lUX1BBU1NXT1JEJykuc3RyaW5nLm9wdGlvbmFsLFxuICAgIH0sXG4gICAgLy8gZG9ja2VyQmFzZUltYWdlczogZW52KCdET0NLRVJfQkFTRV9JTUFHRVMnKS5qc29uPHN0cmluZ1tdPigpLmRlZmF1bHQoW10pLm9wdGlvbmFsLFxuICAgIGNtZDoge1xuICAgICAgZ2l0RW5hYmxlZDogZW52KCdDTURfR0lUX0VOQUJMRUQnKS5ib29sZWFuLmRlZmF1bHQodHJ1ZSkucmVxdWlyZWQsXG4gICAgICAvLyBjbGVhbkVuYWJsZWQ6IGVudignQ01EX0NMRUFOX0VOQUJMRUQnKS5ib29sZWFuLmRlZmF1bHQoZmFsc2UpLnJlcXVpcmVkLFxuICAgICAgbnBtRW5hYmxlZDogZW52KCdDTURfTlBNX0VOQUJMRUQnKS5ib29sZWFuLmRlZmF1bHQodHJ1ZSkucmVxdWlyZWQsXG4gICAgICAvLyBwckVuYWJsZWQ6IGVudignQ01EX1BSX0VOQUJMRUQnKS5ib29sZWFuLmRlZmF1bHQoZmFsc2UpLnJlcXVpcmVkLFxuICAgIH0sXG4gICAgbnBtOiB7XG4gICAgICBnbG9iYWxJZ25vcmVQYWNrYWdlczogZW52KCdOUE1fR0xPQkFMX0lHTk9SRV9QQUNLQUdFUycpLmpzb248c3RyaW5nW10+KCkuZGVmYXVsdChbXSkucmVxdWlyZWQsXG4gICAgfSxcbiAgICBsb2dMZXZlbDogZW52KCdMT0dfTEVWRUwnKS5zdHJpbmcuZGVmYXVsdCgnZXJyb3InKS5yZXF1aXJlZCxcbiAgfSlcbilcbiJdfQ==
+exports.config = (0, pattern_1.singletonPattern)(() => {
+    return {
+        // dockerBaseImages: env('DOCKER_BASE_IMAGES').json<string[]>().default([]).optional,
+        cmd: {
+            gitEnabled: env('CMD_GIT_ENABLED').boolean.default(true).required,
+            // cleanEnabled: env('CMD_CLEAN_ENABLED').boolean.default(false).required,
+            npmEnabled: env('CMD_NPM_ENABLED').boolean.default(true).required,
+            // prEnabled: env('CMD_PR_ENABLED').boolean.default(false).required,
+        },
+        git: {
+            host: env('GIT_HOST').string.default('bitbucket.org').required,
+            password: env('GIT_PASSWORD').string.optional,
+            projectPrefix: env('GIT_PROJECT_PREFIX').string.optional,
+            team: env('GIT_TEAM').string.optional,
+            username: env('GIT_USERNAME').string.optional,
+        },
+        logLevel: env('LOG_LEVEL').string.default('error').required,
+        npm: {
+            globalIgnorePackages: env('NPM_GLOBAL_IGNORE_PACKAGES').json().default([]).required,
+        },
+        projects: env('PROJECTS').json().default([]).required,
+        pullRequestSkip: env('PULL_REQUEST_SKIP').json().default([]).required,
+        rootDir: env('ROOT_DIR').string.default(process.cwd()).required,
+    };
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uZmlnLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL3V0aWwvY29uZmlnLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBLDhDQUF5QztBQUN6Qyw2REFBK0Q7QUFDL0Qsb0RBQThDO0FBQzlDLDZFQUF1RjtBQUN2RixnR0FBOEc7QUFDOUcscUVBQTBFO0FBQzFFLG9EQUEyQjtBQUUzQixJQUFBLHFCQUFZLEVBQUMsSUFBSSwrQkFBcUIsQ0FBQyxFQUFFLGtCQUFrQixFQUFFLElBQUksaUNBQXdCLEVBQUUsRUFBRSxRQUFRLEVBQUUscUJBQVEsQ0FBQyxJQUFJLEVBQUUsQ0FBQyxDQUFDLENBQUE7QUFFeEgsTUFBTSxHQUFHLEdBQUcsSUFBQSxnQkFBTSxHQUFFLENBQUE7QUFDcEIsZ0JBQU0sQ0FBQyxNQUFNLENBQUMsRUFBRSxJQUFJLEVBQUUsUUFBUSxFQUFFLENBQUMsQ0FBQTtBQUNqQyxnQkFBTSxDQUFDLE1BQU0sQ0FBQyxFQUFFLElBQUksRUFBRSxhQUFhLEVBQUUsQ0FBQyxDQUFBO0FBRXpCLFFBQUEsTUFBTSxHQUFHLElBQUEsMEJBQWdCLEVBQUMsR0FBRyxFQUFFO0lBQzNDLE9BQU87UUFDTixxRkFBcUY7UUFDckYsR0FBRyxFQUFFO1lBQ0osVUFBVSxFQUFFLEdBQUcsQ0FBQyxpQkFBaUIsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLENBQUMsUUFBUTtZQUNqRSwwRUFBMEU7WUFDMUUsVUFBVSxFQUFFLEdBQUcsQ0FBQyxpQkFBaUIsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLENBQUMsUUFBUTtZQUNqRSxvRUFBb0U7U0FDcEU7UUFFRCxHQUFHLEVBQUU7WUFDSixJQUFJLEVBQUUsR0FBRyxDQUFDLFVBQVUsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxPQUFPLENBQUMsZUFBZSxDQUFDLENBQUMsUUFBUTtZQUM5RCxRQUFRLEVBQUUsR0FBRyxDQUFDLGNBQWMsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxRQUFRO1lBQzdDLGFBQWEsRUFBRSxHQUFHLENBQUMsb0JBQW9CLENBQUMsQ0FBQyxNQUFNLENBQUMsUUFBUTtZQUN4RCxJQUFJLEVBQUUsR0FBRyxDQUFDLFVBQVUsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxRQUFRO1lBQ3JDLFFBQVEsRUFBRSxHQUFHLENBQUMsY0FBYyxDQUFDLENBQUMsTUFBTSxDQUFDLFFBQVE7U0FDN0M7UUFFRCxRQUFRLEVBQUUsR0FBRyxDQUFDLFdBQVcsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxPQUFPLENBQUMsT0FBTyxDQUFDLENBQUMsUUFBUTtRQUUzRCxHQUFHLEVBQUU7WUFDSixvQkFBb0IsRUFBRSxHQUFHLENBQUMsNEJBQTRCLENBQUMsQ0FBQyxJQUFJLEVBQVksQ0FBQyxPQUFPLENBQUMsRUFBRSxDQUFDLENBQUMsUUFBUTtTQUM3RjtRQUVELFFBQVEsRUFBRSxHQUFHLENBQUMsVUFBVSxDQUFDLENBQUMsSUFBSSxFQUFZLENBQUMsT0FBTyxDQUFDLEVBQUUsQ0FBQyxDQUFDLFFBQVE7UUFDL0QsZUFBZSxFQUFFLEdBQUcsQ0FBQyxtQkFBbUIsQ0FBQyxDQUFDLElBQUksRUFBWSxDQUFDLE9BQU8sQ0FBQyxFQUFFLENBQUMsQ0FBQyxRQUFRO1FBQy9FLE9BQU8sRUFBRSxHQUFHLENBQUMsVUFBVSxDQUFDLENBQUMsTUFBTSxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUMsR0FBRyxFQUFFLENBQUMsQ0FBQyxRQUFRO0tBQ3RELENBQUE7QUFDWCxDQUFDLENBQUMsQ0FBQSJ9

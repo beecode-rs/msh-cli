@@ -1,11 +1,9 @@
-import './index-init'
+import 'src/index-init'
 
-import { appStarterFactory } from '@beecode/msh-node-app'
+import { AppStarter } from '@beecode/msh-app-boot'
 import { CliApp } from 'src/app/cli-app'
 import { updateNotifierUtil } from 'src/util/update-notifier-util'
 
-updateNotifierUtil.check()
+updateNotifierUtil.check().catch((err) => console.log(err)) // eslint-disable-line no-console
 
-appStarterFactory(CliApp)
-  .start()
-  .catch((err) => console.log(err)) // eslint-disable-line no-console
+new AppStarter(new CliApp()).start().catch((err) => console.log(err)) // eslint-disable-line no-console

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const  yargs = require('yargs/yargs');
+const yargs = require('yargs/yargs');
 
 const argv = yargs(process.argv.slice(2)).options({
   abc: { type: 'boolean', default: false },

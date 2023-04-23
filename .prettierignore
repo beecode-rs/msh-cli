@@ -1,7 +1,8 @@
-.idea/
-bin/
-dist/
-node_modules/
-resource/
-package.json
+/.idea
+/.semaphore
+/coverage
+/dist
+/node_modules
+/resource
+/packages
 package-lock.json

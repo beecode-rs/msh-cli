@@ -1,5 +1,5 @@
 describe('placeholders', () => {
-  it('should do nothing :P', () => {
-    return
-  })
+	it('should do nothing :P', () => {
+		return
+	})
 })

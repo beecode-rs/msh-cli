@@ -1,8 +1,6 @@
 import './index-init'
 
-import { appStarterFactory } from '@beecode/msh-node-app'
+import { AppStarter } from '@beecode/msh-app-boot'
 import { HttpServerApp } from 'src/app/http-server-app'
 
-appStarterFactory(HttpServerApp)
-  .start()
-  .catch((err) => console.log(err)) // eslint-disable-line no-console
+new AppStarter(new HttpServerApp()).start().catch((err) => console.log(err)) // eslint-disable-line no-console

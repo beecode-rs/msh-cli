@@ -1,5 +1,3 @@
 {
-  "reject": [
-    "chalk"
-  ]
+	"reject": ["typescript", "update-notifier", "@types/update-notifier", "chalk"]
 }

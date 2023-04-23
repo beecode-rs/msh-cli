@@ -4,34 +4,37 @@ import { projectCommandFactory } from 'src/model/command/project-command/project
 import { terminalWrapperFactory } from 'src/service/terminal-wrapper'
 import yargs from 'yargs'
 
-export const npmRouter = {
-  commands: (yargs: yargs.Argv): yargs.Argv => {
-    npmRouter._install(yargs)
-    npmRouter._global(yargs)
-    return yargs
-  },
-  _install: (yargs: yargs.Argv): void => {
-    yargs.command({
-      command: 'install',
-      describe: 'execute npm i for all projects',
-      aliases: ['i'],
-      handler: async (argv: any) => {
-        await terminalWrapperFactory({
-          command: projectCommandFactory({
-            command: new NpmInstallProjectCommand(),
-          }),
-        }).execute()
-      },
-    })
-  },
-  _global: (yargs: yargs.Argv): void => {
-    yargs.command({
-      command: 'global',
-      aliases: ['g'],
-      describe: 'gather npm packages to global package.json (project root level)',
-      handler: async (argv: any) => {
-        await terminalWrapperFactory({ command: npmGlobalProjectCommandFactory() }).execute()
-      },
-    })
-  },
+export class NpmRouter {
+	commands(yargs: yargs.Argv): yargs.Argv {
+		this._install(yargs)
+		this._global(yargs)
+
+		return yargs
+	}
+
+	protected _install(yargs: yargs.Argv): void {
+		yargs.command({
+			aliases: ['i'],
+			command: 'install',
+			describe: 'execute npm i for all projects',
+			handler: async (_argv: any) => {
+				await terminalWrapperFactory({
+					command: projectCommandFactory({
+						command: new NpmInstallProjectCommand(),
+					}),
+				}).execute()
+			},
+		})
+	}
+
+	protected _global(yargs: yargs.Argv): void {
+		yargs.command({
+			aliases: ['g'],
+			command: 'global',
+			describe: 'gather npm packages to global package.json (project root level)',
+			handler: async (_argv: any) => {
+				await terminalWrapperFactory({ command: npmGlobalProjectCommandFactory() }).execute()
+			},
+		})
+	}
 }
