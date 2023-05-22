@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/beecode-rs/msh-cli/compare/v1.2.4...v1.2.5) (2023-05-22)
+
+
+### Bug Fixes
+
+* update project/packages ([0d932f4](https://github.com/beecode-rs/msh-cli/commit/0d932f47e84373c9183922a1f5d3eaa848e6de7a))
+
 ## [1.2.4](https://github.com/beecode-rs/msh-cli/compare/v1.2.3...v1.2.4) (2023-04-23)
 
 
