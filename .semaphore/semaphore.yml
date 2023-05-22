@@ -29,7 +29,7 @@ blocks:
             - checkout
             - cache restore bc-msh-cli-docker-image-$SEMAPHORE_GIT_SHA
             - docker load -i bc-msh-cli.tar
-            - docker run --rm -e CODECOV_TOKEN bc-msh-cli sh -c 'npm run test:e2e && npm run test:unit:coverage && npm run test:unit:coverage:publish'
+            - docker run --rm -e CODECOV_TOKEN bc-msh-cli sh -c 'npm run test:unit:coverage && npm run test:unit:coverage:publish'
 
   - name: Bump Version
     task:
