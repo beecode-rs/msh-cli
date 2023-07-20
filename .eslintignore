@@ -3,9 +3,12 @@
 /.semaphore
 /coverage
 /dist
-/bin
 /node_modules
 /resource
 /packages
 .*.js
+.*.json
+package-lock.json
+tsconfig*.json
+typedoc.json
 /jest*.config.js

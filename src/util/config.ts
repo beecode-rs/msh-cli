@@ -1,9 +1,9 @@
 import { MshEnv } from '@beecode/msh-env'
-import { setEnvLogger } from '@beecode/msh-env/lib/util/logger'
+import { setEnvLogger } from '@beecode/msh-env/util/logger.js'
 import { LogLevel } from '@beecode/msh-logger'
-import { LoggerStrategyConsole } from '@beecode/msh-logger/lib/logger-strategy/console'
-import { ConsoleLogStrategySimple } from '@beecode/msh-logger/lib/logger-strategy/console/log-strategy/simple'
-import { singletonPattern } from '@beecode/msh-util/lib/singleton/pattern'
+import { LoggerStrategyConsole } from '@beecode/msh-logger/logger-strategy/console/index.js'
+import { ConsoleLogStrategySimple } from '@beecode/msh-logger/logger-strategy/console/log-strategy/simple.js'
+import { singletonPattern } from '@beecode/msh-util/singleton/pattern.js'
 import dotenv from 'dotenv'
 
 setEnvLogger(new LoggerStrategyConsole({ consoleLogStrategy: new ConsoleLogStrategySimple(), logLevel: LogLevel.INFO }))

@@ -1,5 +1,5 @@
-import { Executable } from 'src/model/command/interfaces'
-import { shellService } from 'src/service/shell-service'
+import { Executable } from '#/model/command/interfaces.js'
+import { shellService } from '#/service/shell-service.js'
 
 export class TerminalWrapper {
 	protected readonly _command: Executable

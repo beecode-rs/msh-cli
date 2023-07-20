@@ -1,6 +1,7 @@
 import { ChoiceCollection } from 'inquirer'
-import { BaseMenu } from 'src/util/base-menu'
-import { config } from 'src/util/config'
+
+import { BaseMenu } from '#/util/base-menu.js'
+import { config } from '#/util/config.js'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error

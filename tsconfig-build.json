@@ -1,16 +1,16 @@
 {
-  "compilerOptions": {
-    "paths": {
-      "src/*": [
-        "./src/*"
-      ]
-    }
-  },
-  "exclude": [
-    "**/*.test.ts",
-    "**/__mocks__",
-    "**/__tests__",
-    "**/__snapshots__"
-  ],
-  "extends": "./tsconfig.json"
+	"compilerOptions": {
+		"paths": {
+			"src/*": [
+				"./src/*"
+			]
+		}
+	},
+	"exclude": [
+		"**/*.test.ts",
+		"**/__mocks__",
+		"**/__tests__",
+		"**/__snapshots__"
+	],
+	"extends": "./tsconfig.json"
 }

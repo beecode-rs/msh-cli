@@ -3,10 +3,11 @@ import inquirer, { ChoiceCollection, QuestionCollection } from 'inquirer'
 export abstract class BaseMenu {
 	private __name = '__menu'
 	private __type = 'list'
-	private __message: string
+	private __message = ''
 	private __menu: QuestionCollection
 
 	private async __execute(command: string): Promise<void> {
+		// @ts-expect-error
 		await this[command]()
 		// if (cliService.exitAfterCommandExecuted) process.exit()
 		await this.run()

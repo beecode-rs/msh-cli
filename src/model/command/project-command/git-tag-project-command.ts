@@ -1,6 +1,6 @@
-import { ExecuteResult, ProjectExecutable } from 'src/model/command/interfaces'
-import { shellService } from 'src/service/shell-service'
-import { config } from 'src/util/config'
+import { ExecuteResult, ProjectExecutable } from '#/model/command/interfaces.js'
+import { shellService } from '#/service/shell-service.js'
+import { config } from '#/util/config.js'
 
 export class GitTagProjectCommand implements ProjectExecutable {
 	protected readonly _rootDir: string
