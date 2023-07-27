@@ -1,10 +1,9 @@
+import { GitRouter } from 'src/controller/yargs-router/git-router'
+import { NpmRouter } from 'src/controller/yargs-router/npm-router'
+import { InitConfig } from 'src/model/command/init-config'
+import { terminalWrapperFactory } from 'src/service/terminal-wrapper'
+import { config } from 'src/util/config'
 import yargs, { Argv } from 'yargs'
-
-import { GitRouter } from '#/controller/yargs-router/git-router.js'
-import { NpmRouter } from '#/controller/yargs-router/npm-router.js'
-import { InitConfig } from '#/model/command/init-config.js'
-import { terminalWrapperFactory } from '#/service/terminal-wrapper.js'
-import { config } from '#/util/config.js'
 
 export class CliRouter {
 	protected readonly _yargs: Argv

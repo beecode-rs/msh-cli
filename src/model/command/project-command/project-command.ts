@@ -1,5 +1,5 @@
-import { ExecuteResult, ProjectExecutable } from '#/model/command/interfaces.js'
-import { config } from '#/util/config.js'
+import { ExecuteResult, ProjectExecutable } from 'src/model/command/interfaces'
+import { config } from 'src/util/config'
 
 export class ProjectCommand {
 	protected readonly _projects: string[]

@@ -1,6 +1,5 @@
 import { LifeCycle } from '@beecode/msh-app-boot'
-
-import { cliRouterFactory } from '#/controller/yargs-router/cli-router.js'
+import { cliRouterFactory } from 'src/controller/yargs-router/cli-router'
 
 export class ParseAndRouteArgs extends LifeCycle {
 	protected readonly _argv: string[]

@@ -1,7 +1,6 @@
 import { fs } from 'mz'
 import path from 'path'
-
-import { config } from '#/util/config.js'
+import { config } from 'src/util/config'
 
 export const initConfigService = {
 	configDefaultValue: (): string =>

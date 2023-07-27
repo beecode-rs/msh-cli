@@ -1,4 +1,4 @@
-// import { config } from '#/util/config.js'
+// import { config } from 'src/util/config'
 // import * as util from 'util'
 
 export const clearService = {

@@ -1,3 +1,4 @@
+// @ts-expect-error
 import inquirer, { ChoiceCollection, QuestionCollection } from 'inquirer'
 
 export abstract class BaseMenu {
