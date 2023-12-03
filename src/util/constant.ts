@@ -1,4 +1,4 @@
-import { singletonPattern } from '@beecode/msh-util/dist/singleton/pattern'
+import { singletonPattern } from '@beecode/msh-util/singleton/pattern'
 
 const packageJson = require('../../package.json') // eslint-disable-line
 

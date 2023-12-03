@@ -1,8 +1,8 @@
-// @ts-expect-error
 import { ChoiceCollection } from 'inquirer'
-import { MainMenu } from 'src/controller/cli-menu/main-menu'
-import { BaseMenu } from 'src/util/base-menu'
-import { config } from 'src/util/config'
+
+import { MainMenu } from '#/controller/cli-menu/main-menu'
+import { BaseMenu } from '#/util/base-menu'
+import { config } from '#/util/config'
 
 export abstract class SubMenu extends BaseMenu {
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment

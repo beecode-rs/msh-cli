@@ -1,10 +1,11 @@
 import { compareVersions } from 'compare-versions'
 import stringify from 'fast-json-stable-stringify'
 import path from 'path'
-import { Executable, ExecuteResult } from 'src/model/command/interfaces'
-import { fileService } from 'src/service/file-service'
-import { config } from 'src/util/config'
-import { logger } from 'src/util/logger'
+
+import { Executable, ExecuteResult } from '#/model/command/interfaces'
+import { fileService } from '#/service/file-service'
+import { config } from '#/util/config'
+import { logger } from '#/util/logger'
 
 export type VersionOnProjects = Record<string, string[]>
 

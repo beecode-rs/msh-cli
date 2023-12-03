@@ -1,6 +1,6 @@
-// @ts-expect-error
 import chalk from 'chalk'
-import { ExecResult, shellDal } from 'src/dal/shell-dal'
+
+import { ExecResult, shellDal } from '#/dal/shell-dal'
 
 export type PrintStdMessage = Record<string, ExecResult>
 

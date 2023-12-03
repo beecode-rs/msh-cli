@@ -1,4 +1,3 @@
-// @ts-expect-error
 import inquirer, { ChoiceCollection, QuestionCollection } from 'inquirer'
 
 export abstract class BaseMenu {
@@ -8,7 +7,7 @@ export abstract class BaseMenu {
 	private __menu: QuestionCollection
 
 	private async __execute(command: string): Promise<void> {
-		// @ts-expect-error
+		// @ts-expect-error test
 		await this[command]()
 		// if (cliService.exitAfterCommandExecuted) process.exit()
 		await this.run()
