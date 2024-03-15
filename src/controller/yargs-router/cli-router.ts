@@ -1,10 +1,10 @@
 import yargs, { Argv } from 'yargs'
 
-import { GitRouter } from '#/controller/yargs-router/git-router'
-import { NpmRouter } from '#/controller/yargs-router/npm-router'
-import { InitConfig } from '#/model/command/init-config'
-import { terminalWrapperFactory } from '#/service/terminal-wrapper'
-import { config } from '#/util/config'
+import { GitRouter } from '#src/controller/yargs-router/git-router'
+import { NpmRouter } from '#src/controller/yargs-router/npm-router'
+import { InitConfig } from '#src/model/command/init-config'
+import { terminalWrapperFactory } from '#src/service/terminal-wrapper'
+import { config } from '#src/util/config'
 
 export class CliRouter {
 	protected readonly _yargs: Argv

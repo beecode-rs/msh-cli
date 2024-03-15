@@ -2,8 +2,8 @@ import '#/index-init'
 
 import { AppStarter } from '@beecode/msh-app-boot'
 
-import { CliApp } from '#/app/cli-app'
-import { updateNotifierUtil } from '#/util/update-notifier-util'
+import { CliApp } from '#src/app/cli-app'
+import { updateNotifierUtil } from '#src/util/update-notifier-util'
 
 updateNotifierUtil.check().catch((err) => console.log(err)) // eslint-disable-line no-console
 
