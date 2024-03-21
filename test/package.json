@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"license": "ISC",
+	"type": "module",
 	"author": "",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
