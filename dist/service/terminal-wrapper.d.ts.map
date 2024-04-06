@@ -1,1 +1,0 @@
-{"version":3,"file":"terminal-wrapper.d.ts","sourceRoot":"","sources":["../../src/service/terminal-wrapper.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,8BAA8B,CAAA;AAGzD,qBAAa,eAAe;IAC3B,SAAS,CAAC,QAAQ,CAAC,QAAQ,EAAE,UAAU,CAAA;gBAC3B,MAAM,EAAE;QAAE,OAAO,EAAE,UAAU,CAAA;KAAE;IAKrC,OAAO,IAAI,OAAO,CAAC,IAAI,CAAC;CAO9B;AAED,eAAO,MAAM,sBAAsB;aAdH,UAAU;MAcwD,eACnE,CAAA"}

@@ -1,3 +1,5 @@
 {
-	"reject": ["typescript", "update-notifier", "@types/update-notifier", "chalk"]
+	"reject": [
+		"semantic-release"
+	]
 }

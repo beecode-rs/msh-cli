@@ -3,6 +3,7 @@ export const objectUtil = {
 		return Object.keys(unordered)
 			.sort()
 			.reduce((obj, key) => {
+				// @ts-expect-error
 				obj[key] = unordered[key]
 
 				return obj

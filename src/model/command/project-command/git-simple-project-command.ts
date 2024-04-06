@@ -1,6 +1,6 @@
-import { ExecuteResult, ProjectExecutable } from 'src/model/command/interfaces'
-import { shellService } from 'src/service/shell-service'
-import { config } from 'src/util/config'
+import { ExecuteResult, ProjectExecutable } from '#src/model/command/interfaces'
+import { shellService } from '#src/service/shell-service'
+import { config } from '#src/util/config'
 
 export enum GitSimpleCommand {
 	STATUS = 'status',
