@@ -1,5 +1,6 @@
 import shell from 'shelljs'
-import { logger } from 'src/util/logger'
+
+import { logger } from '#src/util/logger'
 
 export type ExecResult = {
 	stdout: string

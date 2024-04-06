@@ -1,1 +1,0 @@
-{"version":3,"file":"shell-dal.d.ts","sourceRoot":"","sources":["../../src/dal/shell-dal.ts"],"names":[],"mappings":"AAGA,MAAM,MAAM,UAAU,GAAG;IACxB,MAAM,EAAE,MAAM,CAAA;IACd,MAAM,EAAE,MAAM,CAAA;IACd,aAAa,EAAE,OAAO,CAAA;CACtB,CAAA;AAED,eAAO,MAAM,QAAQ;cACV,MAAM,KAAG,IAAI;gBA6BX,MAAM,KAAG,QAAQ,UAAU,CAAC;qBASvB,MAAM,KAAG,IAAI;eAGrB,MAAM;CAGf,CAAA"}

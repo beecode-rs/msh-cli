@@ -1,10 +1,11 @@
 import { compareVersions } from 'compare-versions'
 import stringify from 'fast-json-stable-stringify'
 import path from 'path'
-import { Executable, ExecuteResult } from 'src/model/command/interfaces'
-import { fileService } from 'src/service/file-service'
-import { config } from 'src/util/config'
-import { logger } from 'src/util/logger'
+
+import { Executable, ExecuteResult } from '#src/model/command/interfaces'
+import { fileService } from '#src/service/file-service'
+import { config } from '#src/util/config'
+import { logger } from '#src/util/logger'
 
 export type VersionOnProjects = Record<string, string[]>
 
@@ -46,14 +47,14 @@ export class NpmGlobalProjectCommand implements Executable {
 
 	protected _allDepsByProject(): ProjectWithDependencies {
 		return config()
-			.projects.map((project) => {
+			.projects.map((project: string) => {
 				const packageJs = this._packageJsonForProject(project)
 				const projectDeps = { ...packageJs.dependencies, ...packageJs.devDependencies }
 				const cleanProjectDeps = this._removeIgnoredPackages(projectDeps)
 
 				return { [project]: cleanProjectDeps }
 			})
-			.reduce((acc, cur) => Object.assign(acc, cur), {})
+			.reduce((acc: ProjectWithDependencies, cur: ProjectWithDependencies) => Object.assign(acc, cur), {})
 	}
 
 	protected _removeIgnoredPackages(dependencies: DependenciesObject): DependenciesObject {
@@ -128,6 +129,7 @@ export class NpmGlobalProjectCommand implements Executable {
 		fileService.writeToFileSync({ data: fileData, filePath: 'package.json' })
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	protected _packageJsonForProject(project?: string): any {
 		return require(path.join(process.cwd(), [project, 'package.json'].filter(Boolean).join('/'))) // eslint-disable-line @typescript-eslint/no-var-requires
 	}
