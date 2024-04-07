@@ -1,7 +1,8 @@
 import path from 'path'
-import { ExecuteResult, ProjectExecutable } from 'src/model/command/interfaces'
-import { shellService } from 'src/service/shell-service'
-import { config } from 'src/util/config'
+
+import { ExecuteResult, ProjectExecutable } from '#src/model/command/interfaces'
+import { shellService } from '#src/service/shell-service'
+import { config } from '#src/util/config'
 
 export class NpmInstallProjectCommand implements ProjectExecutable {
 	protected readonly _rootDir: string

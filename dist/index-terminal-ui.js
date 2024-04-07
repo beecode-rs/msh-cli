@@ -1,7 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-require("./index-init");
-const msh_app_boot_1 = require("@beecode/msh-app-boot");
-const tui_app_1 = require("./app/tui-app");
-new msh_app_boot_1.AppStarter(new tui_app_1.TuiApp()).start().catch((err) => console.log(err)); // eslint-disable-line no-console
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXgtdGVybWluYWwtdWkuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgtdGVybWluYWwtdWkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSx3QkFBcUI7QUFFckIsd0RBQWtEO0FBQ2xELDZDQUF3QztBQUV4QyxJQUFJLHlCQUFVLENBQUMsSUFBSSxnQkFBTSxFQUFFLENBQUMsQ0FBQyxLQUFLLEVBQUUsQ0FBQyxLQUFLLENBQUMsQ0FBQyxHQUFHLEVBQUUsRUFBRSxDQUFDLE9BQU8sQ0FBQyxHQUFHLENBQUMsR0FBRyxDQUFDLENBQUMsQ0FBQSxDQUFDLGlDQUFpQyJ9
+import './index-init.js';
+import { AppStarter } from '@beecode/msh-app-boot';
+import { TuiApp } from './app/tui-app.js';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+new AppStarter(new TuiApp()).start().catch((err) => console.log(err)); // eslint-disable-line no-console
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXgtdGVybWluYWwtdWkuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgtdGVybWluYWwtdWkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxjQUFjLENBQUE7QUFFckIsT0FBTyxFQUFFLFVBQVUsRUFBRSxNQUFNLHVCQUF1QixDQUFBO0FBRWxELE9BQU8sRUFBRSxNQUFNLEVBQUUsTUFBTSxrQkFBa0IsQ0FBQTtBQUV6Qyw4REFBOEQ7QUFDOUQsSUFBSSxVQUFVLENBQUMsSUFBSSxNQUFNLEVBQUUsQ0FBQyxDQUFDLEtBQUssRUFBRSxDQUFDLEtBQUssQ0FBQyxDQUFDLEdBQVEsRUFBRSxFQUFFLENBQUMsT0FBTyxDQUFDLEdBQUcsQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFBLENBQUMsaUNBQWlDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICcuL2luZGV4LWluaXQnXG5cbmltcG9ydCB7IEFwcFN0YXJ0ZXIgfSBmcm9tICdAYmVlY29kZS9tc2gtYXBwLWJvb3QnXG5cbmltcG9ydCB7IFR1aUFwcCB9IGZyb20gJyNzcmMvYXBwL3R1aS1hcHAnXG5cbi8vIGVzbGludC1kaXNhYmxlLW5leHQtbGluZSBAdHlwZXNjcmlwdC1lc2xpbnQvbm8tZXhwbGljaXQtYW55XG5uZXcgQXBwU3RhcnRlcihuZXcgVHVpQXBwKCkpLnN0YXJ0KCkuY2F0Y2goKGVycjogYW55KSA9PiBjb25zb2xlLmxvZyhlcnIpKSAvLyBlc2xpbnQtZGlzYWJsZS1saW5lIG5vLWNvbnNvbGVcbiJdfQ==

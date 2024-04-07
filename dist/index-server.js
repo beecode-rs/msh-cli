@@ -1,7 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-require("./index-init");
-const msh_app_boot_1 = require("@beecode/msh-app-boot");
-const http_server_app_1 = require("./app/http-server-app");
-new msh_app_boot_1.AppStarter(new http_server_app_1.HttpServerApp()).start().catch((err) => console.log(err)); // eslint-disable-line no-console
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXgtc2VydmVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vc3JjL2luZGV4LXNlcnZlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLHdCQUFxQjtBQUVyQix3REFBa0Q7QUFDbEQsNkRBQXVEO0FBRXZELElBQUkseUJBQVUsQ0FBQyxJQUFJLCtCQUFhLEVBQUUsQ0FBQyxDQUFDLEtBQUssRUFBRSxDQUFDLEtBQUssQ0FBQyxDQUFDLEdBQUcsRUFBRSxFQUFFLENBQUMsT0FBTyxDQUFDLEdBQUcsQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFBLENBQUMsaUNBQWlDIn0=
+import './index-init.js';
+import { AppStarter } from '@beecode/msh-app-boot';
+import { HttpServerApp } from './app/http-server-app.js';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+new AppStarter(new HttpServerApp()).start().catch((err) => console.log(err)); // eslint-disable-line no-console
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXgtc2VydmVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vc3JjL2luZGV4LXNlcnZlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLGNBQWMsQ0FBQTtBQUVyQixPQUFPLEVBQUUsVUFBVSxFQUFFLE1BQU0sdUJBQXVCLENBQUE7QUFFbEQsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLDBCQUEwQixDQUFBO0FBRXhELDhEQUE4RDtBQUM5RCxJQUFJLFVBQVUsQ0FBQyxJQUFJLGFBQWEsRUFBRSxDQUFDLENBQUMsS0FBSyxFQUFFLENBQUMsS0FBSyxDQUFDLENBQUMsR0FBUSxFQUFFLEVBQUUsQ0FBQyxPQUFPLENBQUMsR0FBRyxDQUFDLEdBQUcsQ0FBQyxDQUFDLENBQUEsQ0FBQyxpQ0FBaUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgJy4vaW5kZXgtaW5pdCdcblxuaW1wb3J0IHsgQXBwU3RhcnRlciB9IGZyb20gJ0BiZWVjb2RlL21zaC1hcHAtYm9vdCdcblxuaW1wb3J0IHsgSHR0cFNlcnZlckFwcCB9IGZyb20gJyNzcmMvYXBwL2h0dHAtc2VydmVyLWFwcCdcblxuLy8gZXNsaW50LWRpc2FibGUtbmV4dC1saW5lIEB0eXBlc2NyaXB0LWVzbGludC9uby1leHBsaWNpdC1hbnlcbm5ldyBBcHBTdGFydGVyKG5ldyBIdHRwU2VydmVyQXBwKCkpLnN0YXJ0KCkuY2F0Y2goKGVycjogYW55KSA9PiBjb25zb2xlLmxvZyhlcnIpKSAvLyBlc2xpbnQtZGlzYWJsZS1saW5lIG5vLWNvbnNvbGVcbiJdfQ==

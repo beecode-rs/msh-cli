@@ -1,12 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.HttpServerApp = void 0;
-const msh_app_boot_1 = require("@beecode/msh-app-boot");
-class HttpServerApp extends msh_app_boot_1.AppFlow {
+import { AppFlow } from '@beecode/msh-app-boot';
+export class HttpServerApp extends AppFlow {
     constructor() {
         super();
         throw new Error('Not implemented.');
     }
 }
-exports.HttpServerApp = HttpServerApp;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaHR0cC1zZXJ2ZXItYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL2FwcC9odHRwLXNlcnZlci1hcHAudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsd0RBQStDO0FBRS9DLE1BQWEsYUFBYyxTQUFRLHNCQUFPO0lBQ3pDO1FBQ0MsS0FBSyxFQUFFLENBQUE7UUFDUCxNQUFNLElBQUksS0FBSyxDQUFDLGtCQUFrQixDQUFDLENBQUE7SUFDcEMsQ0FBQztDQUNEO0FBTEQsc0NBS0MifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaHR0cC1zZXJ2ZXItYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL2FwcC9odHRwLXNlcnZlci1hcHAudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLE9BQU8sRUFBRSxNQUFNLHVCQUF1QixDQUFBO0FBRS9DLE1BQU0sT0FBTyxhQUFjLFNBQVEsT0FBTztJQUN6QztRQUNDLEtBQUssRUFBRSxDQUFBO1FBQ1AsTUFBTSxJQUFJLEtBQUssQ0FBQyxrQkFBa0IsQ0FBQyxDQUFBO0lBQ3BDLENBQUM7Q0FDRCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEFwcEZsb3cgfSBmcm9tICdAYmVlY29kZS9tc2gtYXBwLWJvb3QnXG5cbmV4cG9ydCBjbGFzcyBIdHRwU2VydmVyQXBwIGV4dGVuZHMgQXBwRmxvdyB7XG5cdGNvbnN0cnVjdG9yKCkge1xuXHRcdHN1cGVyKClcblx0XHR0aHJvdyBuZXcgRXJyb3IoJ05vdCBpbXBsZW1lbnRlZC4nKVxuXHR9XG59XG4iXX0=

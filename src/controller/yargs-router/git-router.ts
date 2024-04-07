@@ -1,15 +1,17 @@
-import { GitCloneProjectCommand } from 'src/model/command/project-command/git-clone-project-command'
-import { GitSimpleCommand, GitSimpleProjectCommand } from 'src/model/command/project-command/git-simple-project-command'
-import { GitTagProjectCommand } from 'src/model/command/project-command/git-tag-project-command'
-import { projectCommandFactory } from 'src/model/command/project-command/project-command'
-import { terminalWrapperFactory } from 'src/service/terminal-wrapper'
-import yargs from 'yargs'
+import { Argv } from 'yargs'
+
+import { GitCloneProjectCommand } from '#src/model/command/project-command/git-clone-project-command'
+import { GitSimpleCommand, GitSimpleProjectCommand } from '#src/model/command/project-command/git-simple-project-command'
+import { GitTagProjectCommand } from '#src/model/command/project-command/git-tag-project-command'
+import { projectCommandFactory } from '#src/model/command/project-command/project-command'
+import { terminalWrapperFactory } from '#src/service/terminal-wrapper'
 
 export class GitRouter {
-	protected _clone(yargs: yargs.Argv): void {
+	protected _clone(yargs: Argv): void {
 		yargs.command({
 			command: 'clone',
 			describe: 'execute git clone',
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			handler: async (_argv: any) => {
 				await terminalWrapperFactory({
 					command: projectCommandFactory({ command: new GitCloneProjectCommand() }),
@@ -18,10 +20,11 @@ export class GitRouter {
 		})
 	}
 
-	protected _fetch(yargs: yargs.Argv): void {
+	protected _fetch(yargs: Argv): void {
 		yargs.command({
 			command: 'fetch',
 			describe: 'execute git fetch',
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			handler: async (_argv: any) => {
 				await terminalWrapperFactory({
 					command: projectCommandFactory({ command: new GitSimpleProjectCommand({ gitSimpleCommand: GitSimpleCommand.FETCH }) }),
@@ -30,10 +33,11 @@ export class GitRouter {
 		})
 	}
 
-	protected _pull(yargs: yargs.Argv): void {
+	protected _pull(yargs: Argv): void {
 		yargs.command({
 			command: 'pull',
 			describe: 'execute git pull',
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			handler: async (_argv: any) => {
 				await terminalWrapperFactory({
 					command: projectCommandFactory({ command: new GitSimpleProjectCommand({ gitSimpleCommand: GitSimpleCommand.PULL }) }),
@@ -42,10 +46,11 @@ export class GitRouter {
 		})
 	}
 
-	protected _status(yargs: yargs.Argv): void {
+	protected _status(yargs: Argv): void {
 		yargs.command({
 			command: 'status',
 			describe: 'execute git status',
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			handler: async (_argv: any) => {
 				await terminalWrapperFactory({
 					command: projectCommandFactory({ command: new GitSimpleProjectCommand({ gitSimpleCommand: GitSimpleCommand.STATUS }) }),
@@ -54,7 +59,7 @@ export class GitRouter {
 		})
 	}
 
-	protected _tag(yargs: yargs.Argv): void {
+	protected _tag(yargs: Argv): void {
 		yargs.command({
 			builder: (y) => {
 				y.options('name', {
@@ -67,6 +72,7 @@ export class GitRouter {
 			},
 			command: 'tag',
 			describe: 'execute git tag',
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			handler: async (argv: any) => {
 				await terminalWrapperFactory({
 					command: projectCommandFactory({ command: new GitTagProjectCommand({ filterByName: argv.name }) }),
@@ -75,7 +81,7 @@ export class GitRouter {
 		})
 	}
 
-	commands(yargs: yargs.Argv): yargs.Argv {
+	commands(yargs: Argv): Argv {
 		this._clone(yargs)
 		this._pull(yargs)
 		this._fetch(yargs)
