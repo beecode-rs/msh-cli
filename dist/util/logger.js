@@ -1,15 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.logger = void 0;
-const msh_logger_1 = require("@beecode/msh-logger");
-const console_1 = require("@beecode/msh-logger/lib/logger-strategy/console");
-const simple_1 = require("@beecode/msh-logger/lib/logger-strategy/console/log-strategy/simple");
-const pattern_1 = require("@beecode/msh-util/lib/singleton/pattern");
-const config_1 = require("../util/config");
-exports.logger = (0, pattern_1.singletonPattern)(() => {
-    return new console_1.LoggerStrategyConsole({
-        consoleLogStrategy: new simple_1.ConsoleLogStrategySimple(),
-        logLevel: msh_logger_1.LogLevel[(0, config_1.config)().logLevel.toUpperCase()] ?? msh_logger_1.LogLevel.INFO,
+import { LogLevel } from '@beecode/msh-logger';
+import { LoggerStrategyConsole } from '@beecode/msh-logger/logger-strategy/console';
+import { ConsoleLogStrategySimple } from '@beecode/msh-logger/logger-strategy/console/log-strategy/simple';
+import { singletonPattern } from '@beecode/msh-util/singleton/pattern';
+// import { config } from '../util/config.js'
+export const logger = singletonPattern(() => {
+    return new LoggerStrategyConsole({
+        consoleLogStrategy: new ConsoleLogStrategySimple(),
+        logLevel: LogLevel.DEBUG,
+        // TODO: ESM: fix debug level
+        // logLevel: (LogLevel[config().logLevel.toUpperCase()] as any) ?? LogLevel.INFO,
     });
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9nZ2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL3V0aWwvbG9nZ2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLG9EQUE4QztBQUM5Qyw2RUFBdUY7QUFDdkYsZ0dBQThHO0FBQzlHLHFFQUEwRTtBQUMxRSw0Q0FBd0M7QUFFM0IsUUFBQSxNQUFNLEdBQUcsSUFBQSwwQkFBZ0IsRUFBQyxHQUFHLEVBQUU7SUFDM0MsT0FBTyxJQUFJLCtCQUFxQixDQUFDO1FBQ2hDLGtCQUFrQixFQUFFLElBQUksaUNBQXdCLEVBQUU7UUFDbEQsUUFBUSxFQUFFLHFCQUFRLENBQUMsSUFBQSxlQUFNLEdBQUUsQ0FBQyxRQUFRLENBQUMsV0FBVyxFQUFFLENBQUMsSUFBSSxxQkFBUSxDQUFDLElBQUk7S0FDcEUsQ0FBQyxDQUFBO0FBQ0gsQ0FBQyxDQUFDLENBQUEifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9nZ2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL3V0aWwvbG9nZ2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxRQUFRLEVBQUUsTUFBTSxxQkFBcUIsQ0FBQTtBQUM5QyxPQUFPLEVBQUUscUJBQXFCLEVBQUUsTUFBTSw2Q0FBNkMsQ0FBQTtBQUNuRixPQUFPLEVBQUUsd0JBQXdCLEVBQUUsTUFBTSxpRUFBaUUsQ0FBQTtBQUMxRyxPQUFPLEVBQUUsZ0JBQWdCLEVBQUUsTUFBTSxxQ0FBcUMsQ0FBQTtBQUV0RSw0Q0FBNEM7QUFFNUMsTUFBTSxDQUFDLE1BQU0sTUFBTSxHQUFHLGdCQUFnQixDQUFDLEdBQUcsRUFBRTtJQUMzQyxPQUFPLElBQUkscUJBQXFCLENBQUM7UUFDaEMsa0JBQWtCLEVBQUUsSUFBSSx3QkFBd0IsRUFBRTtRQUNsRCxRQUFRLEVBQUUsUUFBUSxDQUFDLEtBQUs7UUFDeEIsNkJBQTZCO1FBQzdCLGlGQUFpRjtLQUNqRixDQUFDLENBQUE7QUFDSCxDQUFDLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IExvZ0xldmVsIH0gZnJvbSAnQGJlZWNvZGUvbXNoLWxvZ2dlcidcbmltcG9ydCB7IExvZ2dlclN0cmF0ZWd5Q29uc29sZSB9IGZyb20gJ0BiZWVjb2RlL21zaC1sb2dnZXIvbG9nZ2VyLXN0cmF0ZWd5L2NvbnNvbGUnXG5pbXBvcnQgeyBDb25zb2xlTG9nU3RyYXRlZ3lTaW1wbGUgfSBmcm9tICdAYmVlY29kZS9tc2gtbG9nZ2VyL2xvZ2dlci1zdHJhdGVneS9jb25zb2xlL2xvZy1zdHJhdGVneS9zaW1wbGUnXG5pbXBvcnQgeyBzaW5nbGV0b25QYXR0ZXJuIH0gZnJvbSAnQGJlZWNvZGUvbXNoLXV0aWwvc2luZ2xldG9uL3BhdHRlcm4nXG5cbi8vIGltcG9ydCB7IGNvbmZpZyB9IGZyb20gJyNzcmMvdXRpbC9jb25maWcnXG5cbmV4cG9ydCBjb25zdCBsb2dnZXIgPSBzaW5nbGV0b25QYXR0ZXJuKCgpID0+IHtcblx0cmV0dXJuIG5ldyBMb2dnZXJTdHJhdGVneUNvbnNvbGUoe1xuXHRcdGNvbnNvbGVMb2dTdHJhdGVneTogbmV3IENvbnNvbGVMb2dTdHJhdGVneVNpbXBsZSgpLFxuXHRcdGxvZ0xldmVsOiBMb2dMZXZlbC5ERUJVRyxcblx0XHQvLyBUT0RPOiBFU006IGZpeCBkZWJ1ZyBsZXZlbFxuXHRcdC8vIGxvZ0xldmVsOiAoTG9nTGV2ZWxbY29uZmlnKCkubG9nTGV2ZWwudG9VcHBlckNhc2UoKV0gYXMgYW55KSA/PyBMb2dMZXZlbC5JTkZPLFxuXHR9KVxufSlcbiJdfQ==

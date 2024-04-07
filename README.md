@@ -12,8 +12,8 @@ Micro-service helper: cli
 - [Idea](#idea)
 - [Configuration](#configuration)
 - [Features](#features)
-  - [git](#git)
-  - [npm](#npm)
+    + [git](#git)
+    + [npm](#npm)
 - [Help](#help)
 
 <!-- tocstop -->

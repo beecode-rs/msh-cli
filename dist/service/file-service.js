@@ -1,11 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.fileService = void 0;
-const mz_1 = require("mz");
-exports.fileService = {
+import { fs } from 'mz';
+export const fileService = {
     writeToFileSync: (params) => {
         const { filePath, data } = params;
-        mz_1.fs.writeFileSync(filePath, data, 'utf8');
+        fs.writeFileSync(filePath, data, 'utf8');
     },
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmlsZS1zZXJ2aWNlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL3NlcnZpY2UvZmlsZS1zZXJ2aWNlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLDJCQUF1QjtBQUVWLFFBQUEsV0FBVyxHQUFHO0lBQzFCLGVBQWUsRUFBRSxDQUFDLE1BQTBDLEVBQVEsRUFBRTtRQUNyRSxNQUFNLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxHQUFHLE1BQU0sQ0FBQTtRQUNqQyxPQUFFLENBQUMsYUFBYSxDQUFDLFFBQVEsRUFBRSxJQUFJLEVBQUUsTUFBTSxDQUFDLENBQUE7SUFDekMsQ0FBQztDQUNELENBQUEifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmlsZS1zZXJ2aWNlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL3NlcnZpY2UvZmlsZS1zZXJ2aWNlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxFQUFFLEVBQUUsTUFBTSxJQUFJLENBQUE7QUFFdkIsTUFBTSxDQUFDLE1BQU0sV0FBVyxHQUFHO0lBQzFCLGVBQWUsRUFBRSxDQUFDLE1BQTBDLEVBQVEsRUFBRTtRQUNyRSxNQUFNLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBRSxHQUFHLE1BQU0sQ0FBQTtRQUNqQyxFQUFFLENBQUMsYUFBYSxDQUFDLFFBQVEsRUFBRSxJQUFJLEVBQUUsTUFBTSxDQUFDLENBQUE7SUFDekMsQ0FBQztDQUNELENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBmcyB9IGZyb20gJ216J1xuXG5leHBvcnQgY29uc3QgZmlsZVNlcnZpY2UgPSB7XG5cdHdyaXRlVG9GaWxlU3luYzogKHBhcmFtczogeyBmaWxlUGF0aDogc3RyaW5nOyBkYXRhOiBzdHJpbmcgfSk6IHZvaWQgPT4ge1xuXHRcdGNvbnN0IHsgZmlsZVBhdGgsIGRhdGEgfSA9IHBhcmFtc1xuXHRcdGZzLndyaXRlRmlsZVN5bmMoZmlsZVBhdGgsIGRhdGEsICd1dGY4Jylcblx0fSxcbn1cbiJdfQ==
