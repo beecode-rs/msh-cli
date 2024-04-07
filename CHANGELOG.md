@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/beecode-rs/msh-cli/compare/v1.2.5...v2.0.0) (2024-04-07)
+
+
+* refactor!: es modules and commonjs build (#3) ([86ff328](https://github.com/beecode-rs/msh-cli/commit/86ff328a27d755d862d56485217124d56044190b)), closes [#3](https://github.com/beecode-rs/msh-cli/issues/3)
+
+
+### BREAKING CHANGES
+
+* changed file structure
+
 ## [1.2.5](https://github.com/beecode-rs/msh-cli/compare/v1.2.4...v1.2.5) (2023-05-22)
 
 
