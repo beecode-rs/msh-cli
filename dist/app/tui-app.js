@@ -1,0 +1,8 @@
+import { AppFlow } from '@beecode/msh-app-boot';
+export class TuiApp extends AppFlow {
+    constructor() {
+        super();
+        throw new Error('Not implemented.');
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHVpLWFwcC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9hcHAvdHVpLWFwcC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsT0FBTyxFQUFFLE1BQU0sdUJBQXVCLENBQUE7QUFFL0MsTUFBTSxPQUFPLE1BQU8sU0FBUSxPQUFPO0lBQ2xDO1FBQ0MsS0FBSyxFQUFFLENBQUE7UUFDUCxNQUFNLElBQUksS0FBSyxDQUFDLGtCQUFrQixDQUFDLENBQUE7SUFDcEMsQ0FBQztDQUNEIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQXBwRmxvdyB9IGZyb20gJ0BiZWVjb2RlL21zaC1hcHAtYm9vdCdcblxuZXhwb3J0IGNsYXNzIFR1aUFwcCBleHRlbmRzIEFwcEZsb3cge1xuXHRjb25zdHJ1Y3RvcigpIHtcblx0XHRzdXBlcigpXG5cdFx0dGhyb3cgbmV3IEVycm9yKCdOb3QgaW1wbGVtZW50ZWQuJylcblx0fVxufVxuIl19
