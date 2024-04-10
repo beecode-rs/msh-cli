@@ -169,7 +169,7 @@
 		"@semantic-release/git": "10.0.1",
 		"@semantic-release/github": "10.0.3",
 		"@semantic-release/release-notes-generator": "13.0.0",
-		"@types/fast-json-stable-stringify": "2.0.0",
+		"@types/fast-json-stable-stringify": "2.1.0",
 		"@types/inquirer": "9.0.7",
 		"@types/lodash": "4.17.0",
 		"@types/minimist": "1.2.5",
