@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/beecode-rs/msh-cli/compare/v2.0.0...v2.0.1) (2024-04-15)
+
+
+### Bug Fixes
+
+* bump inquirer from 9.2.17 to 9.2.18 ([#11](https://github.com/beecode-rs/msh-cli/issues/11)) ([b0aa169](https://github.com/beecode-rs/msh-cli/commit/b0aa1695d3c35f230bac1e4e38bd69b7e349d07e))
+* update package.json ([5ee021c](https://github.com/beecode-rs/msh-cli/commit/5ee021c6f803bd1fce1163adf0bf489e832ec592))
+* update packages.json ([604a733](https://github.com/beecode-rs/msh-cli/commit/604a733e29015e0eec28b8c4a565c2be72e57c39))
+
 # [2.0.0](https://github.com/beecode-rs/msh-cli/compare/v1.2.5...v2.0.0) (2024-04-07)
 
 
