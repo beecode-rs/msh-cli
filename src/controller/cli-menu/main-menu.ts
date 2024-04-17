@@ -10,7 +10,7 @@ export class MainMenu extends BaseMenu {
 	// @ts-expect-error
 	private async __execute(command: string): Promise<void> {
 		// eslint-disable-next-line @typescript-eslint/no-var-requires
-		const clazz = require(`src/exec/${command}`) as any
+		const clazz = import(`src/exec/${command}`) as any
 		await new clazz().run()
 	}
 

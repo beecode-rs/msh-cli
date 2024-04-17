@@ -1,6 +1,5 @@
+import packageJson from '../../package.json' assert { type: 'json' }
 import { singletonPattern } from '@beecode/msh-util/singleton/pattern'
-
-const packageJson = require('../../package.json') // eslint-disable-line
 
 export const constant = singletonPattern(() =>
 	Object.freeze({
