@@ -131,7 +131,7 @@ export class NpmGlobalProjectCommand implements Executable {
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	protected _packageJsonForProject(project?: string): any {
-		return require(path.join(process.cwd(), [project, 'package.json'].filter(Boolean).join('/'))) // eslint-disable-line @typescript-eslint/no-var-requires
+		return import(path.join(process.cwd(), [project, 'package.json'].filter(Boolean).join('/'))) // eslint-disable-line @typescript-eslint/no-var-requires
 	}
 }
 

@@ -17,6 +17,9 @@ module.exports = function (api) {
 				version: '2023-11',
 			},
 		],
+		["@babel/plugin-syntax-import-attributes",{
+			deprecatedAssertSyntax: true
+		}]
 	]
 
 	const presets = ['@babel/preset-env', '@babel/preset-typescript']

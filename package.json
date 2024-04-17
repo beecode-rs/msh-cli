@@ -57,6 +57,9 @@
 	"main": "./lib/index.js",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
+	"bin": {
+		"msh": "./bin/msh.js"
+	},
 	"files": [
 		"./bin",
 		"./dist",
@@ -156,6 +159,7 @@
 		"@babel/cli": "7.24.1",
 		"@babel/core": "7.24.4",
 		"@babel/plugin-proposal-decorators": "7.24.1",
+		"@babel/plugin-syntax-import-attributes": "7.24.1",
 		"@babel/plugin-transform-modules-commonjs": "7.24.1",
 		"@babel/preset-env": "7.24.4",
 		"@babel/preset-typescript": "7.24.1",

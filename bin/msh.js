@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require('../dist/esm/index-cli')
+import '../dist/index-cli.js'

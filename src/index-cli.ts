@@ -1,4 +1,4 @@
-import '#/index-init'
+import '#src/index-init'
 
 import { AppStarter } from '@beecode/msh-app-boot'
 
