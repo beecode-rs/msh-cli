@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/beecode-rs/msh-cli/compare/v2.0.1...v2.0.2) (2024-04-17)
+
+
+### Bug Fixes
+
+* add missing bin link ([549275e](https://github.com/beecode-rs/msh-cli/commit/549275e6c8a927a96d7a3e2f37513764a0a6779a))
+
 ## [2.0.1](https://github.com/beecode-rs/msh-cli/compare/v2.0.0...v2.0.1) (2024-04-15)
 
 
