@@ -1,4 +1,4 @@
-import { ExecuteResult, ProjectExecutable } from '../../../model/command/interfaces.js';
+import { ExecuteResult, ProjectExecutable } from '#src/model/command/interfaces';
 export declare class ProjectCommand {
     protected readonly _projects: string[];
     protected readonly _command: ProjectExecutable;

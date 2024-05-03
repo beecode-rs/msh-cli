@@ -1,4 +1,4 @@
-import { config } from '../../../util/config.js';
+import { config } from '#src/util/config';
 export class ProjectCommand {
     _projects;
     _command;

@@ -1,5 +1,5 @@
-// import { config } from '../util/config.js'
-// import * as util from '../util'
+// import { config } from '#src/util/config'
+// import * as util from 'util'
 export const clearService = {
 // npm: async (): Promise<void> => {
 //   const promises: any[] = []

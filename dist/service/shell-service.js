@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { shellDal } from '../dal/shell-dal.js';
+import { shellDal } from '#src/dal/shell-dal';
 // TODO refactor object and use class instead
 export const shellService = {
     // eslint-disable-next-line @typescript-eslint/naming-convention

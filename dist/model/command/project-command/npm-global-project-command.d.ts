@@ -1,4 +1,4 @@
-import { Executable, ExecuteResult } from '../../../model/command/interfaces.js';
+import { Executable, ExecuteResult } from '#src/model/command/interfaces';
 export type VersionOnProjects = Record<string, string[]>;
 export type UniquePackages = Record<string, {
     versions: string[];

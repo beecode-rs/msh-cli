@@ -1,4 +1,4 @@
-import { shellService } from '../service/shell-service.js';
+import { shellService } from '#src/service/shell-service';
 export class TerminalWrapper {
     _command;
     constructor(params) {

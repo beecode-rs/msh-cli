@@ -1,5 +1,5 @@
-import { BaseMenu } from '../../util/base-menu.js';
-import { config } from '../../util/config.js';
+import { BaseMenu } from '#src/util/base-menu';
+import { config } from '#src/util/config';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 export class MainMenu extends BaseMenu {
