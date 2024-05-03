@@ -1,5 +1,5 @@
 export declare const constant: import("@beecode/msh-util/singleton/pattern").AnyFunctionNoParams<Readonly<{
-    projectName: string;
-    projectVersion: string;
+    projectName: any;
+    projectVersion: any;
 }>>;
 //# sourceMappingURL=constant.d.ts.map

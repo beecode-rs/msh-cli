@@ -1,3 +1,11 @@
+## [2.0.3](https://github.com/beecode-rs/msh-cli/compare/v2.0.2...v2.0.3) (2024-05-03)
+
+
+### Bug Fixes
+
+* update package.json, esmodule remove alias, use vitest instead of jest ([#20](https://github.com/beecode-rs/msh-cli/issues/20)) ([ddc8f1b](https://github.com/beecode-rs/msh-cli/commit/ddc8f1b1fcda0334a8972f5d86e2e3f3de8a9307))
+* update package.json, use v8 for coverage ([88d9d93](https://github.com/beecode-rs/msh-cli/commit/88d9d93d803a2dbd27a2fc5f9fbda7ab45dbeae8))
+
 ## [2.0.2](https://github.com/beecode-rs/msh-cli/compare/v2.0.1...v2.0.2) (2024-04-17)
 
 
