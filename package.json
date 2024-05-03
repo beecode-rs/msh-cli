@@ -166,7 +166,7 @@
 		"@types/yargs": "17.0.32",
 		"@typescript-eslint/eslint-plugin": "7.8.0",
 		"@typescript-eslint/parser": "7.8.0",
-		"@vitest/coverage-istanbul": "1.6.0",
+		"@vitest/coverage-v8": "1.6.0",
 		"commitizen": "4.3.0",
 		"concurrently": "8.2.2",
 		"eslint": "8.57.0",
