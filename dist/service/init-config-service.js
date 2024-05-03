@@ -1,6 +1,6 @@
 import { fs } from 'mz';
 import path from 'path';
-import { config } from '../util/config.js';
+import { config } from '#src/util/config';
 export const initConfigService = {
     configDefaultValue: () => [
         '# ROOT_DIR - [optional] default is the folder where msh is executed',

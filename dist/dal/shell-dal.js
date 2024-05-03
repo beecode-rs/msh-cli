@@ -1,5 +1,5 @@
 import shell from 'shelljs';
-import { logger } from '../util/logger.js';
+import { logger } from '#src/util/logger';
 export const shellDal = {
     cd: (dir) => {
         shell.cd(dir);

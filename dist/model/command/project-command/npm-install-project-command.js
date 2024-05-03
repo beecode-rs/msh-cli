@@ -1,6 +1,6 @@
 import path from 'path';
-import { shellService } from '../../../service/shell-service.js';
-import { config } from '../../../util/config.js';
+import { shellService } from '#src/service/shell-service';
+import { config } from '#src/util/config';
 export class NpmInstallProjectCommand {
     _rootDir;
     constructor(params) {

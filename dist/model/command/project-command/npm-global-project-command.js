@@ -1,9 +1,9 @@
 import { compareVersions } from 'compare-versions';
 import stringify from 'fast-json-stable-stringify';
 import path from 'path';
-import { fileService } from '../../../service/file-service.js';
-import { config } from '../../../util/config.js';
-import { logger } from '../../../util/logger.js';
+import { fileService } from '#src/service/file-service';
+import { config } from '#src/util/config';
+import { logger } from '#src/util/logger';
 export class NpmGlobalProjectCommand {
     async execute() {
         try {

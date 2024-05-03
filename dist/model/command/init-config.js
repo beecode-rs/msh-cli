@@ -1,4 +1,4 @@
-import { initConfigService } from '../../service/init-config-service.js';
+import { initConfigService } from '#src/service/init-config-service';
 export class InitConfig {
     async execute() {
         // TODO create error handler annotation

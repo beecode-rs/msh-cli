@@ -1,2 +1,2 @@
-import './index-init.js';
+import './index-init';
 //# sourceMappingURL=index-terminal-ui.d.ts.map

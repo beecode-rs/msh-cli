@@ -1,4 +1,4 @@
-import { ExecuteResult, ProjectExecutable } from '../../../model/command/interfaces.js';
+import { ExecuteResult, ProjectExecutable } from '#src/model/command/interfaces';
 export declare enum GitSimpleCommand {
     STATUS = "status",
     FETCH = "fetch",
