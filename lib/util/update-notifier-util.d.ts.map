@@ -1,1 +1,1 @@
-{"version":3,"file":"update-notifier-util.d.ts","sourceRoot":"","sources":["../../src/util/update-notifier-util.ts"],"names":[],"mappings":"AAGA,eAAO,MAAM,kBAAkB;iBACb,QAAQ,IAAI,CAAC;CAG9B,CAAA"}
+{"version":3,"file":"update-notifier-util.d.ts","sourceRoot":"","sources":["../../src/util/update-notifier-util.ts"],"names":[],"mappings":"AAKA,eAAO,MAAM,kBAAkB;iBACb,QAAQ,IAAI,CAAC;CAG9B,CAAA"}

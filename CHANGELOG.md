@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/beecode-rs/msh-cli/compare/v2.0.3...v2.0.4) (2024-05-04)
+
+
+### Bug Fixes
+
+* update package.json, use shared config for eslint and prettier ([9ad3f3f](https://github.com/beecode-rs/msh-cli/commit/9ad3f3f70583edeeea4f25e9b0bf17e309e6eafb))
+
 ## [2.0.3](https://github.com/beecode-rs/msh-cli/compare/v2.0.2...v2.0.3) (2024-05-03)
 
 
