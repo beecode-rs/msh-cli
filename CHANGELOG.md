@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/beecode-rs/msh-cli/compare/v2.0.4...v2.1.0) (2024-05-08)
+
+
+### Features
+
+* add shared semantic release config ([397c784](https://github.com/beecode-rs/msh-cli/commit/397c7842bfb0193596961554e77f0e4678ad66fe))
+
 ## [2.0.4](https://github.com/beecode-rs/msh-cli/compare/v2.0.3...v2.0.4) (2024-05-04)
 
 
