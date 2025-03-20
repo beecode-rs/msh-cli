@@ -1,3 +1,11 @@
+## [2.1.1](https://github.com/beecode-rs/msh-cli/compare/v2.1.0...v2.1.1) (2025-03-20)
+
+
+### Bug Fixes
+
+* clean up eslint disable comments in shell-service and sub-menu ([a8ae5a0](https://github.com/beecode-rs/msh-cli/commit/a8ae5a09966f5dad8ed282c5d1fd1918659f5ff5))
+* update Node.js version, add Prettier configuration ([2340cbf](https://github.com/beecode-rs/msh-cli/commit/2340cbf1db13240023c228b6b7ef09b1a7538205))
+
 # [2.1.0](https://github.com/beecode-rs/msh-cli/compare/v2.0.4...v2.1.0) (2024-05-08)
 
 
