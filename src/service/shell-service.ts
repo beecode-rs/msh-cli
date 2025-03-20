@@ -6,7 +6,6 @@ export type PrintStdMessage = Record<string, ExecResult>
 
 // TODO refactor object and use class instead
 export const shellService = {
-	// eslint-disable-next-line @typescript-eslint/naming-convention
 	_joinResults: (results: PrintStdMessage[]): PrintStdMessage => {
 		return results.reduce<PrintStdMessage>((agg, cur) => {
 			agg = Object.assign(agg, cur)

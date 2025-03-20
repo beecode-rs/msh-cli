@@ -16,8 +16,9 @@ export abstract class SubMenu extends BaseMenu {
 		super(message, choices, [{ name: 'Go Back', value: 'mainMenu' }])
 	}
 
+	// eslint-disable-next-line @typescript-eslint/require-await
 	async run(preSelected?: string): Promise<void> {
-		// @ts-expect-error
+		// @ts-expect-error z
 		if (!config().cmd[`${this.constructor.name.toLowerCase()}Enabled`]) {
 			// util.log(`${this.constructor.name.toLowerCase()} command is disabled. Check config file [.msh]`)
 			return
