@@ -1,4 +1,4 @@
-import { ExecResult } from '#src/dal/shell-dal';
+import { type ExecResult } from '#src/dal/shell-dal';
 export type PrintStdMessage = Record<string, ExecResult>;
 export declare const shellService: {
     _joinResults: (results: PrintStdMessage[]) => PrintStdMessage;

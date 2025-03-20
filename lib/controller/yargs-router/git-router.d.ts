@@ -1,4 +1,4 @@
-import { Argv } from 'yargs';
+import { type Argv } from 'yargs';
 export declare class GitRouter {
     protected _clone(yargs: Argv): void;
     protected _fetch(yargs: Argv): void;

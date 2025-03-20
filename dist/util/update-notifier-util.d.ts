@@ -1,4 +1,4 @@
 export declare const updateNotifierUtil: {
-    check: () => Promise<void>;
+    check: () => void;
 };
 //# sourceMappingURL=update-notifier-util.d.ts.map

@@ -1,4 +1,4 @@
-import { ExecuteResult, ProjectExecutable } from '#src/model/command/interfaces'
+import { type ExecuteResult, type ProjectExecutable } from '#src/model/command/interfaces'
 import { shellService } from '#src/service/shell-service'
 import { config } from '#src/util/config'
 
@@ -24,6 +24,7 @@ export class GitSimpleProjectCommand implements ProjectExecutable {
 			const result = await shellService.exec(cmd)
 
 			return [{ errorMessage: result.stderr, name: project, stringResult: result.stdout }]
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		} catch (err: any) {
 			return [{ errorMessage: err.message }]
 		}

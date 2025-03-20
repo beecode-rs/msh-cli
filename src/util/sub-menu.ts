@@ -1,4 +1,5 @@
-import { ChoiceCollection } from 'inquirer'
+// @ts-expect-error
+import { type ChoiceCollection } from 'inquirer'
 
 import { MainMenu } from '#src/controller/cli-menu/main-menu'
 import { BaseMenu } from '#src/util/base-menu'

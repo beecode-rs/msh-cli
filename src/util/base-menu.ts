@@ -1,10 +1,10 @@
-import inquirer, { ChoiceCollection, QuestionCollection } from 'inquirer'
+import inquirer, { type DistinctQuestion } from 'inquirer'
 
 export abstract class BaseMenu {
 	private __name = '__menu'
 	private __type = 'list'
 	private __message = ''
-	private __menu: QuestionCollection
+	private __menu: DistinctQuestion
 
 	private async __execute(command: string): Promise<void> {
 		// @ts-expect-error test
@@ -13,7 +13,8 @@ export abstract class BaseMenu {
 		await this.run()
 	}
 
-	protected constructor(message: string, choices: ChoiceCollection, exitChoices?: ChoiceCollection) {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	protected constructor(message: string, choices: any[], exitChoices?: any[]) {
 		if (message) {
 			this.__message = message
 		}
@@ -28,7 +29,7 @@ export abstract class BaseMenu {
 			message: this.__message,
 			name: this.__name,
 			type: this.__type,
-		} as QuestionCollection
+		} as DistinctQuestion
 	}
 
 	async run(preSelected?: string): Promise<void> {

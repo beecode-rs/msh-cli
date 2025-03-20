@@ -1,4 +1,4 @@
-import { Executable, ExecuteResult } from '#src/model/command/interfaces'
+import { type Executable, type ExecuteResult } from '#src/model/command/interfaces'
 import { initConfigService } from '#src/service/init-config-service'
 
 export class InitConfig implements Executable {
@@ -8,6 +8,7 @@ export class InitConfig implements Executable {
 			await initConfigService.tryToCreateConfig()
 
 			return [{ stringResult: '.msh file successfully generated' }]
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		} catch (err: any) {
 			return [{ errorMessage: err.message }]
 		}

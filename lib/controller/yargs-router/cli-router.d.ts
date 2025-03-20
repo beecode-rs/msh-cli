@@ -1,4 +1,4 @@
-import { Argv } from 'yargs';
+import { type Argv } from 'yargs';
 export declare class CliRouter {
     protected readonly _yargs: Argv;
     constructor(argv: string[]);

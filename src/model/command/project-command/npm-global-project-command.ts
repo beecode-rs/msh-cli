@@ -2,7 +2,7 @@ import { compareVersions } from 'compare-versions'
 import stringify from 'fast-json-stable-stringify'
 import path from 'path'
 
-import { Executable, ExecuteResult } from '#src/model/command/interfaces'
+import { type Executable, type ExecuteResult } from '#src/model/command/interfaces'
 import { fileService } from '#src/service/file-service'
 import { config } from '#src/util/config'
 import { logger } from '#src/util/logger'
@@ -16,6 +16,7 @@ export type DependenciesObject = Record<string, string>
 export type ProjectWithDependencies = Record<string, DependenciesObject>
 
 export class NpmGlobalProjectCommand implements Executable {
+	// eslint-disable-next-line @typescript-eslint/require-await
 	async execute(): Promise<ExecuteResult[]> {
 		try {
 			const depsByProject = this._allDepsByProject()
@@ -40,6 +41,7 @@ export class NpmGlobalProjectCommand implements Executable {
 					stringResult: `Gathered dependencies \n\n${highestDependenciesString}`,
 				},
 			]
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		} catch (err: any) {
 			return [{ errorMessage: err.message }]
 		}
@@ -131,7 +133,7 @@ export class NpmGlobalProjectCommand implements Executable {
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	protected _packageJsonForProject(project?: string): any {
-		return import(path.join(process.cwd(), [project, 'package.json'].filter(Boolean).join('/'))) // eslint-disable-line @typescript-eslint/no-var-requires
+		return import(path.join(process.cwd(), [project, 'package.json'].filter(Boolean).join('/')))
 	}
 }
 

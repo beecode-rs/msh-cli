@@ -1,4 +1,4 @@
-import { ChoiceCollection } from 'inquirer';
+import { type ChoiceCollection } from 'inquirer';
 import { BaseMenu } from '#src/util/base-menu';
 export declare abstract class SubMenu extends BaseMenu {
     private __mainMenu;

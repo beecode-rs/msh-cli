@@ -1,4 +1,4 @@
-import { Executable } from '#src/model/command/interfaces'
+import { type Executable } from '#src/model/command/interfaces'
 import { shellService } from '#src/service/shell-service'
 
 export class TerminalWrapper {

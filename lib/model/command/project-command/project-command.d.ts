@@ -1,4 +1,4 @@
-import { ExecuteResult, ProjectExecutable } from '../../../model/command/interfaces.js';
+import { type ExecuteResult, type ProjectExecutable } from '../../../model/command/interfaces.js';
 export declare class ProjectCommand {
     protected readonly _projects: string[];
     protected readonly _command: ProjectExecutable;
@@ -10,6 +10,6 @@ export declare class ProjectCommand {
 }
 export declare const projectCommandFactory: (params: {
     command: ProjectExecutable;
-    projects?: string[] | undefined;
+    projects?: string[];
 }) => ProjectCommand;
 //# sourceMappingURL=project-command.d.ts.map

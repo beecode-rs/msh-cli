@@ -1,4 +1,4 @@
-import { Executable, ExecuteResult } from '../../model/command/interfaces.js';
+import { type Executable, type ExecuteResult } from '../../model/command/interfaces.js';
 export declare class InitConfig implements Executable {
     execute(): Promise<ExecuteResult[]>;
 }

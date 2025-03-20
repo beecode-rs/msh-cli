@@ -1,5 +1,3 @@
-import { ChoiceCollection } from 'inquirer'
-
 import { BaseMenu } from '#src/util/base-menu'
 import { config } from '#src/util/config'
 
@@ -9,7 +7,7 @@ export class MainMenu extends BaseMenu {
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-expect-error
 	private async __execute(command: string): Promise<void> {
-		// eslint-disable-next-line @typescript-eslint/no-var-requires
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const clazz = import(`src/exec/${command}`) as any
 		await new clazz().run()
 	}
@@ -24,6 +22,7 @@ export class MainMenu extends BaseMenu {
 			menuItems.push({ name: 'NPM', value: 'NPM' })
 		}
 		// if (config().cmd.prEnabled) menuItems.push({ name: 'Pull Request', value: 'PR' })
-		super('What do you want to do?', menuItems as ChoiceCollection)
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		super('What do you want to do?', menuItems as any[])
 	}
 }

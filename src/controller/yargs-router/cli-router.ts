@@ -1,4 +1,4 @@
-import yargs, { Argv } from 'yargs'
+import yargs, { type Argv } from 'yargs'
 
 import { GitRouter } from '#src/controller/yargs-router/git-router'
 import { NpmRouter } from '#src/controller/yargs-router/npm-router'

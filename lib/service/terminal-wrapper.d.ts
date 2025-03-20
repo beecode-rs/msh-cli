@@ -1,4 +1,4 @@
-import { Executable } from '../model/command/interfaces.js';
+import { type Executable } from '../model/command/interfaces.js';
 export declare class TerminalWrapper {
     protected readonly _command: Executable;
     constructor(params: {

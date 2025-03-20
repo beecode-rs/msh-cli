@@ -1,4 +1,4 @@
-import { Argv } from 'yargs'
+import { type Argv } from 'yargs'
 
 import { npmGlobalProjectCommandFactory } from '#src/model/command/project-command/npm-global-project-command'
 import { NpmInstallProjectCommand } from '#src/model/command/project-command/npm-install-project-command'

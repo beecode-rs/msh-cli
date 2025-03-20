@@ -1,4 +1,4 @@
-import { Argv } from 'yargs'
+import { type Argv } from 'yargs'
 
 import { GitCloneProjectCommand } from '#src/model/command/project-command/git-clone-project-command'
 import { GitSimpleCommand, GitSimpleProjectCommand } from '#src/model/command/project-command/git-simple-project-command'

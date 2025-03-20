@@ -1,4 +1,4 @@
-import { ExecuteResult, ProjectExecutable } from '#src/model/command/interfaces';
+import { type ExecuteResult, type ProjectExecutable } from '#src/model/command/interfaces';
 export declare class GitTagProjectCommand implements ProjectExecutable {
     protected readonly _rootDir: string;
     protected readonly _filterByName?: string;

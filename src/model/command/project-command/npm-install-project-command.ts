@@ -1,6 +1,6 @@
 import path from 'path'
 
-import { ExecuteResult, ProjectExecutable } from '#src/model/command/interfaces'
+import { type ExecuteResult, type ProjectExecutable } from '#src/model/command/interfaces'
 import { shellService } from '#src/service/shell-service'
 import { config } from '#src/util/config'
 
@@ -20,6 +20,7 @@ export class NpmInstallProjectCommand implements ProjectExecutable {
 
 			// return [{ name: project, stringResult: result.stdout, errorMessage: result.stdout }]
 			return [{ errorMessage: result.stdout, name: project, stringResult: 'npm install successful' }]
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		} catch (err: any) {
 			return [{ errorMessage: err.message }]
 		}

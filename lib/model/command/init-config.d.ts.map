@@ -1,1 +1,1 @@
-{"version":3,"file":"init-config.d.ts","sourceRoot":"","sources":["../../../src/model/command/init-config.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,aAAa,EAAE,MAAM,+BAA+B,CAAA;AAGzE,qBAAa,UAAW,YAAW,UAAU;IACtC,OAAO,IAAI,OAAO,CAAC,aAAa,EAAE,CAAC;CAUzC"}
+{"version":3,"file":"init-config.d.ts","sourceRoot":"","sources":["../../../src/model/command/init-config.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,KAAK,UAAU,EAAE,KAAK,aAAa,EAAE,MAAM,+BAA+B,CAAA;AAGnF,qBAAa,UAAW,YAAW,UAAU;IACtC,OAAO,IAAI,OAAO,CAAC,aAAa,EAAE,CAAC;CAWzC"}

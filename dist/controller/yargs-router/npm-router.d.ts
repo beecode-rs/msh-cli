@@ -1,4 +1,4 @@
-import { Argv } from 'yargs';
+import { type Argv } from 'yargs';
 export declare class NpmRouter {
     commands(yargs: Argv): Argv;
     protected _install(yargs: Argv): void;
