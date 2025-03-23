@@ -1,3 +1,11 @@
+## [2.1.2](https://github.com/beecode-rs/msh-cli/compare/v2.1.1...v2.1.2) (2025-03-23)
+
+
+### Bug Fixes
+
+* refactor ESLint configuration and update dependencies ([e9925c3](https://github.com/beecode-rs/msh-cli/commit/e9925c38f0ace9004bffef04b8b2033335d35870))
+* refactor ESLint configuration and update dependencies ([3a96c7f](https://github.com/beecode-rs/msh-cli/commit/3a96c7fed39c7a6016dd73322966e411b455d727))
+
 ## [2.1.1](https://github.com/beecode-rs/msh-cli/compare/v2.1.0...v2.1.1) (2025-03-20)
 
 

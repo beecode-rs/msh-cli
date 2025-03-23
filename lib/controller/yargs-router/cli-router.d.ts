@@ -10,5 +10,5 @@ export declare class CliRouter {
     protected _npmCommands(): void;
     protected _initCommands(): void;
 }
-export declare const cliRouterFactory: (...params: ConstructorParameters<typeof CliRouter>) => CliRouter;
+export declare const cliRouterFactory: (argv: string[]) => CliRouter;
 //# sourceMappingURL=cli-router.d.ts.map

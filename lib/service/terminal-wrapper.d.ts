@@ -6,5 +6,7 @@ export declare class TerminalWrapper {
     });
     execute(): Promise<void>;
 }
-export declare const terminalWrapperFactory: (...params: ConstructorParameters<typeof TerminalWrapper>) => TerminalWrapper;
+export declare const terminalWrapperFactory: (params: {
+    command: Executable;
+}) => TerminalWrapper;
 //# sourceMappingURL=terminal-wrapper.d.ts.map

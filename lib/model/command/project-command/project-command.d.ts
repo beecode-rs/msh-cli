@@ -8,5 +8,8 @@ export declare class ProjectCommand {
     });
     execute(): Promise<ExecuteResult[]>;
 }
-export declare const projectCommandFactory: (...params: ConstructorParameters<typeof ProjectCommand>) => ProjectCommand;
+export declare const projectCommandFactory: (params: {
+    command: ProjectExecutable;
+    projects?: string[];
+}) => ProjectCommand;
 //# sourceMappingURL=project-command.d.ts.map
