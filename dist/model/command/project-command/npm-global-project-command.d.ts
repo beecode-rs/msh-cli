@@ -17,5 +17,5 @@ export declare class NpmGlobalProjectCommand implements Executable {
     protected _overrideGlobalDepsWithNewHighestDependencies(highestDependencies: DependenciesObject): void;
     protected _packageJsonForProject(project?: string): any;
 }
-export declare const npmGlobalProjectCommandFactory: () => NpmGlobalProjectCommand;
+export declare const npmGlobalProjectCommandFactory: (...params: ConstructorParameters<typeof NpmGlobalProjectCommand>) => NpmGlobalProjectCommand;
 //# sourceMappingURL=npm-global-project-command.d.ts.map
