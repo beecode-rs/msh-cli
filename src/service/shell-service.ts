@@ -33,10 +33,14 @@ export const shellService = {
 			shellService.print(borderStars)
 
 			if (stdout.trim() !== '') {
-				stdout.split('\n').forEach((msg) => shellService.print(msg))
+				stdout.split('\n').forEach((msg) => {
+					shellService.print(msg)
+				})
 			}
 			if (stderr.trim() !== '') {
-				stderr.split('\n').forEach((msg) => shellService.printError(msg))
+				stderr.split('\n').forEach((msg) => {
+					shellService.printError(msg)
+				})
 			}
 		})
 	},

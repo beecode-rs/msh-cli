@@ -44,7 +44,7 @@ export const shellDal = {
 			shell.exec(cmd, { silent: true }, (code, stdout, stderr) => {
 				const errorOccurred = code !== 0
 
-				return resolve({ errorOccurred, stderr, stdout })
+				resolve({ errorOccurred, stderr, stdout })
 			})
 		}),
 	print: (message: string): void => {
