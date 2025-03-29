@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/beecode-rs/msh-cli/compare/v2.1.3...v2.1.4) (2025-03-29)
+
+
+### Bug Fixes
+
+* update package.json to use TypeScript source files and add ESM build script ([77afc43](https://github.com/beecode-rs/msh-cli/commit/77afc43da363755638ed933febca129ff88981af))
+
 ## [2.1.3](https://github.com/beecode-rs/msh-cli/compare/v2.1.2...v2.1.3) (2025-03-27)
 
 
