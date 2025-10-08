@@ -6,13 +6,13 @@
 
 ### Variables
 
-- [fileService](service_file_service.md#fileservice)
+- [fileClient](service_file_service.md#fileservice)
 
 ## Variables
 
-### fileService
+### fileClient
 
-• `Const` **fileService**: `Object`
+• `Const` **fileClient**: `Object`
 
 #### Type declaration
 
@@ -22,4 +22,4 @@
 
 #### Defined in
 
-[cli/src/service/file-service.ts:3](https://github.com/beecode-rs/msh-cli/blob/816f38b/src/service/file-service.ts#L3)
+[cli/src/service/file-adapter.ts:3](https://github.com/beecode-rs/msh-cli/blob/816f38b/src/service/file-adapter.ts#L3)
