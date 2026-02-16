@@ -1,8 +1,8 @@
-import './index-init'
+import './index-init.js'
 
 import { AppStarter } from '@beecode/msh-app-boot'
 
-import { TuiApp } from '#src/app/tui-app'
+import { TuiApp } from '#src/app/tui-app.js'
 
 new AppStarter(new TuiApp()).start().catch((err: unknown) => {
 	if (err instanceof Error) {

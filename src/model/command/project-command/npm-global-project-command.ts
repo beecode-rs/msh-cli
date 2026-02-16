@@ -2,10 +2,10 @@ import { compareVersions } from 'compare-versions'
 import stringify from 'fast-json-stable-stringify'
 import path from 'path'
 
-import { type Executable, type ExecuteResult } from '#src/model/command/interfaces'
-import { fileService } from '#src/service/file-service'
-import { config } from '#src/util/config'
-import { logger } from '#src/util/logger'
+import { type Executable, type ExecuteResult } from '#src/model/command/interfaces.js'
+import { fileService } from '#src/service/file-service.js'
+import { config } from '#src/util/config.js'
+import { logger } from '#src/util/logger.js'
 
 export type VersionOnProjects = Record<string, string[]>
 

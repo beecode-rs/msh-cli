@@ -1,9 +1,9 @@
-import '#src/index-init'
+import '#src/index-init.js'
 
 import { AppStarter } from '@beecode/msh-app-boot'
 
-import { CliApp } from '#src/app/cli-app'
-import { updateNotifierUtil } from '#src/util/update-notifier-util'
+import { CliApp } from '#src/app/cli-app.js'
+import { updateNotifierUtil } from '#src/util/update-notifier-util.js'
 
 updateNotifierUtil.check()
 

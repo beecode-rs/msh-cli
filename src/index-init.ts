@@ -1,7 +1,7 @@
 import 'source-map-support/register.js'
 import { setAppBootLogger } from '@beecode/msh-app-boot/util/logger'
 
-import { logger } from '#src/util/logger'
+import { logger } from '#src/util/logger.js'
 
 process.on('uncaughtException', (error) => {
 	logger().error('Uncaught Exception', { error })

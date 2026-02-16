@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 
-import { type ExecResult, shellDal } from '#src/dal/shell-dal'
+import { type ExecResult, shellDal } from '#src/dal/shell-dal.js'
 
 export type PrintStdMessage = Record<string, ExecResult>
 
