@@ -1,3 +1,10 @@
+## [2.1.5](https://github.com/beecode-rs/msh-cli/compare/v2.1.4...v2.1.5) (2026-02-16)
+
+
+### Bug Fixes
+
+* remove compiled files from version control ([1200c8f](https://github.com/beecode-rs/msh-cli/commit/1200c8f1c028bebe0645b596e1e526baf33ee31c))
+
 ## [2.1.4](https://github.com/beecode-rs/msh-cli/compare/v2.1.3...v2.1.4) (2025-03-29)
 
 
