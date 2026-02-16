@@ -16,28 +16,28 @@ export const config = singletonPattern(() => {
 	return {
 		// dockerBaseImages: env('DOCKER_BASE_IMAGES').json<string[]>().default([]).optional,
 		cmd: {
-			gitEnabled: env('CMD_GIT_ENABLED').boolean.default(true).required,
+			gitEnabled: env('CMD_GIT_ENABLED').boolean.default(true),
 			// cleanEnabled: env('CMD_CLEAN_ENABLED').boolean.default(false).required,
-			npmEnabled: env('CMD_NPM_ENABLED').boolean.default(true).required,
+			npmEnabled: env('CMD_NPM_ENABLED').boolean.default(true),
 			// prEnabled: env('CMD_PR_ENABLED').boolean.default(false).required,
 		},
 
 		git: {
-			host: env('GIT_HOST').string.default('bitbucket.org').required,
+			host: env('GIT_HOST').string.default('bitbucket.org'),
 			password: env('GIT_PASSWORD').string.optional,
 			projectPrefix: env('GIT_PROJECT_PREFIX').string.optional,
 			team: env('GIT_TEAM').string.optional,
 			username: env('GIT_USERNAME').string.optional,
 		},
 
-		logLevel: env('LOG_LEVEL').string.default('error').required,
+		logLevel: env('LOG_LEVEL').string.default('error'),
 
 		npm: {
-			globalIgnorePackages: env('NPM_GLOBAL_IGNORE_PACKAGES').json<string[]>().default([]).required,
+			globalIgnorePackages: env('NPM_GLOBAL_IGNORE_PACKAGES').json<string[]>().default([]),
 		},
 
-		projects: env('PROJECTS').json<string[]>().default([]).required,
-		pullRequestSkip: env('PULL_REQUEST_SKIP').json<string[]>().default([]).required,
-		rootDir: env('ROOT_DIR').string.default(process.cwd()).required,
+		projects: env('PROJECTS').json<string[]>().default([]),
+		pullRequestSkip: env('PULL_REQUEST_SKIP').json<string[]>().default([]),
+		rootDir: env('ROOT_DIR').string.default(process.cwd()),
 	} as const
 })
