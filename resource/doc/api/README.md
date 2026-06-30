@@ -17,7 +17,7 @@
 - [dal/shell-dal](modules/dal_shell_dal.md)
 - [index-cli](modules/index_cli.md)
 - [index-init](modules/index_init.md)
-- [index-jest-setup](modules/index_jest_setup.md)
+- [index-vitest-setup](modules/index_vitest_setup.md)
 - [index-server](modules/index_server.md)
 - [index-terminal-ui](modules/index_terminal_ui.md)
 - [model/command/init-config](modules/model_command_init_config.md)
