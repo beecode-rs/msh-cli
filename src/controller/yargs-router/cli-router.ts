@@ -1,10 +1,9 @@
 import yargs, { type Argv } from 'yargs'
 
+import { terminalWrapperFactory } from '#src/business/service/terminal-wrapper.js'
+import { InitConfig } from '#src/business/use-case/init-config.js'
 import { GitRouter } from '#src/controller/yargs-router/git-router.js'
 import { NpmRouter } from '#src/controller/yargs-router/npm-router.js'
-import { InitConfig } from '#src/model/command/init-config.js'
-import { terminalWrapperFactory } from '#src/service/terminal-wrapper.js'
-import { config } from '#src/util/config.js'
 
 export class CliRouter {
 	protected readonly _yargs: Argv
@@ -39,9 +38,6 @@ export class CliRouter {
 	}
 
 	protected _gitCommands(): void {
-		if (!config().cmd.gitEnabled) {
-			return
-		}
 		this._yargs.command({
 			aliases: ['g'],
 			builder: (y) =>
@@ -60,9 +56,6 @@ export class CliRouter {
 	}
 
 	protected _npmCommands(): void {
-		if (!config().cmd.npmEnabled) {
-			return
-		}
 		this._yargs.command({
 			aliases: ['n'],
 			builder: (y) =>
@@ -94,4 +87,5 @@ export class CliRouter {
 	}
 }
 
-export const cliRouterFactory = (...params: ConstructorParameters<typeof CliRouter>): CliRouter => new CliRouter(...params)
+export const cliRouterFactory = (...params: ConstructorParameters<typeof CliRouter>): CliRouter =>
+	new CliRouter(...params)

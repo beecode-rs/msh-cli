@@ -1,19 +1,18 @@
-import { mshEnv } from '@beecode/msh-env'
+import { mshEnv, mshEnvResolver } from '@beecode/msh-env'
 import { setEnvLogger } from '@beecode/msh-env/util/logger'
 import { LogLevel } from '@beecode/msh-logger'
-import { LoggerStrategyConsole } from '@beecode/msh-logger/logger-strategy/console'
-import { ConsoleLogStrategySimple } from '@beecode/msh-logger/logger-strategy/console/log-strategy/simple'
+import { PresetConsoleSimpleString } from '@beecode/msh-logger/controller/preset/console-simple-string'
 import { singletonPattern } from '@beecode/msh-util/singleton/pattern'
 import dotenv from 'dotenv'
 
-setEnvLogger(new LoggerStrategyConsole({ consoleLogStrategy: new ConsoleLogStrategySimple(), logLevel: LogLevel.INFO }))
+setEnvLogger(new PresetConsoleSimpleString({ logLevel: LogLevel.INFO }))
 
 const env = mshEnv()
 dotenv.config({ path: './.msh' })
 dotenv.config({ path: './.msh-user' })
 
 export const config = singletonPattern(() => {
-	return {
+	return mshEnvResolver({
 		// dockerBaseImages: env('DOCKER_BASE_IMAGES').json<string[]>().default([]).optional,
 		cmd: {
 			gitEnabled: env('CMD_GIT_ENABLED').boolean.default(true),
@@ -39,5 +38,5 @@ export const config = singletonPattern(() => {
 		projects: env('PROJECTS').json<string[]>().default([]),
 		pullRequestSkip: env('PULL_REQUEST_SKIP').json<string[]>().default([]),
 		rootDir: env('ROOT_DIR').string.default(process.cwd()),
-	} as const
+	})
 })

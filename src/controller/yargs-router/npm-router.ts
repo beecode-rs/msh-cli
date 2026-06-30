@@ -1,9 +1,9 @@
 import { type Argv } from 'yargs'
 
-import { npmGlobalProjectCommandFactory } from '#src/model/command/project-command/npm-global-project-command.js'
-import { NpmInstallProjectCommand } from '#src/model/command/project-command/npm-install-project-command.js'
-import { projectCommandFactory } from '#src/model/command/project-command/project-command.js'
-import { terminalWrapperFactory } from '#src/service/terminal-wrapper.js'
+import { npmGlobalProjectCommandFactory } from '#src/business/component/project-command/npm-global-project-command.js'
+import { NpmInstallProjectCommand } from '#src/business/component/project-command/npm-install-project-command.js'
+import { terminalWrapperFactory } from '#src/business/service/terminal-wrapper.js'
+import { projectCommandFactory } from '#src/business/use-case/project-command.js'
 
 export class NpmRouter {
 	commands(yargs: Argv): Argv {
