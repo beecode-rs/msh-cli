@@ -54,7 +54,7 @@
 		"docker-rmi": "docker rmi bc-msh-cli",
 		"docker-run-package-lock-update": "docker run --rm -v ./:/usr/app/ milosbugarinovic/msh-lib-base:node22.22.1-alpine3.23 npm i --package-lock-only",
 		"docker-run-sh": "docker run --rm -it bc-msh-cli sh",
-		"fix-hybrid-lib-esm": "mkdir -p ./dist && echo '{\"type\": \"module\", \"imports\": {\"#packageJson\": \"../package.json\", \"#src\": \"./index.js\", \"#src/*.js\": \"./*.js\", \"#src/*\": \"./*.js\"}}' > ./dist/package.json",
+		"fix-hybrid-lib-esm": "mkdir -p ./dist && cp ./package.json ./dist/_package.json && echo '{\"type\": \"module\", \"imports\": {\"#packageJson\": \"./_package.json\", \"#src\": \"./index.js\", \"#src/*.js\": \"./*.js\", \"#src/*\": \"./*.js\"}}' > ./dist/package.json",
 		"init": "concurrently --group -c auto 'npm:init:*'",
 		"init:git-config": "git config include.path ./.git-config",
 		"init:husky": "npx husky init",
