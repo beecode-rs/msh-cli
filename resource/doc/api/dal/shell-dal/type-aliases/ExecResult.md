@@ -8,7 +8,7 @@
 
 > **ExecResult** = `object`
 
-Defined in: [dal/shell-dal.ts:5](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/dal/shell-dal.ts#L5)
+Defined in: [dal/shell-dal.ts:5](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/dal/shell-dal.ts#L5)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [dal/shell-dal.ts:5](https://github.com/beecode-rs/msh-cli/blob/3e1c
 
 > **errorOccurred**: `boolean`
 
-Defined in: [dal/shell-dal.ts:8](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/dal/shell-dal.ts#L8)
+Defined in: [dal/shell-dal.ts:8](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/dal/shell-dal.ts#L8)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [dal/shell-dal.ts:8](https://github.com/beecode-rs/msh-cli/blob/3e1c
 
 > **stderr**: `string`
 
-Defined in: [dal/shell-dal.ts:7](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/dal/shell-dal.ts#L7)
+Defined in: [dal/shell-dal.ts:7](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/dal/shell-dal.ts#L7)
 
 ***
 
@@ -32,4 +32,4 @@ Defined in: [dal/shell-dal.ts:7](https://github.com/beecode-rs/msh-cli/blob/3e1c
 
 > **stdout**: `string`
 
-Defined in: [dal/shell-dal.ts:6](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/dal/shell-dal.ts#L6)
+Defined in: [dal/shell-dal.ts:6](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/dal/shell-dal.ts#L6)

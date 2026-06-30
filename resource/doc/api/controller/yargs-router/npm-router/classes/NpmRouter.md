@@ -6,7 +6,7 @@
 
 # Class: NpmRouter
 
-Defined in: [controller/yargs-router/npm-router.ts:8](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/npm-router.ts#L8)
+Defined in: [controller/yargs-router/npm-router.ts:8](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/npm-router.ts#L8)
 
 ## Constructors
 
@@ -24,7 +24,7 @@ Defined in: [controller/yargs-router/npm-router.ts:8](https://github.com/beecode
 
 > `protected` **\_global**(`yargs`): `void`
 
-Defined in: [controller/yargs-router/npm-router.ts:32](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/npm-router.ts#L32)
+Defined in: [controller/yargs-router/npm-router.ts:32](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/npm-router.ts#L32)
 
 #### Parameters
 
@@ -42,7 +42,7 @@ Defined in: [controller/yargs-router/npm-router.ts:32](https://github.com/beecod
 
 > `protected` **\_install**(`yargs`): `void`
 
-Defined in: [controller/yargs-router/npm-router.ts:16](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/npm-router.ts#L16)
+Defined in: [controller/yargs-router/npm-router.ts:16](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/npm-router.ts#L16)
 
 #### Parameters
 
@@ -60,7 +60,7 @@ Defined in: [controller/yargs-router/npm-router.ts:16](https://github.com/beecod
 
 > **commands**(`yargs`): `Argv`
 
-Defined in: [controller/yargs-router/npm-router.ts:9](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/npm-router.ts#L9)
+Defined in: [controller/yargs-router/npm-router.ts:9](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/npm-router.ts#L9)
 
 #### Parameters
 

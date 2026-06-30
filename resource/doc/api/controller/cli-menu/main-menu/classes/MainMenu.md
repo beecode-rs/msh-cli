@@ -6,7 +6,7 @@
 
 # Class: MainMenu
 
-Defined in: [controller/cli-menu/main-menu.ts:6](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/cli-menu/main-menu.ts#L6)
+Defined in: [controller/cli-menu/main-menu.ts:6](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/cli-menu/main-menu.ts#L6)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [controller/cli-menu/main-menu.ts:6](https://github.com/beecode-rs/m
 
 > **new MainMenu**(): `MainMenu`
 
-Defined in: [controller/cli-menu/main-menu.ts:15](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/cli-menu/main-menu.ts#L15)
+Defined in: [controller/cli-menu/main-menu.ts:15](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/cli-menu/main-menu.ts#L15)
 
 #### Returns
 
@@ -34,7 +34,7 @@ Defined in: [controller/cli-menu/main-menu.ts:15](https://github.com/beecode-rs/
 
 > `protected` **\_getSelectedValue**(`perSelected?`): `Promise`\<`string`\>
 
-Defined in: [util/base-menu.ts:46](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/util/base-menu.ts#L46)
+Defined in: [util/base-menu.ts:46](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/util/base-menu.ts#L46)
 
 #### Parameters
 
@@ -56,7 +56,7 @@ Defined in: [util/base-menu.ts:46](https://github.com/beecode-rs/msh-cli/blob/3e
 
 > **run**(`preSelected?`): `Promise`\<`void`\>
 
-Defined in: [util/base-menu.ts:35](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/util/base-menu.ts#L35)
+Defined in: [util/base-menu.ts:35](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/util/base-menu.ts#L35)
 
 #### Parameters
 

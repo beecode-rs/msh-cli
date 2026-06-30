@@ -6,7 +6,7 @@
 
 # Class: GitRouter
 
-Defined in: [controller/yargs-router/git-router.ts:12](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/git-router.ts#L12)
+Defined in: [controller/yargs-router/git-router.ts:12](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/git-router.ts#L12)
 
 ## Constructors
 
@@ -24,7 +24,7 @@ Defined in: [controller/yargs-router/git-router.ts:12](https://github.com/beecod
 
 > `protected` **\_clone**(`yargs`): `void`
 
-Defined in: [controller/yargs-router/git-router.ts:13](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/git-router.ts#L13)
+Defined in: [controller/yargs-router/git-router.ts:13](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/git-router.ts#L13)
 
 #### Parameters
 
@@ -42,7 +42,7 @@ Defined in: [controller/yargs-router/git-router.ts:13](https://github.com/beecod
 
 > `protected` **\_fetch**(`yargs`): `void`
 
-Defined in: [controller/yargs-router/git-router.ts:26](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/git-router.ts#L26)
+Defined in: [controller/yargs-router/git-router.ts:26](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/git-router.ts#L26)
 
 #### Parameters
 
@@ -60,7 +60,7 @@ Defined in: [controller/yargs-router/git-router.ts:26](https://github.com/beecod
 
 > `protected` **\_pull**(`yargs`): `void`
 
-Defined in: [controller/yargs-router/git-router.ts:41](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/git-router.ts#L41)
+Defined in: [controller/yargs-router/git-router.ts:41](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/git-router.ts#L41)
 
 #### Parameters
 
@@ -78,7 +78,7 @@ Defined in: [controller/yargs-router/git-router.ts:41](https://github.com/beecod
 
 > `protected` **\_status**(`yargs`): `void`
 
-Defined in: [controller/yargs-router/git-router.ts:56](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/git-router.ts#L56)
+Defined in: [controller/yargs-router/git-router.ts:56](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/git-router.ts#L56)
 
 #### Parameters
 
@@ -96,7 +96,7 @@ Defined in: [controller/yargs-router/git-router.ts:56](https://github.com/beecod
 
 > `protected` **\_tag**(`yargs`): `void`
 
-Defined in: [controller/yargs-router/git-router.ts:71](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/git-router.ts#L71)
+Defined in: [controller/yargs-router/git-router.ts:71](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/git-router.ts#L71)
 
 #### Parameters
 
@@ -114,7 +114,7 @@ Defined in: [controller/yargs-router/git-router.ts:71](https://github.com/beecod
 
 > **commands**(`yargs`): `Argv`
 
-Defined in: [controller/yargs-router/git-router.ts:93](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/git-router.ts#L93)
+Defined in: [controller/yargs-router/git-router.ts:93](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/git-router.ts#L93)
 
 #### Parameters
 

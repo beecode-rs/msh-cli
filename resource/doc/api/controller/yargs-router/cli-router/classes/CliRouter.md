@@ -6,7 +6,7 @@
 
 # Class: CliRouter
 
-Defined in: [controller/yargs-router/cli-router.ts:9](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/cli-router.ts#L9)
+Defined in: [controller/yargs-router/cli-router.ts:9](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/cli-router.ts#L9)
 
 ## Constructors
 
@@ -14,7 +14,7 @@ Defined in: [controller/yargs-router/cli-router.ts:9](https://github.com/beecode
 
 > **new CliRouter**(`argv`): `CliRouter`
 
-Defined in: [controller/yargs-router/cli-router.ts:12](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/cli-router.ts#L12)
+Defined in: [controller/yargs-router/cli-router.ts:12](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/cli-router.ts#L12)
 
 #### Parameters
 
@@ -32,7 +32,7 @@ Defined in: [controller/yargs-router/cli-router.ts:12](https://github.com/beecod
 
 > `protected` `readonly` **\_yargs**: `Argv`
 
-Defined in: [controller/yargs-router/cli-router.ts:10](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/cli-router.ts#L10)
+Defined in: [controller/yargs-router/cli-router.ts:10](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/cli-router.ts#L10)
 
 ## Methods
 
@@ -40,7 +40,7 @@ Defined in: [controller/yargs-router/cli-router.ts:10](https://github.com/beecod
 
 > `protected` **\_demandCommands**(): `void`
 
-Defined in: [controller/yargs-router/cli-router.ts:37](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/cli-router.ts#L37)
+Defined in: [controller/yargs-router/cli-router.ts:37](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/cli-router.ts#L37)
 
 #### Returns
 
@@ -52,7 +52,7 @@ Defined in: [controller/yargs-router/cli-router.ts:37](https://github.com/beecod
 
 > `protected` **\_gitCommands**(): `void`
 
-Defined in: [controller/yargs-router/cli-router.ts:41](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/cli-router.ts#L41)
+Defined in: [controller/yargs-router/cli-router.ts:41](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/cli-router.ts#L41)
 
 #### Returns
 
@@ -64,7 +64,7 @@ Defined in: [controller/yargs-router/cli-router.ts:41](https://github.com/beecod
 
 > `protected` **\_helpVersionAlias**(): `void`
 
-Defined in: [controller/yargs-router/cli-router.ts:33](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/cli-router.ts#L33)
+Defined in: [controller/yargs-router/cli-router.ts:33](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/cli-router.ts#L33)
 
 #### Returns
 
@@ -76,7 +76,7 @@ Defined in: [controller/yargs-router/cli-router.ts:33](https://github.com/beecod
 
 > `protected` **\_initCommands**(): `void`
 
-Defined in: [controller/yargs-router/cli-router.ts:84](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/cli-router.ts#L84)
+Defined in: [controller/yargs-router/cli-router.ts:84](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/cli-router.ts#L84)
 
 #### Returns
 
@@ -88,7 +88,7 @@ Defined in: [controller/yargs-router/cli-router.ts:84](https://github.com/beecod
 
 > `protected` **\_npmCommands**(): `void`
 
-Defined in: [controller/yargs-router/cli-router.ts:62](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/cli-router.ts#L62)
+Defined in: [controller/yargs-router/cli-router.ts:62](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/cli-router.ts#L62)
 
 #### Returns
 
@@ -100,7 +100,7 @@ Defined in: [controller/yargs-router/cli-router.ts:62](https://github.com/beecod
 
 > `protected` **\_setupUsage**(): `void`
 
-Defined in: [controller/yargs-router/cli-router.ts:29](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/cli-router.ts#L29)
+Defined in: [controller/yargs-router/cli-router.ts:29](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/cli-router.ts#L29)
 
 #### Returns
 
@@ -112,7 +112,7 @@ Defined in: [controller/yargs-router/cli-router.ts:29](https://github.com/beecod
 
 > **routeArgv**(): `Promise`\<`void`\>
 
-Defined in: [controller/yargs-router/cli-router.ts:16](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/controller/yargs-router/cli-router.ts#L16)
+Defined in: [controller/yargs-router/cli-router.ts:16](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/controller/yargs-router/cli-router.ts#L16)
 
 #### Returns
 

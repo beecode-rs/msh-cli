@@ -6,7 +6,7 @@
 
 # Abstract Class: BaseMenu
 
-Defined in: [util/base-menu.ts:3](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/util/base-menu.ts#L3)
+Defined in: [util/base-menu.ts:3](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/util/base-menu.ts#L3)
 
 ## Extended by
 
@@ -19,7 +19,7 @@ Defined in: [util/base-menu.ts:3](https://github.com/beecode-rs/msh-cli/blob/3e1
 
 > `protected` **new BaseMenu**(`message`, `choices`, `exitChoices?`): `BaseMenu`
 
-Defined in: [util/base-menu.ts:17](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/util/base-menu.ts#L17)
+Defined in: [util/base-menu.ts:17](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/util/base-menu.ts#L17)
 
 #### Parameters
 
@@ -45,7 +45,7 @@ Defined in: [util/base-menu.ts:17](https://github.com/beecode-rs/msh-cli/blob/3e
 
 > `protected` **\_getSelectedValue**(`perSelected?`): `Promise`\<`string`\>
 
-Defined in: [util/base-menu.ts:46](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/util/base-menu.ts#L46)
+Defined in: [util/base-menu.ts:46](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/util/base-menu.ts#L46)
 
 #### Parameters
 
@@ -63,7 +63,7 @@ Defined in: [util/base-menu.ts:46](https://github.com/beecode-rs/msh-cli/blob/3e
 
 > **run**(`preSelected?`): `Promise`\<`void`\>
 
-Defined in: [util/base-menu.ts:35](https://github.com/beecode-rs/msh-cli/blob/3e1c9b3633c8ffbf12a445c50b75a2af580c79b9/src/util/base-menu.ts#L35)
+Defined in: [util/base-menu.ts:35](https://github.com/beecode-rs/msh-cli/blob/7b9689686fee8dbd72757c8f3c16ba4ee70b94ff/src/util/base-menu.ts#L35)
 
 #### Parameters
 
