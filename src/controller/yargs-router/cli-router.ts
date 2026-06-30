@@ -1,9 +1,9 @@
 import yargs, { type Argv } from 'yargs'
 
+import { terminalWrapperFactory } from '#src/business/service/terminal-wrapper.js'
+import { InitConfig } from '#src/business/use-case/init-config.js'
 import { GitRouter } from '#src/controller/yargs-router/git-router.js'
 import { NpmRouter } from '#src/controller/yargs-router/npm-router.js'
-import { InitConfig } from '#src/model/command/init-config.js'
-import { terminalWrapperFactory } from '#src/service/terminal-wrapper.js'
 import { config } from '#src/util/config.js'
 
 export class CliRouter {

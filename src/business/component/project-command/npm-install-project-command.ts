@@ -1,7 +1,7 @@
 import path from 'path'
 
-import { type ExecuteResult, type ProjectExecutable } from '#src/model/command/interfaces.js'
-import { shellService } from '#src/service/shell-service.js'
+import { type ExecuteResult, type ProjectExecutable } from '#src/business/model/executable.js'
+import { shellService } from '#src/business/service/shell-service.js'
 import { config } from '#src/util/config.js'
 
 export class NpmInstallProjectCommand implements ProjectExecutable {

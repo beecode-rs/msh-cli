@@ -1,4 +1,4 @@
-import { type ExecuteResult, type ProjectExecutable } from '#src/model/command/interfaces.js'
+import { type ExecuteResult, type ProjectExecutable } from '#src/business/model/executable.js'
 import { config } from '#src/util/config.js'
 
 export class ProjectCommand {

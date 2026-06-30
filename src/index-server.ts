@@ -2,7 +2,7 @@ import './index-init.js'
 
 import { AppStarter } from '@beecode/msh-app-boot'
 
-import { HttpServerApp } from '#src/app/http-server-app.js'
+import { HttpServerApp } from '#src/app-boot/http-server-app.js'
 
 new AppStarter(new HttpServerApp()).start().catch((err: unknown) => {
 	if (err instanceof Error) {

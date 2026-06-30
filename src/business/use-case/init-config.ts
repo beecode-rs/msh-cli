@@ -1,5 +1,5 @@
-import { type Executable, type ExecuteResult } from '#src/model/command/interfaces.js'
-import { initConfigService } from '#src/service/init-config-service.js'
+import { type Executable, type ExecuteResult } from '#src/business/model/executable.js'
+import { initConfigService } from '#src/business/service/init-config-service.js'
 
 export class InitConfig implements Executable {
 	async execute(): Promise<ExecuteResult[]> {

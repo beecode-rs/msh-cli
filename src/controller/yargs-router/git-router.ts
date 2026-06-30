@@ -1,13 +1,13 @@
 import { type Argv } from 'yargs'
 
-import { GitCloneProjectCommand } from '#src/model/command/project-command/git-clone-project-command.js'
+import { GitCloneProjectCommand } from '#src/business/component/project-command/git-clone-project-command.js'
 import {
 	GitSimpleCommand,
 	GitSimpleProjectCommand,
-} from '#src/model/command/project-command/git-simple-project-command.js'
-import { GitTagProjectCommand } from '#src/model/command/project-command/git-tag-project-command.js'
-import { projectCommandFactory } from '#src/model/command/project-command/project-command.js'
-import { terminalWrapperFactory } from '#src/service/terminal-wrapper.js'
+} from '#src/business/component/project-command/git-simple-project-command.js'
+import { GitTagProjectCommand } from '#src/business/component/project-command/git-tag-project-command.js'
+import { terminalWrapperFactory } from '#src/business/service/terminal-wrapper.js'
+import { projectCommandFactory } from '#src/business/use-case/project-command.js'
 
 export class GitRouter {
 	protected _clone(yargs: Argv): void {
