@@ -6,13 +6,13 @@ export class GitCloneProjectCommand implements ProjectExecutable {
 	protected readonly _rootDir: string
 	protected readonly _gitHost: string
 	protected readonly _gitTeam: string
-	protected readonly _projectPrefix: string
+	protected readonly _projectPrefix: string | undefined
 
 	constructor(params?: { rootDir?: string; gitHost?: string; gitTeam?: string; projectPrefix?: string }) {
 		const {
 			gitHost = config().git.host,
 			gitTeam = config().git.team,
-			projectPrefix = config().git.projectPrefix ?? '',
+			projectPrefix = config().git.projectPrefix,
 			rootDir = config().rootDir,
 		} = params ?? {}
 		if (!gitTeam) {

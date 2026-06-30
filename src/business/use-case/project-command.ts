@@ -2,7 +2,7 @@ import { type ExecuteResult, type ProjectExecutable } from '#src/business/model/
 import { config } from '#src/util/config.js'
 
 export class ProjectCommand {
-	protected readonly _projects: string[]
+	protected readonly _projects: readonly string[]
 	protected readonly _command: ProjectExecutable
 
 	constructor(params: { command: ProjectExecutable; projects?: string[] }) {
