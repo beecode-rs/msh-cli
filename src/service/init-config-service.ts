@@ -1,5 +1,6 @@
-import { fs } from 'mz'
 import path from 'path'
+
+import { fs } from 'mz'
 
 import { config } from '#src/util/config.js'
 

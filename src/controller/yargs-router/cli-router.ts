@@ -94,4 +94,5 @@ export class CliRouter {
 	}
 }
 
-export const cliRouterFactory = (...params: ConstructorParameters<typeof CliRouter>): CliRouter => new CliRouter(...params)
+export const cliRouterFactory = (...params: ConstructorParameters<typeof CliRouter>): CliRouter =>
+	new CliRouter(...params)

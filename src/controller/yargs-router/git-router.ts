@@ -1,7 +1,10 @@
 import { type Argv } from 'yargs'
 
 import { GitCloneProjectCommand } from '#src/model/command/project-command/git-clone-project-command.js'
-import { GitSimpleCommand, GitSimpleProjectCommand } from '#src/model/command/project-command/git-simple-project-command.js'
+import {
+	GitSimpleCommand,
+	GitSimpleProjectCommand,
+} from '#src/model/command/project-command/git-simple-project-command.js'
 import { GitTagProjectCommand } from '#src/model/command/project-command/git-tag-project-command.js'
 import { projectCommandFactory } from '#src/model/command/project-command/project-command.js'
 import { terminalWrapperFactory } from '#src/service/terminal-wrapper.js'
@@ -27,7 +30,9 @@ export class GitRouter {
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			handler: async (_argv: any) => {
 				await terminalWrapperFactory({
-					command: projectCommandFactory({ command: new GitSimpleProjectCommand({ gitSimpleCommand: GitSimpleCommand.FETCH }) }),
+					command: projectCommandFactory({
+						command: new GitSimpleProjectCommand({ gitSimpleCommand: GitSimpleCommand.FETCH }),
+					}),
 				}).execute()
 			},
 		})
@@ -40,7 +45,9 @@ export class GitRouter {
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			handler: async (_argv: any) => {
 				await terminalWrapperFactory({
-					command: projectCommandFactory({ command: new GitSimpleProjectCommand({ gitSimpleCommand: GitSimpleCommand.PULL }) }),
+					command: projectCommandFactory({
+						command: new GitSimpleProjectCommand({ gitSimpleCommand: GitSimpleCommand.PULL }),
+					}),
 				}).execute()
 			},
 		})
@@ -53,7 +60,9 @@ export class GitRouter {
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			handler: async (_argv: any) => {
 				await terminalWrapperFactory({
-					command: projectCommandFactory({ command: new GitSimpleProjectCommand({ gitSimpleCommand: GitSimpleCommand.STATUS }) }),
+					command: projectCommandFactory({
+						command: new GitSimpleProjectCommand({ gitSimpleCommand: GitSimpleCommand.STATUS }),
+					}),
 				}).execute()
 			},
 		})

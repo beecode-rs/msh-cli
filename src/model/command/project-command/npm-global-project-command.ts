@@ -1,6 +1,7 @@
+import path from 'path'
+
 import { compareVersions } from 'compare-versions'
 import stringify from 'fast-json-stable-stringify'
-import path from 'path'
 
 import { type Executable, type ExecuteResult } from '#src/model/command/interfaces.js'
 import { fileService } from '#src/service/file-service.js'

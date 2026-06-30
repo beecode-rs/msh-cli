@@ -11,7 +11,11 @@ export class TerminalWrapper {
 	async execute(): Promise<void> {
 		const results = await this._command.execute()
 		const printableStdMessages = results.map((r) => ({
-			[r.name ?? '<cmd>']: { errorOccurred: !!r.errorMessage, stderr: r.errorMessage ?? '', stdout: r.stringResult ?? '' },
+			[r.name ?? '<cmd>']: {
+				errorOccurred: !!r.errorMessage,
+				stderr: r.errorMessage ?? '',
+				stdout: r.stringResult ?? '',
+			},
 		}))
 		shellService.printStdMessage(...printableStdMessages)
 	}
