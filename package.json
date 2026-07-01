@@ -1,6 +1,6 @@
 {
 	"name": "@beecode/msh-cli",
-	"version": "2.1.5",
+	"version": "3.0.0",
 	"description": "MicroService Shell helper",
 	"keywords": [
 		"shell",

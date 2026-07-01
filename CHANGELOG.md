@@ -1,3 +1,30 @@
+# [3.0.0](https://github.com/beecode-rs/msh-cli/compare/v2.1.5...v3.0.0) (2026-07-01)
+
+
+* feat!: restructure CLI into business layer with modernized toolchain ([#71](https://github.com/beecode-rs/msh-cli/issues/71)) ([0480e44](https://github.com/beecode-rs/msh-cli/commit/0480e4451bec5314bc04079fb6fc186fb811e7ed))
+
+
+### Bug Fixes
+
+* add source-map-support ([a5044d7](https://github.com/beecode-rs/msh-cli/commit/a5044d7da191d50a1a5160236827f5231538fa10))
+
+
+### BREAKING CHANGES
+
+* CLI has been restructured with new directory layout and
+minimum Node.js version bumped to v22.22.1.
+
+- Move project commands to business/component
+- Move services to business/service
+- Move use cases to business/use-case
+- Rename app dir to app-boot
+- Remove babel, migrate from jest to vitest
+- Bump typescript to v6
+- Bump msh-app-boot and msh-env to v2
+- Switch api docs to hierarchical directory structure
+- Update ci to ubuntu2404 and fix ci user to builder
+- Add nvm to husky hooks, clean up ignore rules
+
 ## [2.1.5](https://github.com/beecode-rs/msh-cli/compare/v2.1.4...v2.1.5) (2026-02-16)
 
 
