@@ -99,7 +99,7 @@
 	"dependencies": {
 		"@beecode/msh-app-boot": "^2.0.0",
 		"@beecode/msh-config": "^1.2.0",
-		"@beecode/msh-env": "^2.0.0",
+		"@beecode/msh-env": "^2.0.1",
 		"@beecode/msh-logger": "^2.0.0",
 		"@beecode/msh-util": "^3.0.0",
 		"async-shelljs": "^0.1.4",
@@ -114,6 +114,7 @@
 		"mz": "^2.7.0",
 		"request": "^2.88.2",
 		"request-promise-native": "^1.0.9",
+		"source-map-support": "^0.5.21",
 		"update-notifier": "^7.3.1",
 		"yargs": "^18.0.0"
 	},
