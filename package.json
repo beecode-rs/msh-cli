@@ -97,10 +97,10 @@
 		}
 	},
 	"dependencies": {
-		"@beecode/msh-app-boot": "^2.0.1",
+		"@beecode/msh-app-boot": "^2.0.2",
 		"@beecode/msh-config": "^1.2.2",
-		"@beecode/msh-env": "^2.0.2",
-		"@beecode/msh-logger": "^2.0.0",
+		"@beecode/msh-env": "^2.0.3",
+		"@beecode/msh-logger": "^2.0.2",
 		"@beecode/msh-util": "^3.0.1",
 		"async-shelljs": "^0.1.4",
 		"chalk": "^5.6.2",
